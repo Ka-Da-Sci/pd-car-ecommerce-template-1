@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <link rel="icon" href="#" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/iconify/2.0.0/iconify.min.js"
+      integrity="sha512-lYMiwcB608+RcqJmP93CMe7b4i9G9QK1RbixsNu4PzMRJMsqr/bUrkXUuFzCNsRUo3IXNUr5hz98lINURv5CNA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="stylesheet" href="./build-styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="../tailwind.config.js"></script> -->
+  </head>
+  <style></style>
+  <body>
+    <section id="header" class="bg-[#FFFFFF] fixed z-10 inset-x-0">
+      <!-- sm:justify-around -->
+      <div
+        class="header container mx-auto flex flex-row gap-10 items-center justify-between h-[76px] px-[3%] sm:px-[5%] py-0"
+      >
+        <a href="./index.html" class="logo-brand-name flex items-center">
+          <img
+            class="w-5 h-[14.15px] sm:w-[35px] sm:h-[24.77px]"
+            src="./assets/images/logo-without-name.svg"
+            alt="logo"
+          />
+        </a>
+        <nav
+          class="flex gap-5 flex-col sm:flex-row items-center justify-between fixed sm:static top-14 -right-[100px] bottom-0 bg-[#7E001A] sm:bg-transparent min-w-[130px] max-w-[300px] sm:max-w-full pl-5 pr-5 py-5 sm:p-0 h-[250px] sm:h-full opacity-0 sm:opacity-100 translate-x-[200px] sm:translate-x-0 [transition:opacity_1s_ease,_transform_1s_ease]"
+        >
+          <ul
+            class="nav-ul flex gap-4 flex-col sm:flex-row items-center justify-evenly list-none ml-auto mr-auto sm:mr-0 h-full"
+          >
+            <li class="w-max">
+              <a
+                onclick="adjustScreen(event)"
+                class="no-underline text-[#FFFFFF] sm:text-[#000000] font-['Poppins'] antialiased text-xs sm:text-sm font-medium text-center hover:text-[#898989] transition-all duration-1000 ease-in-out"
+                href="./index.html"
+                >Home</a
+              >
+            </li>
+            <li class="w-max">
+              <a
+                onclick="adjustScreen(event)"
+                class="no-underline text-[#FFFFFF] sm:text-[#000000] font-['Poppins'] antialiased text-xs sm:text-sm font-medium text-center hover:text-[#898989] transition-all duration-1000 ease-in-out"
+                href="./index.html"
+                >Shop</a
+              >
+            </li>
+            <li class="w-max">
+              <a
+                onclick="adjustScreen(event)"
+                class="no-underline text-[#FFFFFF] sm:text-[#000000] font-['Poppins'] antialiased text-xs sm:text-sm font-medium text-center hover:text-[#898989] transition-all duration-1000 ease-in-out"
+                href="./index.html"
+                >About Us</a
+              >
+            </li>
+            <li class="w-max">
+              <a
+                onclick="adjustScreen(event)"
+                class="no-underline text-[#FFFFFF] sm:text-[#000000] font-['Poppins'] antialiased text-xs sm:text-sm font-medium text-center hover:text-[#898989] transition-all duration-1000 ease-in-out"
+                href="./index.html"
+                >Contact</a
+              >
+            </li>
+            <li class="w-max">
+              <a
+                onclick="adjustScreen(event)"
+                class="no-underline text-[#FFFFFF] sm:text-[#000000] font-['Poppins'] antialiased text-xs sm:text-sm font-medium text-center hover:text-[#898989] transition-all duration-1000 ease-in-out"
+                href="./index.html"
+                >FAQ</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="search-cart flex gap-6 items-center">
+          <button
+            class="flex justify-center w-auto h-auto max-w-[30px] max-h-[28.59px]"
+          >
+            <img
+              class="w-auto h-auto max-w-full max-h-full"
+              src="./assets/images/search-icon.svg"
+              alt="search-icon"
+            />
+          </button>
+          <button
+            class="cart relative flex justify-center w-auto h-auto max-w-[40px] max-h-[40px]"
+            id="cart-trolley"
+          >
+            <img
+              class="w-auto h-auto max-w-full max-h-full"
+              src="./assets/images/cat-trolley.svg"
+              alt="cart-icon"
+            />
+            <div
+              class="counter absolute top-1/4 right-0 bg-[#FF4500] rounded-full w-max max-w-[22px] max-h-[22px] aspect-square flex items-center justify-center"
+            >
+              <p
+                id="num-of-items"
+                class="rounded-full p-2 m-0 text-left text-[#FFFFFF] font-['poppins'] text-xs"
+              >
+                0
+              </p>
+            </div>
+          </button>
+        </div>
+        <div class="mobile-toggle block sm:hidden hover:cursor-pointer">
+          <img
+            class="icon-menu w-[100%] h-[100%] max-w-5 max-h-[11.25px] block bg-[rgba(249,_253,_243,_1)]"
+            src="./assets/images/icon-menu.svg"
+            alt="menu-toggle-icon"
+          />
+          <img
+            class="icon-close-menu w-[100%] h-[100%] max-w-5 max-h-5 hidden bg-[rgba(249,_253,_243,_1)]"
+            src="./assets/images/icon-close-menu.svg"
+            alt="menu-toggle-icon"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="hero" class="bg-[#FFFFFF]">
+      <div
+        class="hero container mx-auto px-[3%] py-32 pb-2 sm:pt-36 sm:pb-14 sm:px-[5%] flex gap-5 flex-col md:flex-row justify-center items-center"
+      >
+        <div class="w-full flex flex-col gap-4 items-center">
+          <!-- <span class="hidden text-[#FF4500] animated-text-one relative overflow-hidden">Showstoppers.</span> -->
+          <h1
+            class="overflow-hidden text-[#1E1E1E] text-center font-['montserrat'] font-bold text-6xl"
+          >
+            Explore Our
+            <span class="inline-flex flex-col justify-start items-start w-max">
+              <span
+                class="text-[#FF4500] text-left animated-text-one"
+                >Collection.</span
+              >
+              <span
+                class="text-[#FF4500] text-left animated-text-two"
+                >Showstoppers.</span
+              >
+            </span>
+          </h1>
+          <div
+            class="animate-marquee-container overflow-hidden w-full max-w-[662px] whitespace-nowrap relative"
+          >
+            <p class="animation-marquee inline-block">
+              Drive with Style | Unmatched Comfort | Luxury on Wheels | The
+              Journey Begins | Elegance Awaits | Power and Performance | Where
+              Comfort Meets Class | Ride in Excellence | Feel the Luxury |
+              Crafted for You | Premium Experience | Driven by Perfection |
+              Sophisticated Journeys | Explore in Comfort | Embrace the Road |
+              Adventure in Luxury | Tailored for You | Graceful Rides |
+              Exquisite Performance | Step into Luxury
+            </p>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </section>
+
+    <section class="bg-[#000000] hidden">
+      <div
+        class="container mx-auto flex flex-col items-center justify-between gap-4 py-4 sm:py-8 px-[3%] sm:px-[5%]"
+      >
+        <a href="./index.html" class="flex items-center">
+          <img
+            class="w-[35px] h-[24.77px] md:w-[50px] md:h-[35.39px] filter invert brightness-0"
+            src="./assets/images/logo-without-name.svg"
+            alt="logo"
+          />
+        </a>
+
+        <p
+          class="text-[#FFFFFF] font-normal font-['mulish'] antialiased w-full max-w-[1000px] text-xs text-center hyphens-auto"
+        >
+          Disclaimer: WarriorPlus adhibetur ad venditionem productorum in hoc
+          loco administrandam. Dum WarriorPlus adiuvat in venditione, omnes
+          solutiones directe ad venditorem producti fiunt et NON ad WarriorPlus.
+          Itaque, omnes quaestiones de producto, petitiones auxiliorum, et vel
+          petitiones restitutionis ad venditorem mittendae sunt. WarriorPlus
+          munus non debet interpretari tamquam approbatio, probatio, aut
+          recensio horum productorum vel ullius assertionis, declarationis, aut
+          opinionis in venalicium horum productorum adhibitae.
+        </p>
+        <ul
+          class="flex gap-2 sm:gap-4 w-full justify-center items-center flex-wrap"
+        >
+          <li>
+            <a
+              class="capitalize text-[#FFFFFF] font-normal font-['mulish'] whitespace-nowrap antialiased text-center text-[10px] sm:text-xs hyphens-auto"
+              href="./error404.html"
+              >Earning Disclaimer</a
+            >
+          </li>
+          <li>
+            <a
+              class="capitalize text-[#FFFFFF] font-normal font-['mulish'] whitespace-nowrap antialiased text-center text-[10px] sm:text-xs hyphens-auto"
+              href="./error404.html"
+              >Privacy Policy</a
+            >
+          </li>
+          <li>
+            <a
+              class="capitalize text-[#FFFFFF] font-normal font-['mulish'] whitespace-nowrap antialiased text-center text-[10px] sm:text-xs hyphens-auto"
+              href="./error404.html"
+              >Terms of Use</a
+            >
+          </li>
+        </ul>
+
+        <p
+          class="capitalize text-[#FFFFFF] font-normal font-['mulish'] antialiased text-center text-[10px] sm:text-xs hyphens-auto"
+        >
+          © 2024 Wivali AI | All Rights Reserved
+        </p>
+      </div>
+    </section>
+
+    <script src="./assets/index.js"></script>
+  </body>
+</html>
