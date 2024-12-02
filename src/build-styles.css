@@ -446,6 +446,10 @@ video {
   display: none;
 }
 
+body {
+  display: relative;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -586,6 +590,199 @@ video {
   .container {
     max-width: 1536px;
   }
+}
+
+@keyframes fall-bounce {
+  0% {
+    transform: translateY(-10000px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  60% {
+    transform: translateY(-30px);
+  }
+
+  70% {
+    transform: translateY(0);
+  }
+
+  80% {
+    transform: translateY(-15px);
+  }
+
+  90% {
+    transform: translateY(0);
+  }
+}
+
+.animate-image1 .animation-image {
+  animation: fall-bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes zoom-rev {
+  0% {
+    transform: translate3d(20%, 0, 0) scale(0.8);
+  }
+
+  20% {
+    transform: translate3d(-50%, 0, 0) scale(1.1);
+  }
+
+  30% {
+    transform: translate3d(4%, 0, 0) scale(1);
+  }
+
+  80% {
+    transform: translate3d(-2%, 0, 0) scale(1);
+  }
+
+  90% {
+    transform: translate3d(4%, 0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate3d(-2%, 0, 0) scale(1);
+  }
+}
+
+.animate-image2 .animation-image {
+  animation: zoom-rev 1.2s ease-in-out infinite;
+  /* animation-delay: 3s; */
+}
+
+.animate-image3 .animation-image {
+  animation: imageAnimation 9s infinite;
+  animation-delay: 6s;
+}
+
+@keyframes scaleUpOne {
+  0%, 100% {
+    transform: scale(1) translateY(-12.5%);
+  }
+
+  25% {
+    transform: scale(2) translateY(-12.5%);
+  }
+
+  50% {
+    transform: scale(2) translateY(-6.25%);
+  }
+
+  75% {
+    transform: scale(2) translateY(-6.25%);
+  }
+
+  90% {
+    transform: scale(2) translateY(-6.25%);
+  }
+}
+
+.animate-image4 .animation-image {
+  animation: scaleUpOne infinite ease-in-out;
+  animation-duration: 12s;
+}
+
+@keyframes scaleUpTwo {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1) translateY(-12.5%);
+  }
+
+  50% {
+    transform: scale(2) translateY(-12.5%);
+  }
+
+  75% {
+    transform: scale(2) translateY(-6.25%);
+  }
+
+  90% {
+    transform: scale(2) translateY(-6.25%);
+  }
+}
+
+.animate-image5 .animation-image {
+  animation: scaleUpTwo infinite ease-in-out;
+  animation-duration: 12s;
+}
+
+@keyframes scaleUpThree {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1) translateY(-12.5%);
+  }
+
+  75% {
+    transform: scale(2) translateY(-12.5%);
+  }
+
+  90% {
+    transform: scale(2) translateY(-6.25%);
+  }
+}
+
+.animate-image6 .animation-image {
+  animation: scaleUpThree infinite ease-in-out;
+  animation-duration: 12s;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(27%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee-container .animation-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes slideUpDown {
+  0%, 100% {
+    transform: translateY(-100%);
+    width: 500px;
+  }
+
+  50%, 75% {
+    transform: translateY(0);
+    width: 400px;
+  }
+}
+
+.animated-text-one {
+  animation: slideUpDown 2s linear infinite;
+}
+
+@keyframes slideDownUp {
+  0%, 100% {
+    transform: translateY(100%);
+    width: 500px;
+  }
+
+  50%, 75% {
+    transform: translateY(0);
+    width: 500px;
+  }
+}
+
+.animated-text-two {
+  animation: slideDownUp 2s linear infinite;
 }
 
 .fixed {
@@ -1609,143 +1806,46 @@ video {
   transition: opacity 1s ease, transform 1s ease;
 }
 
-.animate-image1 .animation-image {
-  animation: imageAnimation 9s infinite;
-  animation-delay: 0s;
+/* .animate-image1 .animation-image {
+  @apply animate-scaleUpOne;
 }
 
 .animate-image2 .animation-image {
-  animation: imageAnimation 9s infinite;
+  @apply animate-imageFade;
   animation-delay: 3s;
 }
 
 .animate-image3 .animation-image {
-  animation: imageAnimation 9s infinite;
+  @apply animate-imageFade;
   animation-delay: 6s;
 }
 
-@keyframes scaleUpOne {
-  0%, 100% {
-    transform: scale(1) translateY(-12.5%);
-  }
-
-  25% {
-    transform: scale(2) translateY(-12.5%);
-  }
-
-  50% {
-    transform: scale(2) translateY(-6.25%);
-  }
-
-  75% {
-    transform: scale(2) translateY(-6.25%);
-  }
-
-  90% {
-    transform: scale(2) translateY(-6.25%);
-  }
-}
-
 .animate-image4 .animation-image {
-  animation: scaleUpOne infinite ease-in-out;
+  @apply animate-scaleUpOne;
   animation-duration: 12s;
-}
-
-@keyframes scaleUpTwo {
-  0%, 100% {
-    transform: scale(1);
-  }
-
-  25% {
-    transform: scale(1) translateY(-12.5%);
-  }
-
-  50% {
-    transform: scale(2) translateY(-12.5%);
-  }
-
-  75% {
-    transform: scale(2) translateY(-6.25%);
-  }
-
-  90% {
-    transform: scale(2) translateY(-6.25%);
-  }
 }
 
 .animate-image5 .animation-image {
-  animation: scaleUpTwo infinite ease-in-out;
+  @apply animate-scaleUpTwo;
   animation-duration: 12s;
-}
-
-@keyframes scaleUpThree {
-  0%, 100% {
-    transform: scale(1);
-  }
-
-  25% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1) translateY(-12.5%);
-  }
-
-  75% {
-    transform: scale(2) translateY(-12.5%);
-  }
-
-  90% {
-    transform: scale(2) translateY(-6.25%);
-  }
 }
 
 .animate-image6 .animation-image {
-  animation: scaleUpThree infinite ease-in-out;
+  @apply animate-scaleUpThree;
   animation-duration: 12s;
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(27%);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
 .animate-marquee-container .animation-marquee {
-  animation: marquee 20s linear infinite;
+  @apply animate-marquee;
 }
 
-@keyframes slideUpDown {
-  0%, 100% {
-    transform: translateY(-100%);
-  }
-
-  50%, 75% {
-    transform: translateY(0);
-  }
+.animated-text-one{
+  @apply animate-slideUpDown;
 }
 
-.animated-text-one {
-  animation: slideUpDown 2s linear infinite;
-}
-
-@keyframes slideDownUp {
-  0%, 100% {
-    transform: translateY(100%);
-  }
-
-  50%, 75% {
-    transform: translateY(0);
-  }
-}
-
-.animated-text-two {
-  animation: slideDownUp 2s linear infinite;
-}
+.animated-text-two{
+  @apply animate-slideDownUp;
+} */
 
 .hover\:text-\[rgb\(152\2c 165\2c 133\)\]:hover {
   --tw-text-opacity: 1;

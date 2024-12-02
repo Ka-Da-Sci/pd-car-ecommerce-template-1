@@ -133,17 +133,17 @@
       </div>
     </section>
 
-    <section id="hero" class="bg-[#FFFFFF]">
+    <section id="hero" class="relative">
       <div
-        class="hero container mx-auto px-[3%] py-32 pb-2 sm:pt-36 sm:pb-14 sm:px-[5%] flex gap-5 flex-col md:flex-row justify-center items-center"
+        class="hero container mx-auto px-[3%] py-32 pb-2 sm:pt-36 sm:pb-14 sm:px-[5%] flex gap-5 flex-col justify-center items-center"
       >
+        <img class="absolute top-1/2 -translate-y-1/2 left-0 h-auto w-auto max-w-full max-h-full" src="./assets/images/hero-ellipse.png" alt="sphere">
         <div class="w-full flex flex-col gap-4 items-center">
-          <!-- <span class="hidden text-[#FF4500] animated-text-one relative overflow-hidden">Showstoppers.</span> -->
           <h1
             class="overflow-hidden text-[#1E1E1E] text-center font-['montserrat'] font-bold text-6xl"
           >
             Explore Our
-            <span class="inline-flex flex-col justify-start items-start w-max">
+            <span class="relative inline-flex flex-col justify-start items-start w-max overflow-hidden">
               <span
                 class="text-[#FF4500] text-left animated-text-one"
                 >Collection.</span
@@ -154,10 +154,11 @@
               >
             </span>
           </h1>
+          <!-- bg-[linear-gradient(180deg,_#000000_0.55%,_rgba(12,_12,_12,_0))] -->
           <div
-            class="animate-marquee-container overflow-hidden w-full max-w-[662px] whitespace-nowrap relative"
+            class="animate-marquee-container  overflow-hidden w-full max-w-[662px] whitespace-nowrap relative"
           >
-            <p class="animation-marquee inline-block">
+            <p class="animation-marquee inline-block text-[#1E1E1E] font-normal font-['poppins']">
               Drive with Style | Unmatched Comfort | Luxury on Wheels | The
               Journey Begins | Elegance Awaits | Power and Performance | Where
               Comfort Meets Class | Ride in Excellence | Feel the Luxury |
@@ -168,7 +169,17 @@
             </p>
           </div>
         </div>
-        <div></div>
+        <div class="flex justify-center flex-col">
+          <div class="hidden justify-center w-auto h-auto max-w-[689px] max-h-[419px] animate-image1">
+            <img class="w-auto h-auto max-w-full max-h-full transform animation-image" src="./assets/images/fall-car.png" alt="car">
+          </div>
+          <div class="flex justify-center w-auto h-auto max-w-[689px] max-h-[419px] animate-image2 [transform-style:preserve-3d] [perspective:500px]">
+            <img class="w-auto h-auto max-w-full max-h-full transform animation-image" src="./assets/images/car-2.png" alt="car">
+          </div>
+          <div class="hidden justify-center w-auto h-auto max-w-[689px] max-h-[419px] animate-image2 [transform-style:preserve-3d] [perspective:500px]">
+            <img class="w-auto h-auto max-w-full max-h-full transform animation-image" src="./assets/images/car-3.png" alt="car">
+          </div>
+        </div>
       </div>
     </section>
 
@@ -230,6 +241,6 @@
       </div>
     </section>
 
-    <script src="./assets/index.js"></script>
+    <script type="module" src="./assets/index.js"></script>
   </body>
 </html>
