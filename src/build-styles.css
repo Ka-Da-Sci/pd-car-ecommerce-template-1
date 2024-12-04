@@ -563,6 +563,12 @@ body, html {
   width: 100%;
 }
 
+@media (min-width: 400px) {
+  .container {
+    max-width: 400px;
+  }
+}
+
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
@@ -1916,6 +1922,10 @@ body, html {
 
 .outline-0 {
   outline-width: 0px;
+}
+
+.item-container:hover .item-name, .item-container:hover .item-price{
+  color: #FF4500;
 }
 
 .\[animation-fill-mode\:forwards\] {

@@ -66,6 +66,12 @@
   }
 }
 
+@layer utilities {
+  .item-container:hover .item-name, .item-container:hover .item-price{
+    color: #FF4500;
+  }
+}
+
 /* .animate-image1 .animation-image {
   @apply animate-scaleUpOne;
 }

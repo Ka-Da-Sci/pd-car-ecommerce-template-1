@@ -16,6 +16,10 @@ module.exports = {
     "scrolling-ads-2",
     "scrolling-ads-3",
     "scrolling-ads-4",
+    "item-container",
+    "item-name",
+    "item-price",
+    "xsm",
   ],
   theme: {
     extend: {
@@ -131,16 +135,10 @@ module.exports = {
         },
         
       },
+      screens: {
+        'xsm': { 'min': '400px' },
+      },
     },
   },
   plugins: [],
 };
-
-
-        // rebounce: {
-        //   '0%, 100%': { transform: 'translateY(0)' }, 
-        //   '30%': { transform: 'translateY(-30px)' }, 
-        //   '50%': { transform: 'translateY(0)' }, 
-        //   '70%': { transform: 'translateY(-15px)' }, 
-        //   '90%': { transform: 'translateY(0)' }, 
-        // },
