@@ -133,32 +133,37 @@
       </div>
     </section>
 
-    <section id="hero" class="relative">
+    <section id="hero" class="relative overflow-x-hidden">
       <div
-        class="hero container mx-auto px-[3%] py-32 pb-2 sm:pt-36 sm:pb-14 sm:px-[5%] flex gap-5 flex-col justify-center items-center"
+        class="hero container mx-auto px-[3%] py-32 pb-2 sm:pt-36 sm:pb-14 sm:px-[5%] flex gap-4 flex-col justify-center items-center"
       >
-        <img class="absolute top-1/2 -translate-y-1/2 left-0 h-auto w-auto max-w-full max-h-full" src="./assets/images/hero-ellipse.png" alt="sphere">
+        <img
+          class="absolute top-1/2 -translate-y-1/2 left-0 h-auto w-auto max-w-full max-h-full"
+          src="./assets/images/hero-ellipse.png"
+          alt="sphere"
+        />
         <div class="w-full flex flex-col gap-4 items-center">
           <h1
-            class="overflow-hidden text-[#1E1E1E] text-center font-['montserrat'] font-bold text-6xl"
+            class="overflow-hidden uppercase text-[#1E1E1E] text-center font-['montserrat'] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
           >
             Explore Our
-            <span class="relative inline-flex flex-col justify-start items-start w-max overflow-hidden">
-              <span
-                class="text-[#FF4500] text-left animated-text-one"
+            <span
+              class="relative inline-flex flex-col justify-start items-start w-max overflow-hidden"
+            >
+              <span class="text-[#FF4500]  animated-text-one"
                 >Collection.</span
               >
-              <span
-                class="text-[#FF4500] text-left animated-text-two"
+              <span class="text-[#FF4500]  animated-text-two"
                 >Showstoppers.</span
               >
             </span>
           </h1>
-          <!-- bg-[linear-gradient(180deg,_#000000_0.55%,_rgba(12,_12,_12,_0))] -->
           <div
-            class="animate-marquee-container  overflow-hidden w-full max-w-[662px] whitespace-nowrap relative"
+            class="animate-marquee-container overflow-hidden w-full max-w-[662px] whitespace-nowrap relative"
           >
-            <p class="animation-marquee inline-block text-[#1E1E1E] font-normal font-['poppins']">
+            <p
+              class="animation-marquee inline-block text-[#1E1E1E] font-normal font-['poppins']"
+            >
               Drive with Style | Unmatched Comfort | Luxury on Wheels | The
               Journey Begins | Elegance Awaits | Power and Performance | Where
               Comfort Meets Class | Ride in Excellence | Feel the Luxury |
@@ -169,19 +174,207 @@
             </p>
           </div>
         </div>
-        <div class="flex justify-center flex-col">
-          <div class="hidden justify-center w-auto h-auto max-w-[689px] max-h-[419px] animate-image1">
-            <img class="w-auto h-auto max-w-full max-h-full transform animation-image" src="./assets/images/fall-car.png" alt="car">
+        <div class="h-[200px] sm:h-[420px]">
+          <div class="flex justify-center">
+            <div
+              class="animated-hero-one justify-center w-full h-full max-w-[220px] sm:max-w-[689px] max-h-[250px] sm:max-h-[419px] animate-image1"
+            >
+              <img
+                class="w-auto h-auto max-w-full max-h-full transform animation-image"
+                src="./assets/images/fall-car.png"
+                alt="car"
+              />
+            </div>
+            <div
+              class="animated-hero-two justify-center w-full h-full max-w-[220px] sm:max-w-[689px] max-h-[250px] sm:max-h-[419px] animate-image2 [transform-style:preserve-3d] [perspective:500px]"
+            >
+              <img
+                class="w-auto h-auto max-w-full max-h-full transform animation-image"
+                src="./assets/images/car-2.png"
+                alt="car"
+              />
+            </div>
+            <div
+              class="animated-hero-three justify-center w-full h-full max-w-[220px] sm:max-w-[689px] max-h-[250px] sm:max-h-[419px] animate-image3 [transform-style:preserve-3d] [perspective:500px]"
+            >
+              <img
+                class="w-auto h-auto max-w-full max-h-full transform animation-image"
+                src="./assets/images/car-3.png"
+                alt="car"
+              />
+            </div>
           </div>
-          <div class="flex justify-center w-auto h-auto max-w-[689px] max-h-[419px] animate-image2 [transform-style:preserve-3d] [perspective:500px]">
-            <img class="w-auto h-auto max-w-full max-h-full transform animation-image" src="./assets/images/car-2.png" alt="car">
+        </div>
+        <div
+          class="sticky -mt-2 sm:mt-0 bottom-0 right-[10%] w-full h-full max-w-[60px] max-h-[60px] aspect-square flex justify-center items-center self-end bg-[#FF4500] rounded-full p-2"
+        >
+          <a href="./error404.html">
+            <img
+              class="rounded-full self-center h-auto w-auto max-w-full max-h-full"
+              src="./assets/images/link-icon.svg"
+              alt="link icon"
+            />
+          </a>
+        </div>
+        <div
+          class="animate-marquee-container-2 overflow-hidden w-full max-w-[662px] whitespace-nowrap relative"
+        >
+          <p
+            class="animation-marquee inline-block text-[#1E1E1E] font-normal font-['poppins']"
+          >
+            Drive with Style | Unmatched Comfort | Luxury on Wheels | The
+            Journey Begins | Elegance Awaits | Power and Performance | Where
+            Comfort Meets Class | Ride in Excellence | Feel the Luxury | Crafted
+            for You | Premium Experience | Driven by Perfection | Sophisticated
+            Journeys | Explore in Comfort | Embrace the Road | Adventure in
+            Luxury | Tailored for You | Graceful Rides | Exquisite Performance |
+            Step into Luxury
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="container mx-auto mx-w-[1200px] py-16 px-[3%] sm:px-[5%] flex gap-5 flex-col md:grid grid-cols-4 md:items-stretch justify-center items-center"
+      >
+        <div
+          class="md:rounded-tl-[20px] md:rounded-bl-[20px] px-4 py-8 bg-[#1E1E1E] w-full max-w-[300px] flex-1"
+        >
+          <p
+            class="text-[#FFFFFF] font-['Poppins'] font-semibold text-center text-xl sm:text-2xl md:text-4xl lg:text-6xl antialiased"
+          >
+            10K+
+          </p>
+          <p
+            class="text-[#FFFFFF] font-['Poppins'] font-normal text-center text-xs sm: md:text-lg capitalize antialiased"
+          >
+            Cars Sold
+          </p>
+        </div>
+        <div class="px-4 py-8 bg-[#1E1E1E] w-full max-w-[300px] flex-1">
+          <p
+            class="text-[#FFFFFF] font-['Poppins'] font-semibold text-center text-xl sm:text-2xl md:text-4xl lg:text-6xl antialiased"
+          >
+            8.5K+
+          </p>
+          <p
+            class="text-[#FFFFFF] font-['Poppins'] font-normal text-center text-xs sm: md:text-lg capitalize antialiased"
+          >
+            Satisfied Customers
+          </p>
+        </div>
+        <div class="px-4 py-8 bg-[#1E1E1E] w-full max-w-[300px] flex-1">
+          <p
+            class="text-[#FFFFFF] font-['Poppins'] font-semibold text-center text-xl sm:text-2xl md:text-4xl lg:text-6xl antialiased"
+          >
+            15Y
+          </p>
+          <p
+            class="text-[#FFFFFF] font-['Poppins'] font-normal text-center text-xs sm: md:text-lg capitalize antialiased"
+          >
+            Years of Experience
+          </p>
+        </div>
+        <div
+          class="md:rounded-br-[20px] md:rounded-tr-[20px] px-4 py-8 bg-[#1E1E1E] w-full max-w-[300px] flex-1"
+        >
+          <p
+            class="text-[#FFFFFF] font-['Poppins'] font-semibold text-center text-xl sm:text-2xl md:text-4xl lg:text-6xl antialiased"
+          >
+            25+
+          </p>
+          <p
+            class="text-[#FFFFFF] font-['Poppins'] font-normal text-center text-xs sm: md:text-lg capitalize antialiased"
+          >
+            Years of Experience
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative">
+      <div
+        class="container mx-auto px-[3%] py-8 sm:py-14 sm:px-[5%] flex gap-14 flex-col justify-center items-center"
+      >
+        <div class="flex gap-2 flex-col w-full max-w-[800px] items-center antialiased uppercase text-center text-[#1E1E1E] font-['Montserrat']">
+          <h1 class="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl">Exclusive Offer Just for You</h1>
+          <div class="flex flex-col items-center gap-4">
+            <h2 class="font-normal text-xs sm:text-sm">Unlock Your Savings Today</h2>
+            <div class="overflow-hidden relative z-0 dynamic-hr w-[95%] h-1 rounded-l-full rounded-r-full bg-transparent before:z-20 before:absolute before:top-0 before:left-0 before:content-[''] before:rounded-l-full before:rounded-r-full before:bg-[#ff4500] before:w-full before:h-full after:z-10 after:absolute after:top-0 after:left-0 after:content-[''] after:rounded-l-full after:rounded-r-full after:bg-[#ffa17f] after:w-full after:h-full"></div>
           </div>
-          <div class="hidden justify-center w-auto h-auto max-w-[689px] max-h-[419px] animate-image2 [transform-style:preserve-3d] [perspective:500px]">
-            <img class="w-auto h-auto max-w-full max-h-full transform animation-image" src="./assets/images/car-3.png" alt="car">
+        </div>
+        <div class="relative mx-auto w-full max-w-[900px] h-[400px] flex items-center justify-start scrolling-ads">
+          <div class="absolute top-0 left-0 bg-[#FF4500] w-full h-full max-w-full max-h-full flex items-center justify-start rounded-xl px-10 py-4 scrolling-ads-0">
+            <div class="gap-4 flex flex-col w-[60%] font-['Poppins'] text-[#FFFFFF]">
+              <h1 class="uppercase font-bold text-3xl">Porsche Cayenne 2020</h1>
+              <p class="font-bold text-5xl"><span>$</span><span>53,000</span></p>
+              <p class="font-normal text-xs sm:text-base">Feel the adrenaline rush with a powerful engine and sporty design that turns heads on the road.</p>
+              <a class="flex justify-center w-6 sm:w-8 h-6 sm:h-8 aspect-square mt-4" href="./error404.html">
+                <img class="w-auto h-auto max-w-full max-h-full" src="./assets/images/link-icon2.svg" alt="link icon">
+              </a>
+            </div>
+            <div class="flex flex-1 justify-center absolute top-1/2 -right-[7%] w-1/2 transform -translate-y-1/2">
+              <img class="h-auto w-auto max-w-full max-h-full" src="./assets/images/rolling-ads-1.png" alt="car">
+            </div>
+          </div>
+          <div class="absolute top-0 left-0 bg-[#565656] w-full h-full max-w-full max-h-full flex items-center justify-start rounded-xl px-10 py-4 -z-10 scrolling-ads-1">
+            <div class="gap-4 flex flex-col w-[60%] font-['Poppins'] text-[#FFFFFF]">
+              <h1 class="uppercase font-bold text-3xl">Porsche Cayenne 2020</h1>
+              <p class="font-bold text-5xl"><span>$</span><span>53,000</span></p>
+              <p class="font-normal text-xs sm:text-base">Feel the adrenaline rush with a powerful engine and sporty design that turns heads on the road.</p>
+              <a class="flex justify-center w-6 sm:w-8 h-6 sm:h-8 aspect-square mt-4" href="./error404.html">
+                <img class="w-auto h-auto max-w-full max-h-full" src="./assets/images/link-icon2.svg" alt="link icon">
+              </a>
+            </div>
+            <div class="flex flex-1 justify-center absolute top-1/2 -right-[7%] w-1/2 transform -translate-y-1/2">
+              <img class="h-auto w-auto max-w-full max-h-full" src="./assets/images/rolling-ads-2.png" alt="car">
+            </div>
+          </div>
+          <div class="absolute top-0 left-0 bg-[#B99A00] w-full h-full max-w-full max-h-full flex items-center justify-start rounded-xl px-10 py-4 -z-20 scrolling-ads-2">
+            <div class="gap-4 flex flex-col w-[60%] font-['Poppins'] text-[#FFFFFF]">
+              <h1 class="uppercase font-bold text-3xl">Porsche Cayenne 2020</h1>
+              <p class="font-bold text-5xl"><span>$</span><span>53,000</span></p>
+              <p class="font-normal text-xs sm:text-base">Feel the adrenaline rush with a powerful engine and sporty design that turns heads on the road.</p>
+              <a class="flex justify-center w-6 sm:w-8 h-6 sm:h-8 aspect-square mt-4" href="./error404.html">
+                <img class="w-auto h-auto max-w-full max-h-full" src="./assets/images/link-icon2.svg" alt="link icon">
+              </a>
+            </div>
+            <div class="flex flex-1 justify-center absolute top-1/2 -right-[7%] w-1/2 transform -translate-y-1/2">
+              <img class="h-auto w-auto max-w-full max-h-full" src="./assets/images/rolling-ads-3.png" alt="car">
+            </div>
+          </div>
+          <div class="absolute top-0 left-0 bg-[#1E1E1E] w-full h-full max-w-full max-h-full flex items-center justify-start rounded-xl px-10 py-4 -z-30 scrolling-ads-3">
+            <div class="gap-4 flex flex-col w-[60%] font-['Poppins'] text-[#FFFFFF]">
+              <h1 class="uppercase font-bold text-3xl">Porsche Cayenne 2020</h1>
+              <p class="font-bold text-5xl"><span>$</span><span>53,000</span></p>
+              <p class="font-normal text-xs sm:text-base">Feel the adrenaline rush with a powerful engine and sporty design that turns heads on the road.</p>
+              <a class="flex justify-center w-6 sm:w-8 h-6 sm:h-8 aspect-square mt-4" href="./error404.html">
+                <img class="w-auto h-auto max-w-full max-h-full" src="./assets/images/link-icon2.svg" alt="link icon">
+              </a>
+            </div>
+            <div class="flex flex-1 justify-center absolute top-1/2 -right-[7%] w-1/2 transform -translate-y-1/2">
+              <img class="h-auto w-auto max-w-full max-h-full" src="./assets/images/rolling-ads-4.png" alt="car">
+            </div>
+          </div>
+          <div class="absolute top-0 left-0 bg-[#5F275E] w-full h-full max-w-full max-h-full flex items-center justify-start rounded-xl px-10 py-4 -z-40 scrolling-ads-4">
+            <div class="gap-4 flex flex-col w-[60%] font-['Poppins'] text-[#FFFFFF]">
+              <h1 class="uppercase font-bold text-3xl">Porsche Cayenne 2020</h1>
+              <p class="font-bold text-5xl"><span>$</span><span>53,000</span></p>
+              <p class="font-normal text-xs sm:text-base">Feel the adrenaline rush with a powerful engine and sporty design that turns heads on the road.</p>
+              <a class="flex justify-center w-6 sm:w-8 h-6 sm:h-8 aspect-square mt-4" href="./error404.html">
+                <img class="w-auto h-auto max-w-full max-h-full" src="./assets/images/link-icon2.svg" alt="link icon">
+              </a>
+            </div>
+            <div class="flex flex-1 justify-center absolute top-1/2 -right-[7%] w-1/2 transform -translate-y-1/2">
+              <img class="h-auto w-auto max-w-full max-h-full" src="./assets/images/rolling-ads-5.png" alt="car">
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+
 
     <section class="bg-[#000000] hidden">
       <div

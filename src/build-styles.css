@@ -1,5 +1,113 @@
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
 /*
-! tailwindcss v3.4.10 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -442,120 +550,13 @@ video {
 
 /* Make elements with the HTML hidden attribute stay hidden by default */
 
-[hidden] {
+[hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
 
-body {
+body, html {
   display: relative;
-}
-
-*, ::before, ::after {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
-}
-
-::backdrop {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
+  overflow-x: hidden;
 }
 
 .container {
@@ -648,95 +649,210 @@ body {
   }
 }
 
-.animate-image2 .animation-image {
+.animate-image2 .animation-image,   .animate-image3 .animation-image {
   animation: zoom-rev 1.2s ease-in-out infinite;
-  /* animation-delay: 3s; */
-}
-
-.animate-image3 .animation-image {
-  animation: imageAnimation 9s infinite;
-  animation-delay: 6s;
 }
 
 @keyframes scaleUpOne {
-  0%, 100% {
-    transform: scale(1) translateY(-12.5%);
+  0% {
+    transform: translateX(-98%);
+    opacity: 1;
   }
 
   25% {
-    transform: scale(2) translateY(-12.5%);
+    transform: translateX(-60%);
   }
 
   50% {
-    transform: scale(2) translateY(-6.25%);
+    transform: translateX(-30%);
   }
 
   75% {
-    transform: scale(2) translateY(-6.25%);
+    transform: translateX(-15%);
   }
 
-  90% {
-    transform: scale(2) translateY(-6.25%);
+  75%, 90%, 99% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0%);
+    opacity: 0;
   }
 }
 
-.animate-image4 .animation-image {
-  animation: scaleUpOne infinite ease-in-out;
-  animation-duration: 12s;
+.dynamic-hr::before {
+  animation: scaleUpOne 7s 2s infinite ease-in-out backwards;
 }
 
 @keyframes scaleUpTwo {
-  0%, 100% {
-    transform: scale(1);
+  0% {
+    transform: translateX(98%);
+    opacity: 1;
   }
 
   25% {
-    transform: scale(1) translateY(-12.5%);
+    transform: translateX(60%);
   }
 
   50% {
-    transform: scale(2) translateY(-12.5%);
+    transform: translateX(20%);
   }
 
-  75% {
-    transform: scale(2) translateY(-6.25%);
+  90%, 99% {
+    transform: translateX(0%);
+    opacity: 1;
   }
 
-  90% {
-    transform: scale(2) translateY(-6.25%);
-  }
-}
-
-.animate-image5 .animation-image {
-  animation: scaleUpTwo infinite ease-in-out;
-  animation-duration: 12s;
-}
-
-@keyframes scaleUpThree {
-  0%, 100% {
-    transform: scale(1);
-  }
-
-  25% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1) translateY(-12.5%);
-  }
-
-  75% {
-    transform: scale(2) translateY(-12.5%);
-  }
-
-  90% {
-    transform: scale(2) translateY(-6.25%);
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
   }
 }
 
-.animate-image6 .animation-image {
-  animation: scaleUpThree infinite ease-in-out;
-  animation-duration: 12s;
+.dynamic-hr::after {
+  animation: scaleUpTwo 7s 2s infinite ease-in-out backwards;
+}
+
+@keyframes scaleUpThreeZero {
+  0%, 14% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  16%, 30% {
+    transform: translateX(-110%);
+    opacity: 1;
+  }
+
+  35%, 100% {
+    transform: translateX(-200%);
+    opacity: 1;
+  }
+}
+
+.scrolling-ads-0 {
+  animation: scaleUpThreeZero 15s infinite ease-in-out;
+}
+
+@keyframes scaleUpThreeOne {
+  0%, 14% {
+    transform: translateX(110%);
+    opacity: 1;
+  }
+
+  16%, 30% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  35%, 50% {
+    transform: translateX(-110%);
+    opacity: 1;
+  }
+
+  52%, 100% {
+    transform: translateX(-200%);
+    opacity: 1;
+  }
+}
+
+.scrolling-ads-1 {
+  animation: scaleUpThreeOne 15s infinite ease-in-out;
+}
+
+@keyframes scaleUpThreeTwo {
+  0%, 14% {
+    transform: translateX(110%);
+    opacity: 1;
+  }
+
+  16%, 30% {
+    transform: translateX(110%);
+    opacity: 1;
+  }
+
+  35%, 50% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  52%, 68% {
+    transform: translateX(-110%);
+    opacity: 1;
+  }
+
+  70%, 100% {
+    transform: translateX(-200%);
+    opacity: 1;
+  }
+}
+
+.scrolling-ads-2 {
+  animation: scaleUpThreeTwo 15s infinite ease-in-out;
+}
+
+@keyframes scaleUpThreeThree {
+  0%, 14% {
+    transform: translateX(110%);
+    opacity: 1;
+  }
+
+  16%, 30% {
+    transform: translateX(110%);
+    opacity: 1;
+  }
+
+  35%, 50% {
+    transform: translateX(110%);
+    opacity: 1;
+  }
+
+  52%, 68% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  70%, 100% {
+    transform: translateX(-110%);
+    opacity: 1;
+  }
+}
+
+.scrolling-ads-3 {
+  animation: scaleUpThreeThree 15s infinite ease-in-out;
+}
+
+@keyframes scaleUpThreeFour {
+  0%, 14% {
+    transform: translateX(110%);
+    opacity: 1;
+  }
+
+  16%, 30% {
+    transform: translateX(110%);
+    opacity: 1;
+  }
+
+  35%, 50% {
+    transform: translateX(110%);
+    opacity: 1;
+  }
+
+  52%, 68% {
+    transform: translateX(110%);
+    opacity: 1;
+  }
+
+  70%, 100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.scrolling-ads-4 {
+  animation: scaleUpThreeFour 15s infinite ease-in-out;
 }
 
 @keyframes marquee {
@@ -750,7 +866,23 @@ body {
 }
 
 .animate-marquee-container .animation-marquee {
-  animation: marquee 20s linear infinite;
+  animation: marquee 50s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(27%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee-container-2 .animation-marquee {
+  animation: marquee 50s linear infinite;
+  animation-delay: 10s;
+  animation-fill-mode: backwards;
 }
 
 @keyframes slideUpDown {
@@ -1435,7 +1567,7 @@ body {
 
 .bg-gray-500 {
   --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[linear-gradient\(0deg\2c _\#4D84FF_-0\.05\%\2c _\#F0F0F0_37\.11\%\2c _\#FFFFFF_48\.82\%\)\] {
@@ -1762,7 +1894,7 @@ body {
 
 .text-red-500 {
   --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
+  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
 }
 
 .no-underline {
@@ -1849,7 +1981,7 @@ body {
 
 .hover\:text-\[rgb\(152\2c 165\2c 133\)\]:hover {
   --tw-text-opacity: 1;
-  color: rgb(152 165 133 / var(--tw-text-opacity));
+  color: rgb(152 165 133 / var(--tw-text-opacity, 1));
 }
 
 .hover\:\[transition\:all_0\.5s_ease-in-out\]:hover {

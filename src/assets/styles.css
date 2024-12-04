@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-  body {
+  body, html {
     display: relative;
+    overflow-x: hidden;
   }
 }
 
@@ -14,33 +15,46 @@
     @apply animate-fall-bounce;
   }
   
-  .animate-image2 .animation-image {
+  .animate-image2 .animation-image,   .animate-image3 .animation-image {
     @apply animate-zoom-rev;
-    /* animation-delay: 3s; */
   }
   
-  .animate-image3 .animation-image {
-    @apply animate-imageFade;
-    animation-delay: 6s;
-  }
-  
-  .animate-image4 .animation-image {
+  .dynamic-hr::before {
     @apply animate-scaleUpOne;
-    animation-duration: 12s;
   }
   
-  .animate-image5 .animation-image {
+  .dynamic-hr::after {
     @apply animate-scaleUpTwo;
-    animation-duration: 12s;
   }
-  
-  .animate-image6 .animation-image {
-    @apply animate-scaleUpThree;
-    animation-duration: 12s;
+
+  .scrolling-ads-0 {
+    @apply animate-scaleUpThreeZero;
+  }
+
+  .scrolling-ads-1 {
+    @apply animate-scaleUpThreeOne;
+  }
+
+  .scrolling-ads-2 {
+    @apply animate-scaleUpThreeTwo;
+  }
+
+  .scrolling-ads-3 {
+    @apply animate-scaleUpThreeThree;
+  }
+
+  .scrolling-ads-4 {
+    @apply animate-scaleUpThreeFour;
   }
   
   .animate-marquee-container .animation-marquee {
     @apply animate-marquee;
+  }
+
+  .animate-marquee-container-2 .animation-marquee {       
+    @apply animate-marquee;
+    animation-delay: 10s;
+    animation-fill-mode: backwards;
   }
   
   .animated-text-one{

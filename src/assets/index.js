@@ -90,16 +90,17 @@ window.addEventListener('load', ()=> {
 document.addEventListener("DOMContentLoaded", () => {
   const animatedTextOne = document.querySelector(".animated-text-one");
   const animatedTextTwo = document.querySelector(".animated-text-two");
-  console.log(animatedTextOne);
+  const animatedHeroImageOne = document.querySelector(".animated-hero-one");
+  const animatedHeroImageTwo = document.querySelector(".animated-hero-two");
+  const animatedHeroImageThree = document.querySelector(".animated-hero-three");
+  const scrollingAds = document.querySelectorAll(".scrolling-ads > div");
 
   const animateTextTwo = () => {
-    console.log("One In");
     animatedTextOne.classList.remove("hidden");
     animatedTextOne.classList.add("inline-block");
     animatedTextTwo.classList.remove('inline-block');
     animatedTextTwo.classList.add('hidden');
     setTimeout(() => {
-      console.log("Two In");
       animatedTextTwo.classList.remove("hidden");
       animatedTextTwo.classList.add("inline-block");
       animatedTextOne.classList.remove("inline-block");
@@ -108,4 +109,47 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   setInterval(animateTextTwo, 4000);
   animateTextTwo(); 
+
+  const animateHeroImages = () => {
+    animatedHeroImageOne.classList.remove("hidden");
+    animatedHeroImageOne.classList.add("flex");
+    animatedHeroImageTwo.classList.remove('flex');
+    animatedHeroImageTwo.classList.add('hidden');
+    animatedHeroImageThree.classList.remove('flex');
+    animatedHeroImageThree.classList.add('hidden');
+    setTimeout(() => {
+      animatedHeroImageTwo.classList.remove("hidden");
+      animatedHeroImageTwo.classList.add("flex");
+      animatedHeroImageOne.classList.remove("flex");
+      animatedHeroImageOne.classList.add("hidden");
+      animatedHeroImageThree.classList.remove("flex");
+      animatedHeroImageThree.classList.add("hidden");
+    }, 1500);
+    setTimeout(() => {
+      animatedHeroImageThree.classList.remove("hidden");
+      animatedHeroImageThree.classList.add("flex");
+      animatedHeroImageOne.classList.remove("flex");
+      animatedHeroImageOne.classList.add("hidden");
+      animatedHeroImageTwo.classList.remove("flex");
+      animatedHeroImageTwo.classList.add("hidden");
+    }, 2700);
+  }
+  setInterval(animateHeroImages, 3900);
+  animateHeroImages(); 
+  
+  // const animatedCarousel = () => {
+  //   console.log("One In");
+  //   scrollingAds.forEach((ads, index) => {
+  //     ads.classList.add(`scrolling-ads-${index}`);
+  //   })
+  //   setTimeout(() => {
+  //     console.log("Two In");
+  //     scrollingAds.forEach((ads, index) => {
+  //       ads.classList.remove(`scrolling-ads-${index}`);
+  //       ads.classList.add('flex');
+  //     })
+  //   }, 15000);
+  // }
+  // setInterval(animatedCarousel, 15100);
+  // animatedCarousel(); 
 });
