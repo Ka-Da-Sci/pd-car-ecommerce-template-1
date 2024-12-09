@@ -136,7 +136,7 @@ module.exports = {
         
       },
       screens: {
-        'xsm': { 'min': '400px' },
+        "xsm": "400px",
       },
     },
   },

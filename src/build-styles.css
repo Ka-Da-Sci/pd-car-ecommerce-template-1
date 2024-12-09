@@ -1948,47 +1948,6 @@ body, html {
   transition: opacity 1s ease, transform 1s ease;
 }
 
-/* .animate-image1 .animation-image {
-  @apply animate-scaleUpOne;
-}
-
-.animate-image2 .animation-image {
-  @apply animate-imageFade;
-  animation-delay: 3s;
-}
-
-.animate-image3 .animation-image {
-  @apply animate-imageFade;
-  animation-delay: 6s;
-}
-
-.animate-image4 .animation-image {
-  @apply animate-scaleUpOne;
-  animation-duration: 12s;
-}
-
-.animate-image5 .animation-image {
-  @apply animate-scaleUpTwo;
-  animation-duration: 12s;
-}
-
-.animate-image6 .animation-image {
-  @apply animate-scaleUpThree;
-  animation-duration: 12s;
-}
-
-.animate-marquee-container .animation-marquee {
-  @apply animate-marquee;
-}
-
-.animated-text-one{
-  @apply animate-slideUpDown;
-}
-
-.animated-text-two{
-  @apply animate-slideDownUp;
-} */
-
 .hover\:text-\[rgb\(152\2c 165\2c 133\)\]:hover {
   --tw-text-opacity: 1;
   color: rgb(152 165 133 / var(--tw-text-opacity, 1));

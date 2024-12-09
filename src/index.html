@@ -137,11 +137,11 @@
       <div
         class="hero container mx-auto px-[3%] py-32 pb-2 sm:pt-36 sm:pb-14 sm:px-[5%] flex gap-4 flex-col justify-center items-center"
       >
-        <img
+        <!-- <img
           class="absolute top-1/2 -translate-y-1/2 left-0 h-auto w-auto max-w-full max-h-full"
           src="./assets/images/hero-ellipse.png"
           alt="sphere"
-        />
+        /> -->
         <div class="w-full flex flex-col gap-4 items-center">
           <h1
             class="overflow-hidden uppercase text-[#1E1E1E] text-center font-['montserrat'] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
@@ -513,10 +513,10 @@
         </div>
 
         <div
-          class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4 place-content-center place-items-stretch"
+          class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 place-content-center place-items-stretch"
         >
           <div
-            class="item-container flex gap-4 flex-col border border-solid border-[#1E1E1E4D] hover:[box-shadow:0px_4px_30px_0px_#00000033] rounded-xl p-3"
+            class="item-container items-center flex gap-2 flex-col border border-solid border-[#1E1E1E4D] hover:[box-shadow:0px_4px_30px_0px_#00000033] rounded-xl py-3 px-6"
           >
             <div
               class="flex justify-center h-full w-full max-w-[259px] max-h-[193px] py-7 px-1"
@@ -528,11 +528,11 @@
               />
             </div>
             <p
-              class="item-name font-bold font-['poppins'] text-sm md:text-base text-left capitalize text-[#767676]"
+              class="item-name font-bold font-['poppins'] text-sm md:text-lg text-left capitalize text-[#767676]"
             >
               Porsche Cayenne 2020
             </p>
-            <div class="flex gap-2 items-center">
+            <div class="flex gap-2 items-center xsm:flex-col">
               <div class="flex items-center justify-center">
                 <img
                   class="w-[12px] h-[12px]"
@@ -567,11 +567,13 @@
                 <span>(2.436 Reviews)</span>
               </p>
             </div>
-            <div class="grid grid-cols-3 gap-4">
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full place-content-between gap-1"
+            >
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/seat-icon.svg"
@@ -579,15 +581,15 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   4 Seats
                 </p>
               </div>
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/auto-icon.svg"
@@ -595,15 +597,15 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   Auto
                 </p>
               </div>
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/fuel-icon.svg"
@@ -611,30 +613,43 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   gas
                 </p>
               </div>
             </div>
-            <div class="flex justify-between items-center gap-2">
-              <p class="item-price font-bold font-['poppins'] text-left antialiased text-[#1E1E1E] text-sm sm:text-base md:text-lg lg:text-xl"><span>$</span><span>53,000</span></p>
+            <div class="flex justify-between items-center w-full gap-2">
+              <p
+                class="item-price font-bold font-['poppins'] text-left antialiased text-[#1E1E1E] text-sm sm:text-base md:text-lg lg:text-xl"
+              >
+                <span>$</span><span>53,000</span>
+              </p>
               <div class="flex justify-center items-center gap-2">
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/like.svg" alt="wishlist-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img src="./assets/images/like.svg" alt="wishlist-icon" />
                 </button>
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/add-icon.svg" alt="add-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img src="./assets/images/add-icon.svg" alt="add-icon" />
                 </button>
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/preview-icon.svg" alt="preview-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img
+                    src="./assets/images/preview-icon.svg"
+                    alt="preview-icon"
+                  />
                 </button>
               </div>
             </div>
             <div></div>
           </div>
           <div
-            class="item-container flex gap-4 flex-col border border-solid border-[#1E1E1E4D] hover:[box-shadow:0px_4px_30px_0px_#00000033] rounded-xl p-3"
+            class="item-container items-center flex gap-2 flex-col border border-solid border-[#1E1E1E4D] hover:[box-shadow:0px_4px_30px_0px_#00000033] rounded-xl py-3 px-6"
           >
             <div
               class="flex justify-center h-full w-full max-w-[259px] max-h-[193px] py-7 px-1"
@@ -646,11 +661,11 @@
               />
             </div>
             <p
-              class="item-name font-bold font-['poppins'] text-sm md:text-base text-left capitalize text-[#767676]"
+              class="item-name font-bold font-['poppins'] text-sm md:text-lg text-left capitalize text-[#767676]"
             >
               Porsche Cayenne 2020
             </p>
-            <div class="flex gap-2 items-center">
+            <div class="flex gap-2 items-center xsm:flex-col">
               <div class="flex items-center justify-center">
                 <img
                   class="w-[12px] h-[12px]"
@@ -685,11 +700,13 @@
                 <span>(2.436 Reviews)</span>
               </p>
             </div>
-            <div class="grid grid-cols-3 gap-4">
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full place-content-between gap-1"
+            >
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/seat-icon.svg"
@@ -697,15 +714,15 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   4 Seats
                 </p>
               </div>
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/auto-icon.svg"
@@ -713,15 +730,15 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   Auto
                 </p>
               </div>
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/fuel-icon.svg"
@@ -729,30 +746,43 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   gas
                 </p>
               </div>
             </div>
-            <div class="flex justify-between items-center gap-2">
-              <p class="item-price font-bold font-['poppins'] text-left antialiased text-[#1E1E1E] text-sm sm:text-base md:text-lg lg:text-xl"><span>$</span><span>53,000</span></p>
+            <div class="flex justify-between items-center w-full gap-2">
+              <p
+                class="item-price font-bold font-['poppins'] text-left antialiased text-[#1E1E1E] text-sm sm:text-base md:text-lg lg:text-xl"
+              >
+                <span>$</span><span>53,000</span>
+              </p>
               <div class="flex justify-center items-center gap-2">
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/like.svg" alt="wishlist-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img src="./assets/images/like.svg" alt="wishlist-icon" />
                 </button>
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/add-icon.svg" alt="add-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img src="./assets/images/add-icon.svg" alt="add-icon" />
                 </button>
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/preview-icon.svg" alt="preview-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img
+                    src="./assets/images/preview-icon.svg"
+                    alt="preview-icon"
+                  />
                 </button>
               </div>
             </div>
             <div></div>
           </div>
           <div
-            class="item-container flex gap-4 flex-col border border-solid border-[#1E1E1E4D] hover:[box-shadow:0px_4px_30px_0px_#00000033] rounded-xl p-3"
+            class="item-container items-center flex gap-2 flex-col border border-solid border-[#1E1E1E4D] hover:[box-shadow:0px_4px_30px_0px_#00000033] rounded-xl py-3 px-6"
           >
             <div
               class="flex justify-center h-full w-full max-w-[259px] max-h-[193px] py-7 px-1"
@@ -764,11 +794,11 @@
               />
             </div>
             <p
-              class="item-name font-bold font-['poppins'] text-sm md:text-base text-left capitalize text-[#767676]"
+              class="item-name font-bold font-['poppins'] text-sm md:text-lg text-left capitalize text-[#767676]"
             >
               Porsche Cayenne 2020
             </p>
-            <div class="flex gap-2 items-center">
+            <div class="flex gap-2 items-center xsm:flex-col">
               <div class="flex items-center justify-center">
                 <img
                   class="w-[12px] h-[12px]"
@@ -803,11 +833,13 @@
                 <span>(2.436 Reviews)</span>
               </p>
             </div>
-            <div class="grid grid-cols-3 gap-4">
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full place-content-between gap-1"
+            >
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/seat-icon.svg"
@@ -815,15 +847,15 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   4 Seats
                 </p>
               </div>
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/auto-icon.svg"
@@ -831,15 +863,15 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   Auto
                 </p>
               </div>
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/fuel-icon.svg"
@@ -847,30 +879,43 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   gas
                 </p>
               </div>
             </div>
-            <div class="flex justify-between items-center gap-2">
-              <p class="item-price font-bold font-['poppins'] text-left antialiased text-[#1E1E1E] text-sm sm:text-base md:text-lg lg:text-xl"><span>$</span><span>53,000</span></p>
+            <div class="flex justify-between items-center w-full gap-2">
+              <p
+                class="item-price font-bold font-['poppins'] text-left antialiased text-[#1E1E1E] text-sm sm:text-base md:text-lg lg:text-xl"
+              >
+                <span>$</span><span>53,000</span>
+              </p>
               <div class="flex justify-center items-center gap-2">
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/like.svg" alt="wishlist-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img src="./assets/images/like.svg" alt="wishlist-icon" />
                 </button>
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/add-icon.svg" alt="add-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img src="./assets/images/add-icon.svg" alt="add-icon" />
                 </button>
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/preview-icon.svg" alt="preview-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img
+                    src="./assets/images/preview-icon.svg"
+                    alt="preview-icon"
+                  />
                 </button>
               </div>
             </div>
             <div></div>
           </div>
           <div
-            class="item-container flex gap-4 flex-col border border-solid border-[#1E1E1E4D] hover:[box-shadow:0px_4px_30px_0px_#00000033] rounded-xl p-3"
+            class="item-container items-center flex gap-2 flex-col border border-solid border-[#1E1E1E4D] hover:[box-shadow:0px_4px_30px_0px_#00000033] rounded-xl py-3 px-6"
           >
             <div
               class="flex justify-center h-full w-full max-w-[259px] max-h-[193px] py-7 px-1"
@@ -882,11 +927,11 @@
               />
             </div>
             <p
-              class="item-name font-bold font-['poppins'] text-sm md:text-base text-left capitalize text-[#767676]"
+              class="item-name font-bold font-['poppins'] text-sm md:text-lg text-left capitalize text-[#767676]"
             >
               Porsche Cayenne 2020
             </p>
-            <div class="flex gap-2 items-center">
+            <div class="flex gap-2 items-center xsm:flex-col">
               <div class="flex items-center justify-center">
                 <img
                   class="w-[12px] h-[12px]"
@@ -921,11 +966,13 @@
                 <span>(2.436 Reviews)</span>
               </p>
             </div>
-            <div class="grid grid-cols-3 gap-4">
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full place-content-between gap-1"
+            >
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/seat-icon.svg"
@@ -933,15 +980,15 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   4 Seats
                 </p>
               </div>
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/auto-icon.svg"
@@ -949,15 +996,15 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   Auto
                 </p>
               </div>
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/fuel-icon.svg"
@@ -965,30 +1012,43 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   gas
                 </p>
               </div>
             </div>
-            <div class="flex justify-between items-center gap-2">
-              <p class="item-price font-bold font-['poppins'] text-left antialiased text-[#1E1E1E] text-sm sm:text-base md:text-lg lg:text-xl"><span>$</span><span>53,000</span></p>
+            <div class="flex justify-between items-center w-full gap-2">
+              <p
+                class="item-price font-bold font-['poppins'] text-left antialiased text-[#1E1E1E] text-sm sm:text-base md:text-lg lg:text-xl"
+              >
+                <span>$</span><span>53,000</span>
+              </p>
               <div class="flex justify-center items-center gap-2">
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/like.svg" alt="wishlist-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img src="./assets/images/like.svg" alt="wishlist-icon" />
                 </button>
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/add-icon.svg" alt="add-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img src="./assets/images/add-icon.svg" alt="add-icon" />
                 </button>
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/preview-icon.svg" alt="preview-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img
+                    src="./assets/images/preview-icon.svg"
+                    alt="preview-icon"
+                  />
                 </button>
               </div>
             </div>
             <div></div>
           </div>
           <div
-            class="item-container flex gap-4 flex-col border border-solid border-[#1E1E1E4D] hover:[box-shadow:0px_4px_30px_0px_#00000033] rounded-xl p-3"
+            class="item-container items-center flex gap-2 flex-col border border-solid border-[#1E1E1E4D] hover:[box-shadow:0px_4px_30px_0px_#00000033] rounded-xl py-3 px-6"
           >
             <div
               class="flex justify-center h-full w-full max-w-[259px] max-h-[193px] py-7 px-1"
@@ -1000,11 +1060,11 @@
               />
             </div>
             <p
-              class="item-name font-bold font-['poppins'] text-sm md:text-base text-left capitalize text-[#767676]"
+              class="item-name font-bold font-['poppins'] text-sm md:text-lg text-left capitalize text-[#767676]"
             >
               Porsche Cayenne 2020
             </p>
-            <div class="flex gap-2 items-center">
+            <div class="flex gap-2 items-center xsm:flex-col">
               <div class="flex items-center justify-center">
                 <img
                   class="w-[12px] h-[12px]"
@@ -1039,11 +1099,13 @@
                 <span>(2.436 Reviews)</span>
               </p>
             </div>
-            <div class="grid grid-cols-3 gap-4">
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full place-content-between gap-1"
+            >
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/seat-icon.svg"
@@ -1051,15 +1113,15 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   4 Seats
                 </p>
               </div>
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/auto-icon.svg"
@@ -1067,15 +1129,15 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   Auto
                 </p>
               </div>
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/fuel-icon.svg"
@@ -1083,30 +1145,43 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   gas
                 </p>
               </div>
             </div>
-            <div class="flex justify-between items-center gap-2">
-              <p class="item-price font-bold font-['poppins'] text-left antialiased text-[#1E1E1E] text-sm sm:text-base md:text-lg lg:text-xl"><span>$</span><span>53,000</span></p>
+            <div class="flex justify-between items-center w-full gap-2">
+              <p
+                class="item-price font-bold font-['poppins'] text-left antialiased text-[#1E1E1E] text-sm sm:text-base md:text-lg lg:text-xl"
+              >
+                <span>$</span><span>53,000</span>
+              </p>
               <div class="flex justify-center items-center gap-2">
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/like.svg" alt="wishlist-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img src="./assets/images/like.svg" alt="wishlist-icon" />
                 </button>
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/add-icon.svg" alt="add-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img src="./assets/images/add-icon.svg" alt="add-icon" />
                 </button>
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/preview-icon.svg" alt="preview-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img
+                    src="./assets/images/preview-icon.svg"
+                    alt="preview-icon"
+                  />
                 </button>
               </div>
             </div>
             <div></div>
           </div>
           <div
-            class="item-container flex gap-4 flex-col border border-solid border-[#1E1E1E4D] hover:[box-shadow:0px_4px_30px_0px_#00000033] rounded-xl p-3"
+            class="item-container items-center flex gap-2 flex-col border border-solid border-[#1E1E1E4D] hover:[box-shadow:0px_4px_30px_0px_#00000033] rounded-xl py-3 px-6"
           >
             <div
               class="flex justify-center h-full w-full max-w-[259px] max-h-[193px] py-7 px-1"
@@ -1118,11 +1193,11 @@
               />
             </div>
             <p
-              class="item-name font-bold font-['poppins'] text-sm md:text-base text-left capitalize text-[#767676]"
+              class="item-name font-bold font-['poppins'] text-sm md:text-lg text-left capitalize text-[#767676]"
             >
               Porsche Cayenne 2020
             </p>
-            <div class="flex gap-2 items-center">
+            <div class="flex gap-2 items-center xsm:flex-col">
               <div class="flex items-center justify-center">
                 <img
                   class="w-[12px] h-[12px]"
@@ -1157,11 +1232,13 @@
                 <span>(2.436 Reviews)</span>
               </p>
             </div>
-            <div class="grid grid-cols-3 gap-4">
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full place-content-between gap-1"
+            >
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/seat-icon.svg"
@@ -1169,15 +1246,15 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   4 Seats
                 </p>
               </div>
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/auto-icon.svg"
@@ -1185,15 +1262,15 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   Auto
                 </p>
               </div>
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/fuel-icon.svg"
@@ -1201,30 +1278,43 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   gas
                 </p>
               </div>
             </div>
-            <div class="flex justify-between items-center gap-2">
-              <p class="item-price font-bold font-['poppins'] text-left antialiased text-[#1E1E1E] text-sm sm:text-base md:text-lg lg:text-xl"><span>$</span><span>53,000</span></p>
+            <div class="flex justify-between items-center w-full gap-2">
+              <p
+                class="item-price font-bold font-['poppins'] text-left antialiased text-[#1E1E1E] text-sm sm:text-base md:text-lg lg:text-xl"
+              >
+                <span>$</span><span>53,000</span>
+              </p>
               <div class="flex justify-center items-center gap-2">
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/like.svg" alt="wishlist-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img src="./assets/images/like.svg" alt="wishlist-icon" />
                 </button>
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/add-icon.svg" alt="add-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img src="./assets/images/add-icon.svg" alt="add-icon" />
                 </button>
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/preview-icon.svg" alt="preview-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img
+                    src="./assets/images/preview-icon.svg"
+                    alt="preview-icon"
+                  />
                 </button>
               </div>
             </div>
             <div></div>
           </div>
           <div
-            class="item-container flex gap-4 flex-col border border-solid border-[#1E1E1E4D] hover:[box-shadow:0px_4px_30px_0px_#00000033] rounded-xl p-3"
+            class="item-container items-center flex gap-2 flex-col border border-solid border-[#1E1E1E4D] hover:[box-shadow:0px_4px_30px_0px_#00000033] rounded-xl py-3 px-6"
           >
             <div
               class="flex justify-center h-full w-full max-w-[259px] max-h-[193px] py-7 px-1"
@@ -1236,11 +1326,11 @@
               />
             </div>
             <p
-              class="item-name font-bold font-['poppins'] text-sm md:text-base text-left capitalize text-[#767676]"
+              class="item-name font-bold font-['poppins'] text-sm md:text-lg text-left capitalize text-[#767676]"
             >
               Porsche Cayenne 2020
             </p>
-            <div class="flex gap-2 items-center">
+            <div class="flex gap-2 items-center xsm:flex-col">
               <div class="flex items-center justify-center">
                 <img
                   class="w-[12px] h-[12px]"
@@ -1275,11 +1365,13 @@
                 <span>(2.436 Reviews)</span>
               </p>
             </div>
-            <div class="grid grid-cols-3 gap-4">
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full place-content-between gap-1"
+            >
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/seat-icon.svg"
@@ -1287,15 +1379,15 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   4 Seats
                 </p>
               </div>
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/auto-icon.svg"
@@ -1303,15 +1395,15 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   Auto
                 </p>
               </div>
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/fuel-icon.svg"
@@ -1319,30 +1411,43 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   gas
                 </p>
               </div>
             </div>
-            <div class="flex justify-between items-center gap-2">
-              <p class="item-price font-bold font-['poppins'] text-left antialiased text-[#1E1E1E] text-sm sm:text-base md:text-lg lg:text-xl"><span>$</span><span>53,000</span></p>
+            <div class="flex justify-between items-center w-full gap-2">
+              <p
+                class="item-price font-bold font-['poppins'] text-left antialiased text-[#1E1E1E] text-sm sm:text-base md:text-lg lg:text-xl"
+              >
+                <span>$</span><span>53,000</span>
+              </p>
               <div class="flex justify-center items-center gap-2">
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/like.svg" alt="wishlist-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img src="./assets/images/like.svg" alt="wishlist-icon" />
                 </button>
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/add-icon.svg" alt="add-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img src="./assets/images/add-icon.svg" alt="add-icon" />
                 </button>
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/preview-icon.svg" alt="preview-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img
+                    src="./assets/images/preview-icon.svg"
+                    alt="preview-icon"
+                  />
                 </button>
               </div>
             </div>
             <div></div>
           </div>
           <div
-            class="item-container flex gap-4 flex-col border border-solid border-[#1E1E1E4D] hover:[box-shadow:0px_4px_30px_0px_#00000033] rounded-xl p-3"
+            class="item-container items-center flex gap-2 flex-col border border-solid border-[#1E1E1E4D] hover:[box-shadow:0px_4px_30px_0px_#00000033] rounded-xl py-3 px-6"
           >
             <div
               class="flex justify-center h-full w-full max-w-[259px] max-h-[193px] py-7 px-1"
@@ -1354,11 +1459,11 @@
               />
             </div>
             <p
-              class="item-name font-bold font-['poppins'] text-sm md:text-base text-left capitalize text-[#767676]"
+              class="item-name font-bold font-['poppins'] text-sm md:text-lg text-left capitalize text-[#767676]"
             >
               Porsche Cayenne 2020
             </p>
-            <div class="flex gap-2 items-center">
+            <div class="flex gap-2 items-center xsm:flex-col">
               <div class="flex items-center justify-center">
                 <img
                   class="w-[12px] h-[12px]"
@@ -1393,11 +1498,13 @@
                 <span>(2.436 Reviews)</span>
               </p>
             </div>
-            <div class="grid grid-cols-3 gap-4">
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full place-content-between gap-1"
+            >
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/seat-icon.svg"
@@ -1405,15 +1512,15 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   4 Seats
                 </p>
               </div>
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/auto-icon.svg"
@@ -1421,15 +1528,15 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   Auto
                 </p>
               </div>
               <div
-                class="bg-[#000000] rounded-md p-1 py-2 flex justify-center items-center"
+                class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center"
               >
-                <div class="flex justify-center w-full h-full max-w-6 max-h-6">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
                   <img
                     class="w-auto h-auto max-w-full max-h-full"
                     src="./assets/images/fuel-icon.svg"
@@ -1437,33 +1544,343 @@
                   />
                 </div>
                 <p
-                  class="text-[#FFFFFF] text-xs text-center font-normal font-['poppins'] capitalize"
+                  class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
                 >
                   gas
                 </p>
               </div>
             </div>
-            <div class="flex justify-between items-center gap-2">
-              <p class="item-price font-bold font-['poppins'] text-left antialiased text-[#1E1E1E] text-sm sm:text-base md:text-lg lg:text-xl"><span>$</span><span>53,000</span></p>
+            <div class="flex justify-between items-center w-full gap-2">
+              <p
+                class="item-price font-bold font-['poppins'] text-left antialiased text-[#1E1E1E] text-sm sm:text-base md:text-lg lg:text-xl"
+              >
+                <span>$</span><span>53,000</span>
+              </p>
               <div class="flex justify-center items-center gap-2">
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/like.svg" alt="wishlist-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img src="./assets/images/like.svg" alt="wishlist-icon" />
                 </button>
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/add-icon.svg" alt="add-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img src="./assets/images/add-icon.svg" alt="add-icon" />
                 </button>
-                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
-                  <img src="./assets/images/preview-icon.svg" alt="preview-icon">
+                <button
+                  class="flex justify-center w-full h-full max-w-6 max-h-6"
+                >
+                  <img
+                    src="./assets/images/preview-icon.svg"
+                    alt="preview-icon"
+                  />
                 </button>
               </div>
             </div>
             <div></div>
           </div>
         </div>
+
+        <a
+          class="bg-[#FF4500] py-2 px-4 rounded-xl text-[#FFFFFF] text-center font-['Montserrat'] font-bold uppercase text-sm w-full max-w-[150px]"
+          href="./error404.html"
+        >
+          view more</a
+        >
       </div>
     </section>
 
-    <section class="bg-[#000000] hidden">
+    <section class="relative">
+      <div
+        class="container mx-auto py-8 sm:py-14 px-4 flex gap-7 sm:gap-10 lg:gap-14 flex-col justify-center items-center"
+      >
+        <div
+          class="flex gap-2 flex-col w-full max-w-[800px] items-center antialiased uppercase text-center text-[#1E1E1E] font-['Montserrat']"
+        >
+          <h1 class="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+            Why Buy from Us
+          </h1>
+          <div class="flex flex-col items-center gap-4">
+            <h2 class="font-normal text-xs sm:text-sm">
+              our One-Stop Shop for Reliable and Affordable Cars
+            </h2>
+            <div
+              class="overflow-hidden relative z-0 dynamic-hr w-[95%] h-1 rounded-l-full rounded-r-full bg-transparent before:z-20 before:absolute before:top-0 before:left-0 before:content-[''] before:rounded-l-full before:rounded-r-full before:bg-[#ff4500] before:w-full before:h-full after:z-10 after:absolute after:top-0 after:left-0 after:content-[''] after:rounded-l-full after:rounded-r-full after:bg-[#ffa17f] after:w-full after:h-full"
+            ></div>
+          </div>
+        </div>
+
+        <div
+          class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center items-stretch"
+        >
+          <div
+            class="bg-[#D9D9D933] w-full sm:max-w-[376.97px] rounded-3xl p-8 flex flex-col items-center gap-4"
+          >
+            <div
+              class="w-full h-full max-w-[80px] max-h-[80px] sm:max-w-[100px] sm:max-h-[100px] lg:max-w-[144.99px] lg:max-h-[144.99px] aspect-square flex justify-center overflow-hidden bg-[#FF45001A] rounded-full p-[5%]"
+            >
+              <img
+                class="w-auto h-auto max-w-full max-h-full aspect-square rounded-full"
+                src="./assets/images/quality-medal-star.png"
+                alt="quality-guarranteed"
+              />
+            </div>
+
+            <h1
+              class="text-[#1E1E1E] font-['Poppins'] font-bold text-center antialiased capitalize text-sm sm:text-lg lg:text-2xl"
+            >
+              Quality Guaranteed
+            </h1>
+
+            <p
+              class="text-[#767676] font-['Poppins'] font-normal text-center antialiased capitalize text-xs sm:text-sm lg:text-base"
+            >
+              We rigorously inspect each vehicle to ensure it meets our high
+              standards, delivering only the finest quality cars to our
+              customers.
+            </p>
+          </div>
+
+          <div
+            class="bg-[#D9D9D933] w-full sm:max-w-[376.97px] rounded-3xl p-8 flex flex-col items-center gap-4"
+          >
+            <div
+              class="w-full h-full max-w-[80px] max-h-[80px] sm:max-w-[100px] sm:max-h-[100px] lg:max-w-[144.99px] lg:max-h-[144.99px] aspect-square flex justify-center overflow-hidden bg-[#FF45001A] rounded-full p-[5%]"
+            >
+              <img
+                class="w-auto h-auto max-w-full max-h-full aspect-square rounded-full"
+                src="./assets/images/dollar-circle.png"
+                alt="quality-guarranteed"
+              />
+            </div>
+
+            <h1
+              class="text-[#1E1E1E] font-['Poppins'] font-bold text-center antialiased capitalize text-sm sm:text-lg lg:text-2xl"
+            >
+              Best Prices
+            </h1>
+
+            <p
+              class="text-[#767676] font-['Poppins'] font-normal text-center antialiased capitalize text-xs sm:text-sm lg:text-base"
+            >
+              Transparent pricing on every vehicle, ensuring you get the best
+              value without any hidden costs.
+            </p>
+          </div>
+
+          <div
+            class="bg-[#D9D9D933] w-full sm:max-w-[376.97px] rounded-3xl p-8 flex flex-col items-center gap-4"
+          >
+            <div
+              class="w-full h-full max-w-[80px] max-h-[80px] sm:max-w-[100px] sm:max-h-[100px] lg:max-w-[144.99px] lg:max-h-[144.99px] aspect-square flex justify-center overflow-hidden bg-[#FF45001A] rounded-full p-[5%]"
+            >
+              <img
+                class="w-auto h-auto max-w-full max-h-full aspect-square rounded-full"
+                src="./assets/images/wallet-money.png"
+                alt="quality-guarranteed"
+              />
+            </div>
+
+            <h1
+              class="text-[#1E1E1E] font-['Poppins'] font-bold text-center antialiased capitalize text-sm sm:text-lg lg:text-2xl"
+            >
+              Easy Financing
+            </h1>
+
+            <p
+              class="text-[#767676] font-['Poppins'] font-normal text-center antialiased capitalize text-xs sm:text-sm lg:text-base"
+            >
+              Discover convenient financing options designed to align with your
+              financial goals, making it easier for you to purchase your dream
+              car.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative">
+      <div
+        class="container mx-auto px-[3%] py-8 sm:py-14 sm:px-[5%] flex gap-14 flex-col justify-center items-center"
+      >
+        <div
+          class="flex gap-2 flex-col w-full max-w-[800px] items-center antialiased uppercase text-center text-[#1E1E1E] font-['Montserrat']"
+        >
+          <h1 class="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+            What Our Customers Say
+          </h1>
+          <div class="flex flex-col items-center gap-4">
+            <h2 class="font-normal text-xs sm:text-sm">
+              Hear from our satisfied car buyers
+            </h2>
+            <div
+              class="overflow-hidden relative z-0 dynamic-hr w-[95%] h-1 rounded-l-full rounded-r-full bg-transparent before:z-20 before:absolute before:top-0 before:left-0 before:content-[''] before:rounded-l-full before:rounded-r-full before:bg-[#ff4500] before:w-full before:h-full after:z-10 after:absolute after:top-0 after:left-0 after:content-[''] after:rounded-l-full after:rounded-r-full after:bg-[#ffa17f] after:w-full after:h-full"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-[#1E1E1E] w-full">
+        <div class="container flex flex-col items-start gap-8 mx-auto max-w-[936px] p-8">
+          <div class="flex flex-col items-start gap-2">
+            <svg class="w-4 h-4 md:w-[23px] md:h-[21px]"
+              viewBox="0 0 23 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8.68388 20.5V11.8962H4.0683C4.06953 11.0013 4.13493 10.1076 4.26401 9.22189C4.37714 8.37359 4.62807 7.549 5.00706 6.78012C5.33667 6.10041 5.81824 5.50403 6.4152 5.03625C7.04941 4.57805 7.8214 4.3459 8.60565 4.37754V0.501948C7.26748 0.471775 5.94504 0.792664 4.77237 1.43209C3.69053 2.03995 2.76651 2.8892 2.07357 3.91247C1.34037 5.01248 0.810577 6.23298 0.508964 7.51691C0.162272 8.95118 -0.0085077 10.4217 0.000325888 11.8965V20.5H8.68388ZM23 20.5V11.8962H18.3844C18.3857 11.0013 18.4511 10.1076 18.5801 9.22189C18.6933 8.37359 18.9442 7.549 19.3232 6.78012C19.6528 6.10041 20.1344 5.50403 20.7313 5.03625C21.3655 4.57805 22.1375 4.3459 22.9218 4.37754V0.501948C21.5836 0.471775 20.2612 0.792664 19.0885 1.43209C18.0065 2.03992 17.0824 2.88916 16.3894 3.91247C15.6562 5.01248 15.1264 6.23298 14.8248 7.51691C14.4782 8.95119 14.3075 10.4217 14.3165 11.8965V20.5H23Z"
+                fill="white"
+              />
+            </svg>
+            <p class="text-[#FFFFFF] font-['Poppins'] antialiased hyphens-auto sm:hyphens-none font-semibold text-xs sm:text-sm md:text-lg">
+              I’ve bought cars from many places, but this experience was
+              exceptional. From financing options to delivery, everything was
+              smooth and professional.”
+            </p>
+          </div>
+
+          <div class="flex justify-normal items-center gap-4">
+            <div class="flex justify-center w-full h-full max-w-24 max-h-24 bg-[#1E1E1E] rounded-lg">
+              <img class="w-auto h-auto max-w-full max-h-full rounded-lg" src="./assets/images/client.jpg" alt="">
+            </div>
+
+            <div>
+              <p class="font-semibold font-['inter'] antialiased capitalize text-[#FFFFFF] text-xs sm:text-sm md:text-base lg:text-lg">David H</p>
+              <p class="font-semibold font-['inter'] antialiased capitalize text-[#FF4500] text-xs sm:text-sm md:text-base lg:text-lg">Environmental Advocate</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative">
+      <div
+        class="container mx-auto py-8 sm:py-14 px-4 flex gap-7 sm:gap-10 lg:gap-14 flex-col justify-center items-center"
+      >
+        <div
+          class="flex gap-2 flex-col w-full max-w-[800px] items-center antialiased uppercase text-center text-[#1E1E1E] font-['Montserrat']"
+        >
+          <h1 class="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+            Meet Our Team
+          </h1>
+          <div class="flex flex-col items-center gap-4">
+            <h2 class="font-normal text-xs sm:text-sm">
+              The Experts Behind Your Car-Buying Experience
+            </h2>
+            <div
+              class="overflow-hidden relative z-0 dynamic-hr w-[95%] h-1 rounded-l-full rounded-r-full bg-transparent before:z-20 before:absolute before:top-0 before:left-0 before:content-[''] before:rounded-l-full before:rounded-r-full before:bg-[#ff4500] before:w-full before:h-full after:z-10 after:absolute after:top-0 after:left-0 after:content-[''] after:rounded-l-full after:rounded-r-full after:bg-[#ffa17f] after:w-full after:h-full"
+            ></div>
+          </div>
+        </div>
+
+        <div
+          class="w-full flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <div
+            class="w-full sm:max-w-[265px] rounded-3xl flex flex-col items-center gap-4"
+          >
+            <div
+              class="w-full h-full sm:max-w-[265px] sm:max-h-[230px] flex justify-center bg-[#00000033] rounded-2xl"
+            >
+              <img
+                class="w-auto h-auto max-w-full max-h-full rounded-2xl"
+                src="./assets/images/team-member-1.jpeg"
+                alt="quality-guarranteed"
+              />
+            </div>
+
+            <div class="flex flex-col items-center md:items-start gap-2 p-4">
+              <h1 class="text-center md:text-left font-normal font-['poppins'] antialiased text-[10px] text-[#FF4500]">Farm Manager</h1>
+              <p class="text-center md:text-left font-normal font-['poppins'] antialiased text-[9px] text-[#1E1E1E]">With over a decade of experience in organic farming, John oversees all operations and ensures our sustainable practices are upheld.</p>
+              <div class="flex items-center justify-center gap-1">
+                <a href="./error404.html">
+                  <img class="w-3 h-3" src="./assets/images/instagram-icon.svg" alt="instagram-icon">
+                </a>
+                <a href="./error404.html">
+                  <img class="w-3 h-3" src="./assets/images/linkedIn-icon.svg" alt="linkedIn-icon">
+                </a>
+                <a href="./error404.html">
+                  <img class="w-3 h-3" src="./assets/images/facebook-icon.svg" alt="facebook-icon">
+                </a>
+                <a href="./error404.html">
+                  <img class="w-3 h-3" src="./assets/images/x-icon.svg" alt="x-icon">
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div
+            class="w-full sm:max-w-[340px] rounded-3xl flex flex-col items-center gap-4"
+          >
+            <div
+              class="w-full h-full sm:max-w-[340px] sm:max-h-[295px] flex justify-center bg-[#00000033] rounded-2xl"
+            >
+              <img
+                class="w-auto h-auto max-w-full max-h-full rounded-2xl"
+                src="./assets/images/team-member-2.jpeg"
+                alt="quality-guarranteed"
+              />
+            </div>
+
+            <div class="flex flex-col items-center md:items-start gap-2 p-4">
+              <h1 class="text-center md:text-left font-normal font-['poppins'] antialiased text-[10px] text-[#FF4500]">Farm Manager</h1>
+              <p class="text-center md:text-left font-normal font-['poppins'] antialiased text-[9px] text-[#1E1E1E]">With over a decade of experience in organic farming, John oversees all operations and ensures our sustainable practices are upheld.</p>
+              <div class="flex items-center justify-center gap-1">
+                <a href="./error404.html">
+                  <img class="w-3 h-3" src="./assets/images/instagram-icon.svg" alt="instagram-icon">
+                </a>
+                <a href="./error404.html">
+                  <img class="w-3 h-3" src="./assets/images/linkedIn-icon.svg" alt="linkedIn-icon">
+                </a>
+                <a href="./error404.html">
+                  <img class="w-3 h-3" src="./assets/images/facebook-icon.svg" alt="facebook-icon">
+                </a>
+                <a href="./error404.html">
+                  <img class="w-3 h-3" src="./assets/images/x-icon.svg" alt="x-icon">
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div
+            class="w-full sm:max-w-[265px] rounded-3xl flex flex-col items-center gap-4"
+          >
+            <div
+              class="w-full h-full sm:max-w-[265px] sm:max-h-[230px] flex justify-center overflow-hidden bg-[#00000033] rounded-2xl"
+            >
+              <img
+                class="w-auto h-auto max-w-full max-h-full rounded-2xl"
+                src="./assets/images/team-member-3.jpeg"
+                alt="quality-guarranteed"
+              />
+            </div>
+
+            <div class="flex flex-col items-center md:items-start gap-2 p-4">
+              <h1 class="text-center md:text-left font-normal font-['poppins'] antialiased text-[10px] text-[#FF4500]">Farm Manager</h1>
+              <p class="text-center md:text-left font-normal font-['poppins'] antialiased text-[9px] text-[#1E1E1E]">With over a decade of experience in organic farming, John oversees all operations and ensures our sustainable practices are upheld.</p>
+              <div class="flex items-center justify-center gap-1">
+                <a href="./error404.html">
+                  <img class="w-3 h-3" src="./assets/images/instagram-icon.svg" alt="instagram-icon">
+                </a>
+                <a href="./error404.html">
+                  <img class="w-3 h-3" src="./assets/images/linkedIn-icon.svg" alt="linkedIn-icon">
+                </a>
+                <a href="./error404.html">
+                  <img class="w-3 h-3" src="./assets/images/facebook-icon.svg" alt="facebook-icon">
+                </a>
+                <a href="./error404.html">
+                  <img class="w-3 h-3" src="./assets/images/x-icon.svg" alt="x-icon">
+                </a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#000000]">
       <div
         class="container mx-auto flex flex-col items-center justify-between gap-4 py-4 sm:py-8 px-[3%] sm:px-[5%]"
       >
