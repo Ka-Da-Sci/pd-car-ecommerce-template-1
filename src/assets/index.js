@@ -1,8 +1,15 @@
 
+
+function submitSubscribe(event) {
+  event.preventDefault();
+  console.log("hello");
+}
+
 const mobileMenuToggle = document.querySelector(".mobile-toggle");
 const navElementChildren = document.querySelectorAll("nav a");
 // Manages Mobile Menu Toggles
-mobileMenuToggle.addEventListener("click", function () {
+mobileMenuToggle.addEventListener("click", () => {
+  console.log("Chommy");
   document.querySelector("nav").classList.toggle("opacity-100");
   document.querySelector("nav").classList.toggle("opacity-0");
   document.querySelector("nav").classList.toggle("-translate-x-[100px]");
@@ -64,26 +71,26 @@ document.addEventListener("click", (event) => {
 const adjustScreen = (event) => {
   // event.preventDefault();
   if (event.target.href !== window.location.href) {
-    sessionStorage.setItem('scrollAfterLoad', 'true');
+    sessionStorage.setItem("scrollAfterLoad", "true");
   }
 
   setTimeout(() => {
-    window.scrollBy(
-      {
-        top: -76,
-        behavior: 'smooth'
-      }
-    ), 5})
-}
-
-// Check on page load whether to scroll
-window.addEventListener('load', ()=> {
-  if (sessionStorage.getItem('scrollAfterLoad') === 'true') {
     window.scrollBy({
       top: -76,
-      behavior: 'smooth'
+      behavior: "smooth",
+    }),
+      5;
+  });
+};
+
+// Check on page load whether to scroll
+window.addEventListener("load", () => {
+  if (sessionStorage.getItem("scrollAfterLoad") === "true") {
+    window.scrollBy({
+      top: -76,
+      behavior: "smooth",
     });
-    sessionStorage.removeItem('scrollAfterLoad'); // Clean up
+    sessionStorage.removeItem("scrollAfterLoad"); // Clean up
   }
 });
 
@@ -98,25 +105,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const animateTextTwo = () => {
     animatedTextOne.classList.remove("hidden");
     animatedTextOne.classList.add("inline-block");
-    animatedTextTwo.classList.remove('inline-block');
-    animatedTextTwo.classList.add('hidden');
+    animatedTextTwo.classList.remove("inline-block");
+    animatedTextTwo.classList.add("hidden");
     setTimeout(() => {
       animatedTextTwo.classList.remove("hidden");
       animatedTextTwo.classList.add("inline-block");
       animatedTextOne.classList.remove("inline-block");
       animatedTextOne.classList.add("hidden");
     }, 2000);
-  }
+  };
   setInterval(animateTextTwo, 4000);
-  animateTextTwo(); 
+  animateTextTwo();
 
   const animateHeroImages = () => {
     animatedHeroImageOne.classList.remove("hidden");
     animatedHeroImageOne.classList.add("flex");
-    animatedHeroImageTwo.classList.remove('flex');
-    animatedHeroImageTwo.classList.add('hidden');
-    animatedHeroImageThree.classList.remove('flex');
-    animatedHeroImageThree.classList.add('hidden');
+    animatedHeroImageTwo.classList.remove("flex");
+    animatedHeroImageTwo.classList.add("hidden");
+    animatedHeroImageThree.classList.remove("flex");
+    animatedHeroImageThree.classList.add("hidden");
     setTimeout(() => {
       animatedHeroImageTwo.classList.remove("hidden");
       animatedHeroImageTwo.classList.add("flex");
@@ -133,23 +140,29 @@ document.addEventListener("DOMContentLoaded", () => {
       animatedHeroImageTwo.classList.remove("flex");
       animatedHeroImageTwo.classList.add("hidden");
     }, 2700);
-  }
+  };
   setInterval(animateHeroImages, 3900);
-  animateHeroImages(); 
+  animateHeroImages();
+});
+
+// EMAIL FORM INPUTS VALIDATION FUNCTION
+const subscribeBtn = document.getElementById('subscribe-btn');
+subscribeBtn.addEventListener('click', (event) => {
+  console.log("Triggered");
+  const emailInput = document.getElementById('email');
+  const errorMessage = document.getElementById('email-error-message');
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   
-  // const animatedCarousel = () => {
-  //   console.log("One In");
-  //   scrollingAds.forEach((ads, index) => {
-  //     ads.classList.add(`scrolling-ads-${index}`);
-  //   })
-  //   setTimeout(() => {
-  //     console.log("Two In");
-  //     scrollingAds.forEach((ads, index) => {
-  //       ads.classList.remove(`scrolling-ads-${index}`);
-  //       ads.classList.add('flex');
-  //     })
-  //   }, 15000);
-  // }
-  // setInterval(animatedCarousel, 15100);
-  // animatedCarousel(); 
+  if (!emailPattern.test(emailInput.value)) {
+    event.preventDefault();
+    emailInput.classList.add("error");
+    errorMessage.style.display = "inline";
+  } else {
+    emailInput.classList.remove("error");
+    errorMessage.style.display = "none";
+  }
+
+  document.getElementById('email').oninput = () => {
+    errorMessage.style.display = "none";
+  };
 });
