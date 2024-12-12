@@ -20,6 +20,7 @@ module.exports = {
     "item-name",
     "item-price",
     "xsm",
+    "leaflet-popup-content",
   ],
   theme: {
     extend: {
@@ -135,9 +136,9 @@ module.exports = {
         },
         
       },
-      screens: {
-        "xsm": "400px",
-      },
+      // screens: {
+      //   "xsm": "400px",
+      // },
     },
   },
   plugins: [],

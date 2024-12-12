@@ -97,48 +97,51 @@ window.addEventListener("load", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const animatedTextOne = document.querySelector(".animated-text-one");
   const animatedTextTwo = document.querySelector(".animated-text-two");
-  const animatedHeroImageOne = document.querySelector(".animated-hero-one");
-  const animatedHeroImageTwo = document.querySelector(".animated-hero-two");
-  const animatedHeroImageThree = document.querySelector(".animated-hero-three");
-  const scrollingAds = document.querySelectorAll(".scrolling-ads > div");
+  const animatedHeroImageOne =
+    document.querySelector(".animated-hero-one");
+  const animatedHeroImageTwo =
+    document.querySelector(".animated-hero-two");
+  const animatedHeroImageThree = document.querySelector(
+    ".animated-hero-three"
+  );
 
   const animateTextTwo = () => {
-    animatedTextOne.classList.remove("hidden");
-    animatedTextOne.classList.add("inline-block");
-    animatedTextTwo.classList.remove("inline-block");
-    animatedTextTwo.classList.add("hidden");
+    animatedTextOne && animatedTextOne.classList.remove("hidden");
+    animatedTextOne && animatedTextOne.classList.add("inline-block");
+    animatedTextTwo && animatedTextTwo.classList.remove("inline-block");
+    animatedTextTwo && animatedTextTwo.classList.add("hidden");
     setTimeout(() => {
-      animatedTextTwo.classList.remove("hidden");
-      animatedTextTwo.classList.add("inline-block");
-      animatedTextOne.classList.remove("inline-block");
-      animatedTextOne.classList.add("hidden");
+      animatedTextTwo && animatedTextTwo.classList.remove("hidden");
+      animatedTextTwo && animatedTextTwo.classList.add("inline-block");
+      animatedTextOne && animatedTextOne.classList.remove("inline-block");
+      animatedTextOne && animatedTextOne.classList.add("hidden");
     }, 2000);
   };
   setInterval(animateTextTwo, 4000);
   animateTextTwo();
 
   const animateHeroImages = () => {
-    animatedHeroImageOne.classList.remove("hidden");
-    animatedHeroImageOne.classList.add("flex");
-    animatedHeroImageTwo.classList.remove("flex");
-    animatedHeroImageTwo.classList.add("hidden");
-    animatedHeroImageThree.classList.remove("flex");
-    animatedHeroImageThree.classList.add("hidden");
+    animatedHeroImageOne && animatedHeroImageOne.classList.remove("hidden");
+    animatedHeroImageOne && animatedHeroImageOne.classList.add("flex");
+    animatedHeroImageTwo && animatedHeroImageTwo.classList.remove("flex");
+    animatedHeroImageTwo && animatedHeroImageTwo.classList.add("hidden");
+    animatedHeroImageThree && animatedHeroImageThree.classList.remove("flex");
+    animatedHeroImageThree && animatedHeroImageThree.classList.add("hidden");
     setTimeout(() => {
-      animatedHeroImageTwo.classList.remove("hidden");
-      animatedHeroImageTwo.classList.add("flex");
-      animatedHeroImageOne.classList.remove("flex");
-      animatedHeroImageOne.classList.add("hidden");
-      animatedHeroImageThree.classList.remove("flex");
-      animatedHeroImageThree.classList.add("hidden");
+      animatedHeroImageTwo && animatedHeroImageTwo.classList.remove("hidden");
+      animatedHeroImageTwo && animatedHeroImageTwo.classList.add("flex");
+      animatedHeroImageOne && animatedHeroImageOne.classList.remove("flex");
+      animatedHeroImageOne && animatedHeroImageOne.classList.add("hidden");
+      animatedHeroImageThree && animatedHeroImageThree.classList.remove("flex");
+      animatedHeroImageThree && animatedHeroImageThree.classList.add("hidden");
     }, 1500);
     setTimeout(() => {
-      animatedHeroImageThree.classList.remove("hidden");
-      animatedHeroImageThree.classList.add("flex");
-      animatedHeroImageOne.classList.remove("flex");
-      animatedHeroImageOne.classList.add("hidden");
-      animatedHeroImageTwo.classList.remove("flex");
-      animatedHeroImageTwo.classList.add("hidden");
+      animatedHeroImageThree && animatedHeroImageThree.classList.remove("hidden");
+      animatedHeroImageThree && animatedHeroImageThree.classList.add("flex");
+      animatedHeroImageOne && animatedHeroImageOne.classList.remove("flex");
+      animatedHeroImageOne && animatedHeroImageOne.classList.add("hidden");
+      animatedHeroImageTwo && animatedHeroImageTwo.classList.remove("flex");
+      animatedHeroImageTwo && animatedHeroImageTwo.classList.add("hidden");
     }, 2700);
   };
   setInterval(animateHeroImages, 3900);
@@ -147,22 +150,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // EMAIL FORM INPUTS VALIDATION FUNCTION
 const subscribeBtn = document.getElementById('subscribe-btn');
-subscribeBtn.addEventListener('click', (event) => {
-  console.log("Triggered");
-  const emailInput = document.getElementById('email');
-  const errorMessage = document.getElementById('email-error-message');
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (subscribeBtn) {
+  console.log(submitSubscribe);
+  subscribeBtn.addEventListener('click', (event) => {
+    console.log("Triggered");
+    const emailInput = document.getElementById('email');
+    const errorMessage = document.getElementById('email-error-message');
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (!emailPattern.test(emailInput.value)) {
+      event.preventDefault();
+      emailInput.classList.add("error");
+      errorMessage.style.display = "inline";
+    } else {
+      emailInput.classList.remove("error");
+      errorMessage.style.display = "none";
+    }
   
-  if (!emailPattern.test(emailInput.value)) {
-    event.preventDefault();
-    emailInput.classList.add("error");
-    errorMessage.style.display = "inline";
-  } else {
-    emailInput.classList.remove("error");
-    errorMessage.style.display = "none";
-  }
+    document.getElementById('email').oninput = () => {
+      errorMessage.style.display = "none";
+    };
+  });
+} 
 
-  document.getElementById('email').oninput = () => {
-    errorMessage.style.display = "none";
-  };
+// Manages FAQ Toggles
+document.addEventListener("click", (event) => {
+  const faq = document.querySelectorAll(".question");
+
+  console.log('faq');
+  for (let num = 0; num < faq.length; num++) {
+    if (faq[num].contains(event.target)) {
+      let targetAns = document.querySelector("#answer" + num);
+      let plusMinusSign = document.querySelector("#sign" + num);
+      if (targetAns.classList.contains("block")) {
+        console.log(targetAns.classList);
+        targetAns.classList.remove('block');
+        targetAns.classList.add('hidden');
+        plusMinusSign.innerHTML = "+";
+      } else {
+        targetAns.classList.remove('hidden');
+        targetAns.classList.add('block');
+        plusMinusSign.innerHTML = "-";
+        plusMinusSign.classList.add("bolder-sign");
+      }
+    }
+  }
 });
