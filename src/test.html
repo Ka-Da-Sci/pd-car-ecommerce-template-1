@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Collection</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Container -->
+  <div class="max-w-7xl mx-auto px-4 py-8">
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-gray-800">COLLECTION</h1>
+      <p id="results-info" class="text-gray-500">Showing 1 - 9 of 10 results</p>
+    </div>
+
+    <!-- Grid for dynamic cards -->
+    <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Cards will be dynamically rendered here -->
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex justify-center items-center space-x-2 mt-8">
+      <button id="prev-btn" class="px-3 py-2 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300">&lt;</button>
+      <div id="pagination" class="flex space-x-2">
+        <!-- Pagination buttons will be generated here -->
+      </div>
+      <button id="next-btn" class="px-3 py-2 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300">&gt;</button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Data for cards (example dataset with 10 cars)
+    const dataLength = 35;
+    const cars = Array.from({ length: dataLength }, (_, i) => ({
+      id: i + 1,
+      title: `Porsche Cayenne 202${i % 3}`,
+      mileage: `${Math.floor(Math.random() * 10000)} KM`,
+      price: `$${53 + i},000`,
+      image: "https://via.placeholder.com/300" // Replace with real images
+    }));
+
+    const cardsPerPage = 8; // Number of cards per page
+    let currentPage = 1;
+
+    const cardContainer = document.getElementById("card-container");
+    const paginationContainer = document.getElementById("pagination");
+    const resultsInfo = document.getElementById("results-info");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+
+    // Function to render cards
+    function renderCards() {
+      cardContainer.innerHTML = "";
+      const start = (currentPage - 1) * cardsPerPage;
+      const end = Math.min(start + cardsPerPage, cars.length);
+
+      for (let i = start; i < end; i++) {
+        const car = cars[i];
+        const card = `
+          <div class="bg-white shadow rounded-md overflow-hidden">
+            <img src="${car.image}" alt="Car" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h2 class="text-lg font-semibold text-gray-800">${car.title}</h2>
+              <div class="flex items-center justify-between mt-2">
+                <span class="text-gray-500 text-sm">Mileage: ${car.mileage}</span>
+                <span class="text-gray-800 font-bold">${car.price}</span>
+              </div>
+            </div>
+          </div>
+        `;
+        cardContainer.innerHTML += card;
+      }
+
+      resultsInfo.textContent = `Showing ${start + 1} - ${end} of ${cars.length} results`;
+    }
+
+    // Function to render pagination buttons
+    function renderPagination() {
+      paginationContainer.innerHTML = "";
+      const totalPages = Math.ceil(cars.length / cardsPerPage);
+
+      for (let i = 1; i <= totalPages; i++) {
+        const button = document.createElement("button");
+        button.textContent = i;
+        button.className = `px-3 py-2 rounded-md ${
+          i === currentPage ? "bg-orange-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+        }`;
+
+        button.addEventListener("click", () => {
+          currentPage = i;
+          renderCards();
+          renderPagination();
+        });
+
+        paginationContainer.appendChild(button);
+      }
+    }
+
+    // Navigation buttons
+    prevBtn.addEventListener("click", () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderCards();
+        renderPagination();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      const totalPages = Math.ceil(cars.length / cardsPerPage);
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderCards();
+        renderPagination();
+      }
+    });
+
+    // Initial Render
+    renderCards();
+    renderPagination();
+  </script>
+
+</body>
+</html>

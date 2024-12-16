@@ -1,5 +1,3 @@
-
-
 function submitSubscribe(event) {
   event.preventDefault();
   console.log("hello");
@@ -51,21 +49,6 @@ document.addEventListener("click", (event) => {
     document.querySelector(".icon-close-menu").classList.toggle("block");
     document.querySelector(".icon-close-menu").classList.toggle("hidden");
   }
-
-  for (let num = 0; num < faq.length; num++) {
-    if (faq[num].contains(event.target)) {
-      var targetAns = document.querySelector("#answer" + num);
-      var plusMinusSign = document.querySelector("#sign" + num);
-      if (targetAns.classList.contains("ans-active")) {
-        targetAns.classList.remove("ans-active");
-        plusMinusSign.innerHTML = "+";
-      } else {
-        targetAns.classList.add("ans-active");
-        plusMinusSign.innerHTML = "-";
-        plusMinusSign.classList.add("bolder-sign");
-      }
-    }
-  }
 });
 
 const adjustScreen = (event) => {
@@ -97,13 +80,9 @@ window.addEventListener("load", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const animatedTextOne = document.querySelector(".animated-text-one");
   const animatedTextTwo = document.querySelector(".animated-text-two");
-  const animatedHeroImageOne =
-    document.querySelector(".animated-hero-one");
-  const animatedHeroImageTwo =
-    document.querySelector(".animated-hero-two");
-  const animatedHeroImageThree = document.querySelector(
-    ".animated-hero-three"
-  );
+  const animatedHeroImageOne = document.querySelector(".animated-hero-one");
+  const animatedHeroImageTwo = document.querySelector(".animated-hero-two");
+  const animatedHeroImageThree = document.querySelector(".animated-hero-three");
 
   const animateTextTwo = () => {
     animatedTextOne && animatedTextOne.classList.remove("hidden");
@@ -136,7 +115,8 @@ document.addEventListener("DOMContentLoaded", () => {
       animatedHeroImageThree && animatedHeroImageThree.classList.add("hidden");
     }, 1500);
     setTimeout(() => {
-      animatedHeroImageThree && animatedHeroImageThree.classList.remove("hidden");
+      animatedHeroImageThree &&
+        animatedHeroImageThree.classList.remove("hidden");
       animatedHeroImageThree && animatedHeroImageThree.classList.add("flex");
       animatedHeroImageOne && animatedHeroImageOne.classList.remove("flex");
       animatedHeroImageOne && animatedHeroImageOne.classList.add("hidden");
@@ -149,15 +129,15 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // EMAIL FORM INPUTS VALIDATION FUNCTION
-const subscribeBtn = document.getElementById('subscribe-btn');
+const subscribeBtn = document.getElementById("subscribe-btn");
 if (subscribeBtn) {
   console.log(submitSubscribe);
-  subscribeBtn.addEventListener('click', (event) => {
+  subscribeBtn.addEventListener("click", (event) => {
     console.log("Triggered");
-    const emailInput = document.getElementById('email');
-    const errorMessage = document.getElementById('email-error-message');
+    const emailInput = document.getElementById("email");
+    const errorMessage = document.getElementById("email-error-message");
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
+
     if (!emailPattern.test(emailInput.value)) {
       event.preventDefault();
       emailInput.classList.add("error");
@@ -166,31 +146,35 @@ if (subscribeBtn) {
       emailInput.classList.remove("error");
       errorMessage.style.display = "none";
     }
-  
-    document.getElementById('email').oninput = () => {
+
+    document.getElementById("email").oninput = () => {
       errorMessage.style.display = "none";
     };
   });
-} 
+}
 
 // Manages FAQ Toggles
 document.addEventListener("click", (event) => {
   const faq = document.querySelectorAll(".question");
 
-  console.log('faq');
+  console.log("faq");
   for (let num = 0; num < faq.length; num++) {
     if (faq[num].contains(event.target)) {
       let targetAns = document.querySelector("#answer" + num);
       let plusMinusSign = document.querySelector("#sign" + num);
       if (targetAns.classList.contains("block")) {
         console.log(targetAns.classList);
-        targetAns.classList.remove('block');
-        targetAns.classList.add('hidden');
-        plusMinusSign.innerHTML = "+";
+        targetAns.classList.remove("block");
+        targetAns.classList.add("hidden");
+        plusMinusSign.innerHTML = `<svg width="19" height="10" viewBox="0 0 19 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.625 0.75L9.5 8.875L1.375 0.75" stroke="#767676" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`;
       } else {
-        targetAns.classList.remove('hidden');
-        targetAns.classList.add('block');
-        plusMinusSign.innerHTML = "-";
+        targetAns.classList.remove("hidden");
+        targetAns.classList.add("block");
+        plusMinusSign.innerHTML = `<svg width="10" height="19" viewBox="0 0 10 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0.75 1.375L8.875 9.5L0.75 17.625" stroke="#767676" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`;
         plusMinusSign.classList.add("bolder-sign");
       }
     }
