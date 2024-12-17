@@ -44,7 +44,7 @@
           />
         </a>
         <nav
-          class="flex gap-5 flex-col sm:flex-row items-center justify-between fixed sm:static top-14 -right-[100px] bottom-0 bg-[#7E001A] sm:bg-transparent min-w-[130px] max-w-[300px] sm:max-w-full pl-5 pr-5 py-5 sm:p-0 h-[250px] sm:h-full opacity-0 sm:opacity-100 translate-x-[200px] sm:translate-x-0 [transition:opacity_1s_ease,_transform_1s_ease]"
+          class="flex gap-5 flex-col sm:flex-row items-center justify-between fixed sm:static top-14 -right-[100px] bottom-0 bg-[#1E1E1E] sm:bg-transparent min-w-[130px] max-w-[300px] sm:max-w-full pl-5 pr-5 py-5 sm:p-0 h-[250px] sm:h-full opacity-0 sm:opacity-100 translate-x-[200px] sm:translate-x-0 [transition:opacity_1s_ease,_transform_1s_ease]"
         >
           <ul
             class="nav-ul flex gap-4 sm:gap-6 md:gap-8 lg:gap-12 flex-col sm:flex-row items-center justify-evenly list-none ml-auto mr-auto sm:mr-0 h-full"
@@ -172,13 +172,12 @@
         <div
           class="w-full flex flex-col sm:grid grid-cols-4 items-center sm:items-start gap-8 rounded-lg"
         >
-          <!-- Map Section -->
-          <div class="w-full flex flex-col gap-4">
+          <div class="w-full flex flex-col items-center gap-4">
             <button
-              class="border border-solid border-[#1E1E1E] rounded-xl px-4 py-2 flex gap-2 items-center justify-between"
+              class="w-full border border-solid border-[#1E1E1E] rounded-xl px-4 py-2 flex gap-2 items-center justify-between"
             >
               <input
-                class="placeholder:capitalize placeholder:text-[#1E1E1EB2] placeholder:font-['inter'] placeholder:font-normal font-['inter'] font-normal text-[#1E1E1ECC] appearance-none outline-none"
+                class="placeholder:capitalize placeholder:text-[#1E1E1EB2] w-full placeholder:font-['inter'] placeholder:font-normal font-['inter'] font-normal text-[#1E1E1ECC] appearance-none outline-none antialiased text-left text-sm sm:text-base"
                 type="text"
                 placeholder="search"
               />
@@ -190,15 +189,15 @@
             </button>
 
             <button
-              class="p-4 flex items-start gap-1 justify-between rounded-lg"
+              class="p-4 w-full flex items-start gap-1 justify-between rounded-lg"
             >
               <p
-                class="text-[#1E1E1E] text-sm font-['Montserrat'] font-bold uppercase"
+                class="text-[#1E1E1E] antialiased text-left text-xs sm:text-sm font-['Montserrat'] font-bold capitalize sm:uppercase"
               >
                 Categories
               </p>
               <img
-                class="w-4 h-4"
+                class="w-5 h-5"
                 src="./assets/images/arrow-down-black.svg"
                 alt="direction-icon"
               />
@@ -207,21 +206,21 @@
 
           <!-- Container -->
           <div
-            class="flex flex-col items-center sm:items-start px-4 gap-4 justify-between col-span-3"
+            class="w-full flex flex-col items-center sm:items-start sm:px-4 gap-4 justify-between col-span-3"
           >
-            <div class="flex items-center justify-between w-full">
+            <div class="w-full flex flex-col-reverse sm:flex-row gap-4 items-center sm:items-start justify-between">
               <div class="text-center mb-8">
-                <h1 class="text-3xl font-bold text-gray-800">COLLECTION</h1>
-                <p id="results-info" class="text-gray-500">
+                <h1 class="text-sm sm:text-xl md:text-2xl antialiased font-bold font-['Montserrat'] text-[#1E1E1E]">COLLECTION</h1>
+                <p id="results-info" class="text-xl sm:text-sm antialiased font-normal font-['Montserrat'] text-[#767676]">
                   Showing 1 - 9 of 10 results
                 </p>
               </div>
 
               <button
-                class="bg-[#1E1E1E] py-4 px-8 flex items-start gap-1 justify-center rounded-lg"
+                class="bg-[#1E1E1E] w-full sm:w-max px-3 py-2 sm:py-4 sm:px-8 flex items-start gap-1 justify-between sm:justify-center rounded-lg"
               >
                 <p
-                  class="text-[#FFFFFF] text-xs font-['Montserrat'] font-bold uppercase"
+                  class="text-[#FFFFFF] text-xs font-['Montserrat'] font-bold capitalize sm:uppercase"
                 >
                   Sort by: default
                 </p>
@@ -266,40 +265,40 @@
 
     <section>
       <div
-        class="container mx-auto my-10 flex gap-4 p-4 relative flex-col md:flex-row items-center justify-between bg-black text-white rounded-xl overflow-hidden shadow-lg w-full max-w-5xl"
+        class="container mx-auto my-10 flex gap-4 p-4 relative flex-col md:flex-row items-center justify-between bg-[linear-gradient(89.79deg,_rgba(14,_17,_23,_0.89)_31.58%,_rgba(0,_0,_0,_0.62)_59%,_rgba(14,_17,_23,_0.89)100%)] text-white rounded-xl overflow-hidden w-[90%] lg:max-w-5xl"
       >
         <!-- Text Section -->
-        <div class="p-8 lg:w-1/2">
+        <div class="w-full px-0 py-4 md:p-8 flex gap-4 justify-center items-center sm:items-start text-center sm:text-left flex-col">
           <span
-            class="inline-block bg-red-500 text-white text-xs font-bold uppercase px-3 py-1 rounded-full mb-4"
+            class="w-max max-w-full bg-[#FF0000] hover:bg-orange-700 text-white text-xs md:text-sm font-['Montserrat'] font-bold uppercase antialiased px-3 py-1 rounded-full"
             >Best Seller</span
           >
-          <h2 class="text-4xl font-bold mb-4">
-            GET $1000 OFF YOUR <br />FIRST ORDER
+          <h2 class="text-base sm:text-xl md:text-2xl lg:text-4xl text-white font-['Montserrat'] font-bold uppercase mb-4">
+            GET $1000 OFF YOUR FIRST ORDER
           </h2>
 
           <!-- Form Input -->
-          <form class="flex mt-4">
+          <form class="flex items-center sm:items-start p-1 gap-4 flex-col sm:flex-row w-full mt-4 border sm:border-solid border-none sm:border-[#FFFFFF] rounded-lg">
             <input
               type="email"
               placeholder="Enter Email"
-              class="w-full py-2 px-4 rounded-l-lg bg-gray-800 text-gray-300 focus:outline-none"
+              class="w-full py-2 px-4 rounded-lg sm:rounded-l-lg text-[#1E1E1E] antialiased text-left focus:outline-none bg-transparent border border-solid border-[#FFFFFF] sm:border-none"
             />
             <button
               type="submit"
-              class="bg-orange-500 hover:bg-orange-600 text-white px-6 rounded-r-lg font-semibold"
+              class="uppercase w-max max-w-full flex-shrink-0 bg-[#FF4500] hover:bg-orange-700 text-[#FFFFFF] py-2 px-6 rounded-lg sm:rounded-r-lg font-bold"
             >
-              TRY NOW
+              Shop NOW
             </button>
           </form>
         </div>
 
         <!-- Image Section -->
         <div
-          class="relative w-full lg:w-1/2 h-full flex-shrink-0 overflow-hidden"
+          class="relative rounded-3xl flex justify-center w-full h-full max-w-[638px] max-h-[408px]"
         >
           <img
-          class="w-full h-full max-h-full object-cover"
+          class=" rounded-3xl w-auto h-auto max-w-full max-h-full object-cover"
             src="./assets/images/view-3d-car.jpg"
             alt="Promo Car" 
           >
@@ -326,7 +325,7 @@
             </a>
 
             <p
-              class="text-[#FFFFFF] font-normal font-['mulish'] antialiased w-full max-w-[1000px] text-xs text-left hyphens-auto"
+              class="text-[#FFFFFF] font-normal font-['mulish'] antialiased w-full max-w-[1000px] text-xs text-center sm:text-left hyphens-auto"
             >
               Lorem ipsum dolor sit amet consectetur. Mi nibh venenatis in
               suscipit turpis enim cursus vulputate amet. Lobortis mi platea
@@ -1144,10 +1143,10 @@
             <div class="flex justify-center h-full w-full max-w-[259px] max-h-[193px] py-7 px-1">
               <img class="h-auto w-auto max-w-full max-h-full" src="${car.image}" alt="car">
             </div>
-            <p class="item-name font-bold font-['poppins'] text-sm md:text-lg text-left capitalize text-[#767676]">
+            <p class="item-name font-bold font-['poppins'] text-sm md:text-lg text-center sm:text-left capitalize text-[#767676]">
               ${car.name}
             </p>
-            <div class="flex gap-2 items-center xsm:flex-col">
+            <div class="flex gap-2 items-center flex-col sm:flex-row">
               <div class="flex items-center justify-center">
                 <img class="w-[12px] h-[12px]" src="./assets/images/colored-star.svg" alt="rating-star">
                 <img class="w-[12px] h-[12px]" src="./assets/images/colored-star.svg" alt="rating-star">
