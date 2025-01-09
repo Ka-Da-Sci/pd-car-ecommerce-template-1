@@ -3,23 +3,12 @@ function submitSubscribe(event) {
   console.log("hello");
 }
 
-const mobileMenuToggle = document.querySelector(".mobile-toggle");
-const navElementChildren = document.querySelectorAll("nav a");
 // Manages Mobile Menu Toggles
-mobileMenuToggle.addEventListener("click", () => {
-  console.log("Chommy");
-  document.querySelector("nav").classList.toggle("opacity-100");
-  document.querySelector("nav").classList.toggle("opacity-0");
-  document.querySelector("nav").classList.toggle("-translate-x-[100px]");
-  document.querySelector(".icon-menu").classList.toggle("hidden");
-  document.querySelector(".icon-menu").classList.toggle("block");
-  document.querySelector(".icon-close-menu").classList.toggle("block");
-  document.querySelector(".icon-close-menu").classList.toggle("hidden");
-});
-
-// Manages Mobile Menu Toggles
-for (let num = 0; num < navElementChildren.length; num++) {
-  navElementChildren[num].addEventListener("mouseup", () => {
+const mobileMenuToggle = () => {
+  const mobileMenuToggle = document.querySelector(".mobile-toggle");
+  const navElementChildren = document.querySelectorAll("nav a");
+  mobileMenuToggle.addEventListener("click", () => {
+    console.log("Chommy");
     document.querySelector("nav").classList.toggle("opacity-100");
     document.querySelector("nav").classList.toggle("opacity-0");
     document.querySelector("nav").classList.toggle("-translate-x-[100px]");
@@ -28,28 +17,39 @@ for (let num = 0; num < navElementChildren.length; num++) {
     document.querySelector(".icon-close-menu").classList.toggle("block");
     document.querySelector(".icon-close-menu").classList.toggle("hidden");
   });
+  for (let num = 0; num < navElementChildren.length; num++) {
+    navElementChildren[num].addEventListener("mouseup", () => {
+      document.querySelector("nav").classList.toggle("opacity-100");
+      document.querySelector("nav").classList.toggle("opacity-0");
+      document.querySelector("nav").classList.toggle("-translate-x-[100px]");
+      document.querySelector(".icon-menu").classList.toggle("hidden");
+      document.querySelector(".icon-menu").classList.toggle("block");
+      document.querySelector(".icon-close-menu").classList.toggle("block");
+      document.querySelector(".icon-close-menu").classList.toggle("hidden");
+    });
+  }
+  document.addEventListener("click", (event) => {
+    const mobileMenu = document.querySelector("nav");
+    const innerMobileMenu = document.querySelector(".nav-ul");
+    const mobileMenuToggle = document.querySelector(".mobile-toggle");
+    const faq = document.querySelectorAll(".question");
+  
+    if (
+      !mobileMenu.contains(event.target) &&
+      !innerMobileMenu.contains(event.target) &&
+      mobileMenu.classList.contains("opacity-100", "-translate-x-[100px]") &&
+      !mobileMenuToggle.contains(event.target)
+    ) {
+      mobileMenu.classList.remove("opacity-100", "-translate-x-[100px]");
+      document.querySelector(".icon-menu").classList.toggle("hidden");
+      document.querySelector(".icon-menu").classList.toggle("block");
+      document.querySelector(".icon-close-menu").classList.toggle("block");
+      document.querySelector(".icon-close-menu").classList.toggle("hidden");
+    }
+  });
 }
 
-// Manages Mobile Menu Toggles
-document.addEventListener("click", (event) => {
-  const mobileMenu = document.querySelector("nav");
-  const innerMobileMenu = document.querySelector(".nav-ul");
-  const mobileMenuToggle = document.querySelector(".mobile-toggle");
-  const faq = document.querySelectorAll(".question");
-
-  if (
-    !mobileMenu.contains(event.target) &&
-    !innerMobileMenu.contains(event.target) &&
-    mobileMenu.classList.contains("opacity-100", "-translate-x-[100px]") &&
-    !mobileMenuToggle.contains(event.target)
-  ) {
-    mobileMenu.classList.remove("opacity-100", "-translate-x-[100px]");
-    document.querySelector(".icon-menu").classList.toggle("hidden");
-    document.querySelector(".icon-menu").classList.toggle("block");
-    document.querySelector(".icon-close-menu").classList.toggle("block");
-    document.querySelector(".icon-close-menu").classList.toggle("hidden");
-  }
-});
+mobileMenuToggle();
 
 const adjustScreen = (event) => {
   // event.preventDefault();

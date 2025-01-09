@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+    <link rel="icon" href="#" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/iconify/2.0.0/iconify.min.js"
+      integrity="sha512-lYMiwcB608+RcqJmP93CMe7b4i9G9QK1RbixsNu4PzMRJMsqr/bUrkXUuFzCNsRUo3IXNUr5hz98lINURv5CNA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="stylesheet" href="./build-styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="../tailwind.config.js"></script> -->
+  </head>
+  <style></style>
+  <body>
+    <section id="header" class="bg-[#FFFFFF] fixed z-10 inset-x-0">
+      <div
+        class="header sm:container mx-auto flex flex-row gap-10 items-center justify-between h-[60px] px-4 py-0"
+      >
+        <a href="./index.html" class="logo-brand-name flex items-center">
+          <img
+            class="w-5 h-[14.15px] sm:w-[35px] sm:h-[24.77px]"
+            src="./assets/images/logo-without-name.svg"
+            alt="logo"
+          />
+        </a>
+        <nav
+          class="flex gap-5 flex-col sm:flex-row items-center justify-between fixed sm:static top-14 -right-[100px] bottom-0 bg-[#1E1E1E] sm:bg-transparent min-w-[130px] max-w-[300px] sm:max-w-full pl-5 pr-5 py-5 sm:p-0 h-[250px] sm:h-full opacity-0 sm:opacity-100 translate-x-[200px] sm:translate-x-0 [transition:opacity_1s_ease,_transform_1s_ease]"
+        >
+          <ul
+            class="nav-ul flex gap-4 sm:gap-6 md:gap-8 lg:gap-12 flex-col sm:flex-row items-center justify-evenly list-none ml-auto mr-auto sm:mr-0 h-full"
+          >
+            <li class="w-max">
+              <a
+                onclick="adjustScreen(event)"
+                class="no-underline text-[#FFFFFF] sm:text-[#000000] font-['Poppins'] antialiased text-xs sm:text-sm font-medium text-center hover:text-[#898989] transition-all duration-1000 ease-in-out"
+                href="./index.html"
+                >Home</a
+              >
+            </li>
+            <li class="w-max">
+              <a
+                onclick="adjustScreen(event)"
+                class="no-underline text-[#FFFFFF] sm:text-[#000000] font-['Poppins'] antialiased text-xs sm:text-sm font-medium text-center hover:text-[#898989] transition-all duration-1000 ease-in-out"
+                href="./shop.html"
+                >Shop</a
+              >
+            </li>
+            <li class="w-max">
+              <a
+                onclick="adjustScreen(event)"
+                class="no-underline text-[#FFFFFF] sm:text-[#000000] font-['Poppins'] antialiased text-xs sm:text-sm font-medium text-center hover:text-[#898989] transition-all duration-1000 ease-in-out"
+                href="./about-us.html"
+                >About Us</a
+              >
+            </li>
+            <li class="w-max">
+              <a
+                onclick="adjustScreen(event)"
+                class="no-underline text-[#FFFFFF] sm:text-[#000000] font-['Poppins'] antialiased text-xs sm:text-sm font-medium text-center hover:text-[#898989] transition-all duration-1000 ease-in-out"
+                href="./contact.html"
+                >Contact</a
+              >
+            </li>
+            <li class="w-max">
+              <a
+                onclick="adjustScreen(event)"
+                class="no-underline text-[#FFFFFF] sm:text-[#000000] font-['Poppins'] antialiased text-xs sm:text-sm font-medium text-center hover:text-[#898989] transition-all duration-1000 ease-in-out"
+                href="./faq.html"
+                >FAQ</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="search-cart flex gap-6 items-center">
+          <button
+            class="flex justify-center w-auto h-auto max-w-[30px] max-h-[28.59px]"
+          >
+            <img
+              class="w-auto h-auto max-w-full max-h-full"
+              src="./assets/images/search-icon.svg"
+              alt="search-icon"
+            />
+          </button>
+          <button
+            class="cart relative flex justify-center w-auto h-auto max-w-[40px] max-h-[40px]"
+            id="cart-trolley"
+          >
+            <img
+              class="w-auto h-auto max-w-full max-h-full"
+              src="./assets/images/cat-trolley.svg"
+              alt="cart-icon"
+            />
+            <div
+              class="counter absolute top-1/4 right-0 bg-[#FF4500] rounded-full w-max max-w-[22px] max-h-[22px] aspect-square flex items-center justify-center"
+            >
+              <p
+                id="num-of-items"
+                class="rounded-full p-2 m-0 text-left text-[#FFFFFF] font-['poppins'] text-xs"
+              >
+                0
+              </p>
+            </div>
+          </button>
+        </div>
+        <div class="mobile-toggle block sm:hidden hover:cursor-pointer">
+          <img
+            class="icon-menu w-[100%] h-[100%] max-w-5 max-h-[11.25px] block bg-[rgba(249,_253,_243,_1)]"
+            src="./assets/images/icon-menu.svg"
+            alt="menu-toggle-icon"
+          />
+          <img
+            class="icon-close-menu w-[100%] h-[100%] max-w-5 max-h-5 hidden bg-[rgba(249,_253,_243,_1)]"
+            src="./assets/images/icon-close-menu.svg"
+            alt="menu-toggle-icon"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white">
+      <div
+        class="container mx-auto max-w-[1200px] px-4 py-20 pb-6 sm:pt-36 sm:pb-14 bg-white flex flex-col items-center"
+      >
+        <div
+          class="item-container w-full max-w-[600px] sm:max-w-full flex flex-col items-center md:grid grid-cols-3 md:items-start gap-12 py-3 px-3 sm:px-6"
+        >
+          <div
+            class="col-span-2 flex justify-center h-auto w-auto max-w-full max-h-[550px] py-7 px-1 overflow-hidden rounded-xl bg-white shadow-lg"
+          >
+            <img
+              class="h-auto w-auto max-w-full max-h-full"
+              src="./assets/images/veh0.png"
+              alt="car"
+            />
+          </div>
+          <div
+            class="w-full max-w-full col-span-1 flex flex-col gap-2 h-full max-h-full justify-evenly"
+          >
+            <p
+              class="item-name font-bold font-['poppins'] text-sm md:text-lg text-center sm:text-left capitalize text-[#767676]"
+            >
+              Porsche Cayenne 2020
+            </p>
+            <div class="flex gap-2 items-center flex-col sm:flex-row">
+              <div class="flex items-center justify-center">
+                <img
+                  class="w-[12px] h-[12px]"
+                  src="./assets/images/colored-star.svg"
+                  alt="rating-star"
+                />
+                <img
+                  class="w-[12px] h-[12px]"
+                  src="./assets/images/colored-star.svg"
+                  alt="rating-star"
+                />
+                <img
+                  class="w-[12px] h-[12px]"
+                  src="./assets/images/colored-star.svg"
+                  alt="rating-star"
+                />
+                <img
+                  class="w-[12px] h-[12px]"
+                  src="./assets/images/non-colored-star.svg"
+                  alt="rating-star"
+                />
+                <img
+                  class="w-[12px] h-[12px]"
+                  src="./assets/images/non-colored-star.svg"
+                  alt="rating-star"
+                />
+              </div>
+              <p
+                class="font-['poppins'] text-[#1E1E1E] text-center text-xs antialiased capitalize"
+              >
+                <span>4.8</span>
+                <span>(2,436 Reviews)</span>
+              </p>
+            </div>
+            <div
+              class="w-max max-w-full grid grid-cols-3 place-content-between mx-auto sm:mr-auto sm:mx-0 gap-1"
+            >
+              <div
+                class="bg-black rounded-md px-2 py-2 flex justify-center gap-1 items-center"
+              >
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
+                  <img
+                    class="w-auto h-auto max-w-full max-h-full"
+                    src="./assets/images/seat-icon.svg"
+                    alt="seat-icon"
+                  />
+                </div>
+                <p
+                  class="text-white text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
+                >
+                  4 Seats
+                </p>
+              </div>
+              <div
+                class="bg-black rounded-md px-2 py-2 flex justify-center gap-1 items-center"
+              >
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
+                  <img
+                    class="w-auto h-auto max-w-full max-h-full"
+                    src="./assets/images/auto-icon.svg"
+                    alt="seat-icon"
+                  />
+                </div>
+                <p
+                  class="text-white text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
+                >
+                  auto
+                </p>
+              </div>
+              <div
+                class="bg-black rounded-md px-2 py-2 flex justify-center gap-1 items-center"
+              >
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
+                  <img
+                    class="w-auto h-auto max-w-full max-h-full"
+                    src="./assets/images/fuel-icon.svg"
+                    alt="fuel-icon"
+                  />
+                </div>
+                <p
+                  class="text-white text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden"
+                >
+                  fuel
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex -order-1 sm:order-none justify-center sm:justify-between items-center w-full gap-2"
+            >
+              <p
+                class="item-price font-bold font-['poppins'] text-left antialiased text-[#1E1E1E] text-sm sm:text-base md:text-lg lg:text-xl"
+              >
+                <span>$</span><span>83,990</span>
+              </p>
+            </div>
+            <div
+              class="w-full max-w-full flex flex-col gap-4 bg-white border-t border-gray-300 py-4"
+            >
+              <h1
+                class="text-[#767676] font-['Poppins'] font-normal text-center sm:text-left antialiased text-xs sm:text-sm lg:text-base"
+              >
+                A stylish and reliable sedan featuring a 1.5L turbo engine,
+                advanced safety features, and a spacious interior. Perfect for
+                both city commutes and long drives.
+              </h1>
+              <div
+                class="flex flex-col mx-auto sm:mr-auto sm:mx-0 gap-4 w-max max-w-full"
+              >
+                <div
+                  class="flex items-center flex-wrap justify-center sm:justify-normal gap-4"
+                >
+                  <div
+                    class="quantity-selector flex items-center p-2 rounded bg-[#E9E9E9] text-[#000000]"
+                  >
+                    <button
+                      onclick="updateQuantity('decrease')"
+                      class="decrease bg-gray-200 text-gray-700 font-bold px-4 whitespace-nowrap uppercase font-['Montserrat'] text-sm sm:text-xl"
+                    >
+                      -
+                    </button>
+                    <input
+                      type="text"
+                      id="quantity"
+                      min="1"
+                      step="1"
+                      value="1"
+                      class="w-12 outline-none text-center bg-transparent whitespace-nowrap uppercase font-semibold font-['Montserrat'] text-xs sm:text-sm"
+                    />
+                    <button
+                      onclick="updateQuantity('increase')"
+                      class="increase bg-gray-200 text-gray-700 font-bold px-4 whitespace-nowrap uppercase font-['Montserrat'] text-sm sm:text-xl"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <button
+                    class="bg-orange-500 text-white whitespace-nowrap uppercase font-semibold font-['Montserrat'] text-xs sm:text-sm p-2 pt-[10px] pb-[10px] rounded"
+                  >
+                    ADD TO CART
+                  </button>
+                </div>
+                <div
+                  class="w-full flex items-center mx-auto sm:mx-0 gap-8 justify-center sm:justify-normal"
+                >
+                  <button
+                    class="w-auto whitespace-nowrap text-gray-700 h-auto max-w-full max-h-5 flex items-center gap-1 justify-center"
+                  >
+                    <img
+                      class="w-auto h-auto max-w-full max-h-full"
+                      src="./assets/images/like.svg"
+                      alt="like-icon"
+                    />
+
+                    <span class="font-['Poppins'] font-normal text-[#000000] text-xs">Add to save item</span>
+
+                  </button>
+                  
+                  <button onclick="shareProduct()" class="text-gray-700 w-auto h-auto max-w-full max-h-5 flex items-center gap-2 justify-center whitespace-nowrap">
+                    <img
+                      class="w-auto h-auto max-w-full max-h-full"
+                      src="./assets/images/share-icon.svg"
+                      alt="share-icon"
+                    />
+
+                    <span class="font-['Poppins'] font-normal text-[#000000] text-xs">Share</span>
+                  
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full border-t border-gray-200 mt-16 pt-6 px-3 sm:px-6 flex flex-col gap-8">
+          <div class="flex justify-center space-x-12 mb-4">
+            <button
+              id="description"
+              class="hover:text-gray-700 border-t-2 border-solid border-[#ff4500] text-[#000000] uppercase text-center font-medium font-['poppins'] text-xs sm:text-sm"
+            >
+              Description
+            </button>
+            <button
+              id="review"
+              class="hover:text-gray-700 border-t-2 border-solid border-[#ffffff] text-[#000000] uppercase text-center font-medium font-['poppins'] text-xs sm:text-sm"
+            >
+              Reviews
+            </button>
+          </div>
+          <div class="flex justify-center w-full">
+            <div id="description-text"
+              class="w-full max-w-4xl flex flex-col justify-normal text-[#767676] font-['Poppins'] font-normal text-left antialiased text-xs sm:text-sm lg:text-base mt-4"
+            >
+              <p
+                class="uppercase text-[#1E1E1E] font-['Poppins'] font-bold text-xl"
+              >
+                description
+              </p>
+              <p>
+                A stylish and reliable sedan with a 3.5L turbo engine, advanced
+                safety features, and spacious interior. Equipped with Apple
+                CarPlay, Android Auto, and Bluetooth connectivity. This model
+                comes with a panoramic sunroof, adaptive cruise control,
+                lane-keeping assist, and a premium sound system. Perfect for
+                city driving and long trips, it combines luxury, performance,
+                style, and technology in one sleek package.
+              </p>
+            </div>
+
+            <div id="review-form" class="hidden w-full max-w-4xl flex-col items-center sm:items-start gap-2">
+              <div class="bg-white rounded-lg w-full flex flex-col items-center sm:items-start gap-2 mt-4">
+                <h2 class="text-base text-center sm:text-left sm:text-xl font-bold font-['Poppins'] text-[#1E1E1E]">ADD A REVIEW</h2>
+                <form class="flex gap-4 flex-col items-center w-full">
+                  <p class="w-full self-start text-sm text-center sm:text-left text-gray-600">
+                    Your email address will not be published. Required fields
+                    are marked *
+                  </p>
+
+                  <!-- Rating -->
+                  <div class="flex items-center gap-2 justify-center sm:justify-start w-full">
+                    <p class="text-[#000000] font-['Poppins'] font-normal text-sm sm:text-base text-center sm:text-left">Your Rating</p>
+                    <div class="flex items-center justify-center">
+                      <img
+                        class="w-[12px] h-[12px]"
+                        src="./assets/images/colored-star.svg"
+                        alt="rating-star"
+                      />
+                      <img
+                        class="w-[12px] h-[12px]"
+                        src="./assets/images/colored-star.svg"
+                        alt="rating-star"
+                      />
+                      <img
+                        class="w-[12px] h-[12px]"
+                        src="./assets/images/colored-star.svg"
+                        alt="rating-star"
+                      />
+                      <img
+                        class="w-[12px] h-[12px]"
+                        src="./assets/images/non-colored-star.svg"
+                        alt="rating-star"
+                      />
+                      <img
+                        class="w-[12px] h-[12px]"
+                        src="./assets/images/non-colored-star.svg"
+                        alt="rating-star"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Full Name -->
+                  <div class="w-full">
+                    <label for="name" class="mb-2 hidden">Full Name *</label>
+                    <input
+                      type="text"
+                      id="name"
+                      class="w-full p-2 border rounded outline-none font-['Poppins'] font-normal text-sm sm:text-base placeholder:text-[#1E1E1E4D] text-[#1E1E1E]"
+                      placeholder="Full Name"
+                    />
+                  </div>
+
+                  <!-- Email Address -->
+                  <div class="w-full">
+                    <label for="email" class="mb-2 hidden"
+                      >Email Address *</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      class="w-full p-2 border rounded outline-none font-['Poppins'] font-normal text-sm sm:text-base placeholder:text-[#1E1E1E4D] text-[#1E1E1E]"
+                      placeholder="Email Address"
+                    />
+                  </div>
+
+                  <!-- Message -->
+                  <div class="w-full">
+                    <label for="message" class="mb-2 hidden">Message *</label>
+                    <textarea
+                      id="message"
+                      rows="4"
+                      class="w-full p-2 border rounded outline-none font-['Poppins'] font-normal text-sm sm:text-base placeholder:text-[#1E1E1E4D] text-[#1E1E1E]"
+                      placeholder="Message"
+                    ></textarea>
+                  </div>
+
+                  <!-- Submit Button -->
+                  <button
+                    type="submit"
+                    class="bg-orange-500 text-white font-['Montserrat'] font-bold text-center text-sm sm:text-base px-6 py-2 rounded hover:bg-orange-600"
+                  >
+                    SUBMIT
+                  </button>
+                </form>
+              </div>
+
+              <div class="mt-8 w-full max-w-4xl mx-auto">
+                <h2 class="text-xl font-bold mb-4 text-center sm:text-start">3 REVIEWS FOR BENZ</h2>
+                <div class="flex flex-col items-center gap-4">
+                  <div class="bg-[#F3F3F3] py-4 px-2 sm:px-8 rounded-xl">
+                    <div class="flex flex-col sm:flex-row items-center justify-between mb-2">
+                      <div class="flex flex-col sm:flex-row gap-2 items-center space-x-2">
+                        <img
+                          src="./assets/images/client.jpg"
+                          alt="User Avatar"
+                          class="w-16 h-16 rounded-md"
+                        />
+                        <div class="flex flex-col items-center sm:items-start">
+                          <p
+                            class="font-semibold text-left text-[#1E1E1E] text-sm font-['inter']"
+                          >
+                            David H
+                          </p>
+                          <p
+                            class="text-sm font-normal font-['inter'] text-left text-[#FF4500]"
+                          >
+                            Environmental Advocate
+                          </p>
+                        </div>
+                      </div>
+                      <p
+                        class="text-[#000000] font-['Poppins'] font-normal text-xs sm:text-sm"
+                      >
+                        January 30, 2021
+                      </p>
+                    </div>
+                    <p
+                      class="text-[#000000] text-left font-['Poppins'] font-normal text-sm sm:text-base"
+                    >
+                      Excellent car! Smooth ride, great fuel efficiency, and
+                      packed with modern features. Perfect for daily commutes
+                      and long trips. Highly recommend!
+                    </p>
+                    <div class="mt-2 flex items-center">
+                      <button class="text-gray-500">
+                        <svg
+                          width="26"
+                          height="27"
+                          viewBox="0 0 26 27"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M13.6717 23.4499C13.3034 23.5799 12.6967 23.5799 12.3284 23.4499C9.18675 22.3774 2.16675 17.9032 2.16675 10.3199C2.16675 6.97237 4.86425 4.26404 8.19008 4.26404C10.1617 4.26404 11.9059 5.21737 13.0001 6.69071C14.0942 5.21737 15.8492 4.26404 17.8101 4.26404C21.1359 4.26404 23.8334 6.97237 23.8334 10.3199C23.8334 17.9032 16.8134 22.3774 13.6717 23.4499Z"
+                            stroke="#1E1E1E"
+                            stroke-width="1.625"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                      <span class="w-max max-w-[200px] ml-1 text-base text-[#1E1E1E] font-['Poppins']"
+                        >0</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="bg-[#F3F3F3] py-4 px-4 sm:px-8 rounded-xl">
+                    <div class="flex flex-col sm:flex-row items-center justify-between mb-2">
+                      <div class="flex flex-col sm:flex-row gap-2 items-center space-x-2">
+                        <img
+                          src="./assets/images/client.jpg"
+                          alt="User Avatar"
+                          class="w-16 h-16 rounded-md"
+                        />
+                        <div class="flex flex-col items-center sm:items-start">
+                          <p
+                            class="font-semibold text-left text-[#1E1E1E] text-sm font-['inter']"
+                          >
+                            David H
+                          </p>
+                          <p
+                            class="text-sm font-normal font-['inter'] text-left text-[#FF4500]"
+                          >
+                            Environmental Advocate
+                          </p>
+                        </div>
+                      </div>
+                      <p
+                        class="text-[#000000] font-['Poppins'] font-normal text-xs sm:text-sm"
+                      >
+                        January 30, 2021
+                      </p>
+                    </div>
+                    <p
+                      class="text-[#000000] text-left font-['Poppins'] font-normal text-sm sm:text-base"
+                    >
+                      Excellent car! Smooth ride, great fuel efficiency, and
+                      packed with modern features. Perfect for daily commutes
+                      and long trips. Highly recommend!
+                    </p>
+                    <div class="mt-2 flex items-center">
+                      <button class="text-gray-500">
+                        <svg
+                          width="26"
+                          height="27"
+                          viewBox="0 0 26 27"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M13.6717 23.4499C13.3034 23.5799 12.6967 23.5799 12.3284 23.4499C9.18675 22.3774 2.16675 17.9032 2.16675 10.3199C2.16675 6.97237 4.86425 4.26404 8.19008 4.26404C10.1617 4.26404 11.9059 5.21737 13.0001 6.69071C14.0942 5.21737 15.8492 4.26404 17.8101 4.26404C21.1359 4.26404 23.8334 6.97237 23.8334 10.3199C23.8334 17.9032 16.8134 22.3774 13.6717 23.4499Z"
+                            stroke="#1E1E1E"
+                            stroke-width="1.625"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                      <span class="w-max max-w-[200px] ml-1 text-base text-[#1E1E1E] font-['Poppins']"
+                        >0</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="bg-[#F3F3F3] py-4 px-4 sm:px-8 rounded-xl">
+                    <div class="flex flex-col sm:flex-row items-center justify-between mb-2">
+                      <div class="flex flex-col sm:flex-row gap-2 items-center space-x-2">
+                        <img
+                          src="./assets/images/client.jpg"
+                          alt="User Avatar"
+                          class="w-16 h-16 rounded-md"
+                        />
+                        <div class="flex flex-col items-center sm:items-start">
+                          <p
+                            class="font-semibold text-left text-[#1E1E1E] text-sm font-['inter']"
+                          >
+                            David H
+                          </p>
+                          <p
+                            class="text-sm font-normal font-['inter'] text-left text-[#FF4500]"
+                          >
+                            Environmental Advocate
+                          </p>
+                        </div>
+                      </div>
+                      <p
+                        class="text-[#000000] font-['Poppins'] font-normal text-xs sm:text-sm"
+                      >
+                        January 30, 2021
+                      </p>
+                    </div>
+                    <p
+                      class="text-[#000000] text-left font-['Poppins'] font-normal text-sm sm:text-base"
+                    >
+                      Excellent car! Smooth ride, great fuel efficiency, and
+                      packed with modern features. Perfect for daily commutes
+                      and long trips. Highly recommend!
+                    </p>
+                    <div class="mt-2 flex items-center">
+                      <button class="text-gray-500">
+                        <svg
+                          width="26"
+                          height="27"
+                          viewBox="0 0 26 27"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M13.6717 23.4499C13.3034 23.5799 12.6967 23.5799 12.3284 23.4499C9.18675 22.3774 2.16675 17.9032 2.16675 10.3199C2.16675 6.97237 4.86425 4.26404 8.19008 4.26404C10.1617 4.26404 11.9059 5.21737 13.0001 6.69071C14.0942 5.21737 15.8492 4.26404 17.8101 4.26404C21.1359 4.26404 23.8334 6.97237 23.8334 10.3199C23.8334 17.9032 16.8134 22.3774 13.6717 23.4499Z"
+                            stroke="#1E1E1E"
+                            stroke-width="1.625"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                      <span class="w-max max-w-[200px] ml-1 text-base text-[#1E1E1E] font-['Poppins']"
+                        >0</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#1E1E1E]">
+      <div
+        class="container mx-auto flex flex-col items-center justify-between gap-4 py-4 px-4"
+      >
+        <div
+          class="w-full flex flex-col xl:flex-row justify-between items-center gap-4 sm:py-8 px-[3%] sm:px-[5%]"
+        >
+          <div
+            class="flex flex-col items-center xl:items-start gap-4 w-full xl:max-w-[350px]"
+          >
+            <a href="./index.html" class="flex items-center">
+              <img
+                class="w-[35px] h-[24.77px] md:w-[50px] md:h-[35.39px] filter invert brightness-0"
+                src="./assets/images/logo-without-name.svg"
+                alt="logo"
+              />
+            </a>
+
+            <p
+              class="text-[#FFFFFF] font-normal font-['mulish'] antialiased w-full max-w-[1000px] text-xs text-center sm:text-left hyphens-auto"
+            >
+              Lorem ipsum dolor sit amet consectetur. Mi nibh venenatis in
+              suscipit turpis enim cursus vulputate amet. Lobortis mi platea
+              aliquam senectus tempus mauris neque.
+            </p>
+            <ul
+              class="flex gap-2 sm:gap-4 w-full items-center justify-center xl:justify-start flex-wrap"
+            >
+              <li>
+                <a
+                  class="capitalize text-[#FFFFFF] font-normal font-['mulish'] antialiased text-center sm:text-left text-[10px] sm:text-xs hyphens-auto"
+                  href="./error404.html"
+                >
+                  <svg
+                    width="21"
+                    height="20"
+                    viewBox="0 0 21 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20.5955 10C20.5955 4.48 16.1155 0 10.5955 0C5.07546 0 0.595459 4.48 0.595459 10C0.595459 14.84 4.03546 18.87 8.59546 19.8V13H6.59546V10H8.59546V7.5C8.59546 5.57 10.1655 4 12.0955 4H14.5955V7H12.5955C12.0455 7 11.5955 7.45 11.5955 8V10H14.5955V13H11.5955V19.95C16.6455 19.45 20.5955 15.19 20.5955 10Z"
+                      fill="white"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="capitalize text-[#FFFFFF] font-normal font-['mulish'] antialiased text-center sm:text-left text-[10px] sm:text-xs hyphens-auto"
+                  href="./error404.html"
+                  ><svg
+                    width="19"
+                    height="20"
+                    viewBox="0 0 19 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12.5955 10C12.5955 10.5933 12.4195 11.1734 12.0899 11.6667C11.7602 12.1601 11.2917 12.5446 10.7435 12.7716C10.1953 12.9987 9.59213 13.0581 9.01019 12.9424C8.42825 12.8266 7.8937 12.5409 7.47414 12.1213C7.05458 11.7018 6.76886 11.1672 6.6531 10.5853C6.53735 10.0033 6.59676 9.40013 6.82382 8.85195C7.05088 8.30377 7.4354 7.83524 7.92875 7.50559C8.4221 7.17595 9.00212 7 9.59546 7C10.3903 7.00247 11.152 7.31934 11.714 7.88141C12.2761 8.44349 12.593 9.20511 12.5955 10ZM18.9705 5.875V14.125C18.9705 15.5174 18.4173 16.8527 17.4328 17.8373C16.4482 18.8219 15.1128 19.375 13.7205 19.375H5.47046C4.07807 19.375 2.74271 18.8219 1.75815 17.8373C0.773582 16.8527 0.220459 15.5174 0.220459 14.125V5.875C0.220459 4.48261 0.773582 3.14726 1.75815 2.16269C2.74271 1.17812 4.07807 0.625 5.47046 0.625H13.7205C15.1128 0.625 16.4482 1.17812 17.4328 2.16269C18.4173 3.14726 18.9705 4.48261 18.9705 5.875ZM14.0955 10C14.0955 9.10998 13.8315 8.23995 13.3371 7.49993C12.8426 6.75991 12.1398 6.18314 11.3175 5.84254C10.4953 5.50195 9.59047 5.41283 8.71755 5.58647C7.84464 5.7601 7.04281 6.18868 6.41348 6.81802C5.78414 7.44736 5.35556 8.24918 5.18193 9.12209C5.00829 9.99501 5.09741 10.8998 5.438 11.7221C5.7786 12.5443 6.35537 13.2471 7.09539 13.7416C7.83541 14.2361 8.70544 14.5 9.59546 14.5C10.7889 14.5 11.9335 14.0259 12.7774 13.182C13.6214 12.3381 14.0955 11.1935 14.0955 10ZM15.5955 5.125C15.5955 4.9025 15.5295 4.68499 15.4059 4.49998C15.2822 4.31498 15.1065 4.17078 14.901 4.08564C14.6954 4.00049 14.4692 3.97821 14.251 4.02162C14.0328 4.06502 13.8323 4.17217 13.675 4.3295C13.5176 4.48684 13.4105 4.68729 13.3671 4.90552C13.3237 5.12375 13.3459 5.34995 13.4311 5.55552C13.5162 5.76109 13.6604 5.93679 13.8454 6.0604C14.0304 6.18402 14.248 6.25 14.4705 6.25C14.7688 6.25 15.055 6.13147 15.266 5.9205C15.4769 5.70952 15.5955 5.42337 15.5955 5.125Z"
+                      fill="white"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="capitalize text-[#FFFFFF] font-normal font-['mulish'] antialiased text-center sm:text-left text-[10px] sm:text-xs hyphens-auto"
+                  href="./error404.html"
+                  ><svg
+                    width="21"
+                    height="20"
+                    viewBox="0 0 21 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.5954 0.0546875C5.10259 0.0546875 0.649902 4.50737 0.649902 10.0002C0.649902 15.493 5.10259 19.9457 10.5954 19.9457C16.0882 19.9457 20.5409 15.493 20.5409 10.0002C20.5409 4.50737 16.0882 0.0546875 10.5954 0.0546875ZM8.16083 14.1224H6.14687V7.64124H8.16083V14.1224ZM7.14142 6.8456C6.50532 6.8456 6.09403 6.39495 6.09403 5.83758C6.09403 5.26883 6.51775 4.83164 7.16732 4.83164C7.81688 4.83164 8.2147 5.26883 8.22714 5.83758C8.22714 6.39495 7.81688 6.8456 7.14142 6.8456ZM15.5164 14.1224H13.5024V10.5306C13.5024 9.69458 13.2102 9.12685 12.4819 9.12685C11.9256 9.12685 11.5951 9.51121 11.4491 9.88106C11.3952 10.0126 11.3817 10.1991 11.3817 10.3845V14.1214H9.36672V9.70805C9.36672 8.89894 9.34082 8.22243 9.31389 7.64021H11.0637L11.1559 8.54048H11.1963C11.4615 8.1178 12.1111 7.49413 13.1978 7.49413C14.5228 7.49413 15.5164 8.38198 15.5164 10.2903V14.1224Z"
+                      fill="white"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="w-full grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
+          >
+            <div class="flex items-center sm:items-start gap-4 flex-col">
+              <h3
+                class="capitalize text-[#FF4500] font-normal font-['mulish'] antialiased text-center sm:text-left text-[10px] sm:text-xs hyphens-auto"
+              >
+                Visit Link
+              </h3>
+              <ul
+                class="flex gap-[2px] w-full items-center sm:items-start flex-col [@media_(max-width:300px)]:max-w-[210px"
+              >
+                <li>
+                  <a
+                    class="capitalize text-[#FFFFFF] font-normal font-['mulish'] antialiased text-center sm:text-left text-[10px] sm:text-xs hyphens-auto"
+                    href="./shop.html"
+                    >shop</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="capitalize text-[#FFFFFF] font-normal font-['mulish'] antialiased text-center sm:text-left text-[10px] sm:text-xs hyphens-auto"
+                    href="./error404.html"
+                    >Privacy</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="capitalize text-[#FFFFFF] font-normal font-['mulish'] antialiased text-center sm:text-left text-[10px] sm:text-xs hyphens-auto"
+                    href="./error404.html"
+                    >Terms & conditions</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="flex items-center sm:items-start gap-4 flex-col">
+              <h3
+                class="capitalize text-[#FF4500] font-normal font-['mulish'] antialiased text-center sm:text-left text-[10px] sm:text-xs hyphens-auto"
+              >
+                Company
+              </h3>
+              <ul
+                class="flex gap-[2px] w-full items-center sm:items-start flex-col [@media_(max-width:300px)]:max-w-[210px"
+              >
+                <li>
+                  <a
+                    class="capitalize text-[#FFFFFF] font-normal font-['mulish'] antialiased text-center sm:text-left text-[10px] sm:text-xs hyphens-auto"
+                    href="./index.html"
+                    >home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="capitalize text-[#FFFFFF] font-normal font-['mulish'] antialiased text-center sm:text-left text-[10px] sm:text-xs hyphens-auto"
+                    href="./error404.html"
+                    >about us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="capitalize text-[#FFFFFF] font-normal font-['mulish'] antialiased text-center sm:text-left text-[10px] sm:text-xs hyphens-auto"
+                    href="./error404.html"
+                    >Contact us</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="flex items-center sm:items-start gap-4 flex-col">
+              <h3
+                class="capitalize text-[#FF4500] font-normal font-['mulish'] antialiased text-center sm:text-left text-[10px] sm:text-xs hyphens-auto"
+              >
+                Contact
+              </h3>
+              <ul
+                class="flex gap-[2px] w-full items-center sm:items-start flex-col [@media_(max-width:300px)]:max-w-[210px"
+              >
+                <li>
+                  <a
+                    class="capitalize text-[#FFFFFF] font-normal font-['mulish'] antialiased text-center sm:text-left text-[10px] sm:text-xs hyphens-auto"
+                    href="tel:+99 (0) 101 0000 888"
+                    >+99 (0) 101 0000 888</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="capitalize text-[#FFFFFF] font-normal font-['mulish'] antialiased text-center sm:text-left text-[10px] sm:text-xs hyphens-auto"
+                    href="mailto:loremipsum@yourdomain.com"
+                    >loremipsum@yourdomain.com</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="flex items-center sm:items-start gap-4 flex-col">
+              <h3
+                class="capitalize text-[#FF4500] font-normal font-['mulish'] antialiased text-center sm:text-left text-[10px] sm:text-xs hyphens-auto"
+              >
+                Address
+              </h3>
+              <ul
+                class="flex gap-[2px] w-full items-center sm:items-start flex-col [@media_(max-width:300px)]:max-w-[210px"
+              >
+                <li>
+                  <p
+                    class="capitalize text-[#FFFFFF] font-normal font-['mulish'] antialiased text-center sm:text-left text-[10px] sm:text-xs hyphens-auto"
+                  >
+                    Silicon Valley, Palo Alto, Santa Clara County, California,
+                    94301, United States
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <hr class="w-full h-[1px] bg-[#FFFFFF]" />
+
+        <p
+          class="capitalize text-[#FFFFFF] font-normal font-['mulish'] antialiased text-center text-[10px] sm:text-xs hyphens-auto"
+        >
+          Non Copyrighted © 2022 Design and upload by rich technologies
+        </p>
+      </div>
+    </section>
+
+    <script type="module" src="./assets/index.js"></script>
+    <script>
+      const shareProduct = () => {
+        const productName = document.querySelector('.item-name').textContent;
+        const productPrice = document.querySelector('.item-price').textContent;
+        const productDescription = document.querySelector('h1').textContent;
+        const shareData = {
+          title: productName,
+          text: `${productDescription} - ${productPrice}`,
+          url: window.location.href
+        };
+
+        if (navigator.share) {
+          navigator.share(shareData)
+            // .then(() => console.log('Product shared successfully'))
+            .catch((error) => console.error('Error sharing product:', error));
+        } else {
+          alert('Web Share API is not supported in your browser.');
+        }
+      }
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const descriptionBtn = document.getElementById("description");
+        const reviewBtn = document.getElementById("review");
+        const descriptionText = document.getElementById("description-text");
+        const reviewForm = document.getElementById("review-form");
+
+        const showDescription = () => {
+          descriptionBtn.classList.add("border-[#ff4500]");
+          descriptionBtn.classList.remove("border-[#ffffff]");
+          reviewBtn.classList.add("border-[#ffffff]");
+          descriptionText.classList.remove("hidden");
+          reviewForm.classList.add("hidden");
+          reviewForm.classList.remove("flex");
+        }
+        
+        const showReview = () => {
+          reviewBtn.classList.add("border-[#ff4500]");
+          reviewBtn.classList.remove("border-[#ffffff]");
+          descriptionBtn.classList.add("border-[#ffffff]");
+          reviewForm.classList.add("flex");
+          reviewForm.classList.remove("hidden");
+          descriptionText.classList.add("hidden");
+        }
+
+        descriptionBtn.addEventListener("click", showDescription);
+        reviewBtn.addEventListener("click", showReview);
+
+        // Initial state
+        showDescription();
+      });
+    </script>
+    <script>
+      // Data for cards (example dataset with 10 cars)
+      const inventoryData = [
+        {
+          image: "./assets/images/veh0.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "83,990",
+        },
+        {
+          image: "./assets/images/veh1.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "12,090",
+        },
+        {
+          image: "./assets/images/veh2.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "74,050",
+        },
+        {
+          image: "./assets/images/veh3.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "53,500",
+        },
+        {
+          image: "./assets/images/veh4.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "50,000",
+        },
+        {
+          image: "./assets/images/veh5.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "manual",
+          fuel: "electric",
+          currencySymb: "$",
+          price: "33,000",
+        },
+        {
+          image: "./assets/images/veh6.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "53,070",
+        },
+        {
+          image: "./assets/images/veh7.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "63,000",
+        },
+
+        {
+          image: "./assets/images/veh0.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "73,090",
+        },
+        {
+          image: "./assets/images/veh1.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "52,090",
+        },
+        {
+          image: "./assets/images/veh7.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "94,750",
+        },
+        {
+          image: "./assets/images/veh6.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "53,500",
+        },
+        {
+          image: "./assets/images/veh4.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "50,000",
+        },
+        {
+          image: "./assets/images/veh2.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "manual",
+          fuel: "electric",
+          currencySymb: "$",
+          price: "33,000",
+        },
+        {
+          image: "./assets/images/veh6.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "53,070",
+        },
+        {
+          image: "./assets/images/veh5.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "63,000",
+        },
+
+        {
+          image: "./assets/images/veh4.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "23,090",
+        },
+        {
+          image: "./assets/images/veh3.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "62,090",
+        },
+        {
+          image: "./assets/images/veh2.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "4,050",
+        },
+        {
+          image: "./assets/images/veh1.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "53,500",
+        },
+        {
+          image: "./assets/images/veh0.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "50,000",
+        },
+        {
+          image: "./assets/images/veh7.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "manual",
+          fuel: "electric",
+          currencySymb: "$",
+          price: "33,000",
+        },
+        {
+          image: "./assets/images/veh6.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "manual",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "43,070",
+        },
+        {
+          image: "./assets/images/veh5.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "manual",
+          currencySymb: "$",
+          price: "33,000",
+        },
+
+        {
+          image: "./assets/images/veh7.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "33,090",
+        },
+        {
+          image: "./assets/images/veh6.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "82,090",
+        },
+        {
+          image: "./assets/images/veh5.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "50,050",
+        },
+        {
+          image: "./assets/images/veh4.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "53,500",
+        },
+        {
+          image: "./assets/images/veh3.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "50,000",
+        },
+        {
+          image: "./assets/images/veh2.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "manual",
+          fuel: "electric",
+          currencySymb: "$",
+          price: "33,000",
+        },
+        {
+          image: "./assets/images/veh1.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "53,070",
+        },
+        {
+          image: "./assets/images/veh0.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "63,000",
+        },
+
+        {
+          image: "./assets/images/veh0.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "73,990",
+        },
+        {
+          image: "./assets/images/veh1.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "92,090",
+        },
+        {
+          image: "./assets/images/veh2.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "51,050",
+        },
+        {
+          image: "./assets/images/veh7.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "53,500",
+        },
+        {
+          image: "./assets/images/veh6.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "50,000",
+        },
+        {
+          image: "./assets/images/veh5.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "manual",
+          fuel: "electric",
+          currencySymb: "$",
+          price: "33,000",
+        },
+        {
+          image: "./assets/images/veh4.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "53,070",
+        },
+        {
+          image: "./assets/images/veh3.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "63,000",
+        },
+
+        {
+          image: "./assets/images/veh7.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "53,090",
+        },
+        {
+          image: "./assets/images/veh6.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "22,090",
+        },
+        {
+          image: "./assets/images/veh5.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "84,050",
+        },
+        {
+          image: "./assets/images/veh4.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "53,500",
+        },
+        {
+          image: "./assets/images/veh3.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "50,000",
+        },
+        {
+          image: "./assets/images/veh2.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "manual",
+          fuel: "electric",
+          currencySymb: "$",
+          price: "33,000",
+        },
+        {
+          image: "./assets/images/veh1.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "53,070",
+        },
+        {
+          image: "./assets/images/veh0.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "13,000",
+        },
+
+        {
+          image: "./assets/images/veh1.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "43,000",
+        },
+        {
+          image: "./assets/images/veh5.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "52,490",
+        },
+        {
+          image: "./assets/images/veh0.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "54,050",
+        },
+        {
+          image: "./assets/images/veh5.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "53,500",
+        },
+        {
+          image: "./assets/images/veh6.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "auto",
+          fuel: "gas",
+          currencySymb: "$",
+          price: "50,000",
+        },
+        {
+          image: "./assets/images/veh1.png",
+          name: "Porsche Cayenne 2020",
+          rating: "4.8",
+          reviewsNum: "2,436 Reviews",
+          seatCount: "4",
+          transmissionType: "manual",
+          fuel: "electric",
+          currencySymb: "$",
+          price: "33,000",
+        },
+      ];
+
+      // JavaScript functions for quantity update
+      document.addEventListener("DOMContentLoaded", function () {
+        const quantityInput = document.getElementById("quantity");
+        const decreaseButton = document.querySelector(".decrease");
+        const increaseButton = document.querySelector(".increase");
+
+        function updateQuantity(action) {
+          const currentQuantity = parseInt(quantityInput.value);
+
+          if (action === "increase") {
+            quantityInput.value = currentQuantity + 1;
+          } else if (action === "decrease") {
+            if (currentQuantity > 1) {
+              quantityInput.value = currentQuantity - 1;
+            }
+          }
+        }
+
+        decreaseButton.addEventListener("click", function (e) {
+          e.preventDefault(); // Prevent default button behavior if any
+          updateQuantity("decrease");
+        });
+
+        increaseButton.addEventListener("click", function (e) {
+          e.preventDefault(); // Prevent default button behavior if any
+          updateQuantity("increase");
+        });
+      });
+
+      const cardsPerPage = 8; // Number of cards per page
+      const maxVisiblePages = 5; // Maximum pagination buttons visible
+      let currentPage = 1;
+
+      const cardContainer = document.getElementById("card-container");
+      const paginationContainer = document.getElementById("pagination");
+      const resultsInfo = document.getElementById("results-info");
+      const pageInfo = document.getElementById("page-info");
+      const prevBtn = document.getElementById("prev-btn");
+      const nextBtn = document.getElementById("next-btn");
+
+      // Function to render cards
+      const renderCards = () => {
+       if (cardContainer) {
+         cardContainer.innerHTML = "";
+       }
+        const start = (currentPage - 1) * cardsPerPage;
+        const end = Math.min(start + cardsPerPage, inventoryData.length);
+
+        for (let i = start; i < end; i++) {
+          const car = inventoryData[i];
+          const card = `
+          <a href="./product-details.html" class="item-container items-center flex gap-2 flex-col border border-solid border-[#1E1E1E4D] hover:[box-shadow:0px_4px_30px_0px_#00000033] rounded-xl py-3 px-6">
+            <div class="flex justify-center h-full w-full max-w-[259px] max-h-[193px] py-7 px-1 overflow-hidden">
+              <img class="h-auto w-auto max-w-full max-h-full" src="${car.image}" alt="car">
+            </div>
+            <p class="item-name font-bold font-['poppins'] text-sm md:text-lg text-center sm:text-left capitalize text-[#767676]">
+              ${car.name}
+            </p>
+            <div class="flex gap-2 items-center flex-col sm:flex-row">
+              <div class="flex items-center justify-center">
+                <img class="w-[12px] h-[12px]" src="./assets/images/colored-star.svg" alt="rating-star">
+                <img class="w-[12px] h-[12px]" src="./assets/images/colored-star.svg" alt="rating-star">
+                <img class="w-[12px] h-[12px]" src="./assets/images/colored-star.svg" alt="rating-star">
+                <img class="w-[12px] h-[12px]" src="./assets/images/non-colored-star.svg" alt="rating-star">
+                <img class="w-[12px] h-[12px]" src="./assets/images/non-colored-star.svg" alt="rating-star">
+              </div>
+              <p class="font-['poppins'] text-[#1E1E1E] text-center text-xs antialiased capitalize">
+                <span>${car.rating}</span>
+                <span>(${car.reviewsNum})</span>
+              </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full place-content-between gap-1">
+              <div class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
+                  <img class="w-auto h-auto max-w-full max-h-full" src="./assets/images/seat-icon.svg" alt="seat-icon">
+                </div>
+                <p class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden">
+                  ${car.seatCount} Seats
+                </p>
+              </div>
+              <div class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
+                  <img class="w-auto h-auto max-w-full max-h-full" src="./assets/images/auto-icon.svg" alt="seat-icon">
+                </div>
+                <p class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden">
+                  ${car.transmissionType}
+                </p>
+              </div>
+              <div class="bg-[#000000] rounded-md px-2 py-2 flex justify-center gap-1 items-center">
+                <div class="flex justify-center w-full h-full max-w-4 max-h-4">
+                  <img class="w-auto h-auto max-w-full max-h-full" src="./assets/images/fuel-icon.svg" alt="fuel-icon">
+                </div>
+                <p class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden">
+                  ${car.fuel}
+                </p>
+              </div>
+            </div>
+            <div class="flex justify-between items-center w-full gap-2">
+              <p class="item-price font-bold font-['poppins'] text-left antialiased text-[#1E1E1E] text-sm sm:text-base md:text-lg lg:text-xl">
+                <span>${car.currencySymb}</span><span>${car.price}</span>
+              </p>
+              <div class="flex justify-center items-center gap-2">
+                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
+                  <img src="./assets/images/like.svg" alt="wishlist-icon">
+                </button>
+                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
+                  <img src="./assets/images/add-icon.svg" alt="add-icon">
+                </button>
+                <button class="flex justify-center w-full h-full max-w-6 max-h-6">
+                  <img src="./assets/images/preview-icon.svg" alt="preview-icon">
+                </button>
+              </div>
+            </div>
+            <div></div>
+          </a>
+        `;
+        if (cardContainer) {
+          cardContainer.innerHTML += card;
+        }
+        }
+
+        if (resultsInfo){
+          resultsInfo.textContent = `Showing ${start + 1} - ${end} of ${
+          inventoryData.length
+        } results`;
+        }  
+        if (pageInfo) {
+          pageInfo.textContent = `Page ${currentPage} of ${Math.ceil(
+            inventoryData.length / cardsPerPage
+          )}`;
+        }
+      };
+
+      // Function to scroll to the top of the container
+      const scrollToTop = () => {
+        const topElement = document.getElementById("card-container"); // Cards container
+        topElement.classList.remove("grid");
+        topElement.classList.add("hidden");
+        // topElement.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        setTimeout(() => {
+          window.scrollBy({
+            top: -10000,
+            behavior: "smooth",
+          }),
+            5;
+        });
+        setTimeout(() => {
+          topElement.classList.remove("hidden");
+          topElement.classList.add("grid");
+        }, 100);
+      };
+
+      // Function to render pagination buttons
+      const renderPagination = () => {
+        if (paginationContainer) {
+          paginationContainer.innerHTML = "";
+        }
+        const totalPages = Math.ceil(inventoryData.length / cardsPerPage);
+        const half = Math.floor(maxVisiblePages / 2);
+
+        let startPage = Math.max(currentPage - half, 1);
+        let endPage = Math.min(startPage + maxVisiblePages - 1, totalPages);
+
+        if (endPage - startPage + 1 < maxVisiblePages) {
+          startPage = Math.max(endPage - maxVisiblePages + 1, 1);
+        }
+
+        // Previous Button
+        prevBtn && (prevBtn.disabled = currentPage === 1);
+        prevBtn && (prevBtn.className = `px-3 py-2 rounded-md ${
+          currentPage === 1
+            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+            : "bg-gray-300 text-gray-900 hover:bg-gray-300"
+        }`);
+        
+
+        // Next Button
+        nextBtn && (nextBtn.disabled = currentPage === totalPages);
+        nextBtn && (nextBtn.className = `px-3 py-2 rounded-md ${
+          currentPage === totalPages
+            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+            : "bg-gray-300 text-gray-900 hover:bg-gray-300"
+        }`);
+
+        for (let i = startPage; i <= endPage; i++) {
+          const button = document.createElement("button");
+          button.textContent = i;
+          button.className = `px-3 py-2 rounded-md ${
+            i === currentPage
+              ? "bg-orange-500 text-white"
+              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+          }`;
+
+          button.addEventListener("click", () => {
+            currentPage = i;
+            renderCards();
+            renderPagination();
+            scrollToTop();
+          });
+
+          paginationContainer && paginationContainer.appendChild(button);
+        }
+      };
+
+      // Navigation buttons
+      prevBtn && prevBtn.addEventListener("click", () => {
+        if (currentPage > 1) {
+          currentPage--;
+          renderCards();
+          renderPagination();
+          scrollToTop();
+        }
+      });
+
+      nextBtn && nextBtn.addEventListener("click", () => {
+        const totalPages = Math.ceil(inventoryData.length / cardsPerPage);
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderCards();
+          renderPagination();
+          scrollToTop();
+        }
+      });
+
+      // Initial Render
+      renderCards();
+      renderPagination();
+      window.addEventListener("resize", renderPagination);
+    </script>
+  </body>
+</html>

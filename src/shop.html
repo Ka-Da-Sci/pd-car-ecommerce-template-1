@@ -34,7 +34,7 @@
   <body>
     <section id="header" class="bg-[#FFFFFF] fixed z-10 inset-x-0">
       <div
-        class="header sm:container mx-auto flex flex-row gap-10 items-center justify-between h-[76px] px-4 py-0"
+        class="header sm:container mx-auto flex flex-row gap-10 items-center justify-between h-[60px] px-4 py-0"
       >
         <a href="./index.html" class="logo-brand-name flex items-center">
           <img
@@ -139,10 +139,10 @@
 
     <section class="relative overflow-x-hidden bg-[#1E1E1E]">
       <div
-        class="container mx-auto px-4 py-32 pb-2 sm:pt-36 sm:pb-14 flex gap-4 flex-col justify-center items-center"
+        class="container mx-auto px-4 py-20 pb-6 sm:pt-36 sm:pb-14 flex gap-4 flex-col justify-center items-center"
       >
         <div
-          class="flex gap-2 flex-col w-full max-w-[800px] items-center antialiased uppercase text-center text-[#FFFFFF] font-['Montserrat']"
+          class="flex gap-1 flex-col w-full max-w-[800px] items-center antialiased uppercase text-center text-[#FFFFFF] font-['Montserrat']"
         >
           <h1 class="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl">
             shop
@@ -208,10 +208,19 @@
           <div
             class="w-full flex flex-col items-center sm:items-start sm:px-4 gap-4 justify-between col-span-3"
           >
-            <div class="w-full flex flex-col-reverse sm:flex-row gap-4 items-center sm:items-start justify-between">
+            <div
+              class="w-full flex flex-col-reverse sm:flex-row gap-4 items-center sm:items-start justify-between"
+            >
               <div class="text-center mb-8">
-                <h1 class="text-sm sm:text-xl md:text-2xl antialiased font-bold font-['Montserrat'] text-[#1E1E1E]">COLLECTION</h1>
-                <p id="results-info" class="text-xl sm:text-sm antialiased font-normal font-['Montserrat'] text-[#767676]">
+                <h1
+                  class="text-sm sm:text-xl md:text-2xl antialiased font-bold font-['Montserrat'] text-[#1E1E1E]"
+                >
+                  COLLECTION
+                </h1>
+                <p
+                  id="results-info"
+                  class="text-xl sm:text-sm antialiased font-normal font-['Montserrat'] text-[#767676]"
+                >
                   Showing 1 - 9 of 10 results
                 </p>
               </div>
@@ -241,22 +250,27 @@
             </div>
 
             <!-- Pagination -->
-            <div class="flex justify-center items-center space-x-2 mt-8">
-              <button
-                id="prev-btn"
-                class="px-3 py-2 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300"
-              >
-                &lt;
-              </button>
-              <div id="pagination" class="flex space-x-2">
-                <!-- Pagination buttons will be generated here -->
+            <div class="w-full flex justify-between items-center mt-8">
+              <!-- Page Info (only visible on small screens) -->
+              <p id="page-info" class="sm:hidden text-gray-700"></p>
+              <!-- Pagination Controls -->
+              <div class="flex justify-center items-center space-x-2">
+                <button
+                  id="prev-btn"
+                  class="px-3 py-2 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300"
+                >
+                  &lt;
+                </button>
+                <div id="pagination" class="hidden sm:flex space-x-2">
+                  <!-- Pagination buttons will be generated here -->
+                </div>
+                <button
+                  id="next-btn"
+                  class="px-3 py-2 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300"
+                >
+                  &gt;
+                </button>
               </div>
-              <button
-                id="next-btn"
-                class="px-3 py-2 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300"
-              >
-                &gt;
-              </button>
             </div>
           </div>
         </div>
@@ -268,17 +282,23 @@
         class="container mx-auto my-10 flex gap-4 p-4 relative flex-col md:flex-row items-center justify-between bg-[linear-gradient(89.79deg,_rgba(14,_17,_23,_0.89)_31.58%,_rgba(0,_0,_0,_0.62)_59%,_rgba(14,_17,_23,_0.89)100%)] text-white rounded-xl overflow-hidden w-[90%] lg:max-w-5xl"
       >
         <!-- Text Section -->
-        <div class="w-full px-0 py-4 md:p-8 flex gap-4 justify-center items-center sm:items-start text-center sm:text-left flex-col">
+        <div
+          class="w-full px-0 py-4 md:p-8 flex gap-4 justify-center items-center sm:items-start text-center sm:text-left flex-col"
+        >
           <span
             class="w-max max-w-full bg-[#FF0000] hover:bg-orange-700 text-white text-xs md:text-sm font-['Montserrat'] font-bold uppercase antialiased px-3 py-1 rounded-full"
             >Best Seller</span
           >
-          <h2 class="text-base sm:text-xl md:text-2xl lg:text-4xl text-white font-['Montserrat'] font-bold uppercase mb-4">
+          <h2
+            class="text-base sm:text-xl md:text-2xl lg:text-4xl text-white font-['Montserrat'] font-bold uppercase mb-4"
+          >
             GET $1000 OFF YOUR FIRST ORDER
           </h2>
 
           <!-- Form Input -->
-          <form class="flex items-center sm:items-start p-1 gap-4 flex-col sm:flex-row w-full mt-4 border sm:border-solid border-none sm:border-[#FFFFFF] rounded-lg">
+          <form
+            class="flex items-center sm:items-start p-1 gap-4 flex-col sm:flex-row w-full mt-4 border sm:border-solid border-none sm:border-[#FFFFFF] rounded-lg"
+          >
             <input
               type="email"
               placeholder="Enter Email"
@@ -298,10 +318,10 @@
           class="relative rounded-3xl flex justify-center w-full h-full max-w-[638px] max-h-[408px]"
         >
           <img
-          class=" rounded-3xl w-auto h-auto max-w-full max-h-full object-cover"
+            class="rounded-3xl w-auto h-auto max-w-full max-h-full object-cover"
             src="./assets/images/view-3d-car.jpg"
-            alt="Promo Car" 
-          >
+            alt="Promo Car"
+          />
         </div>
       </div>
     </section>
@@ -530,7 +550,7 @@
           transmissionType: "auto",
           fuel: "gas",
           currencySymb: "$",
-          price: "73,090",
+          price: "83,990",
         },
         {
           image: "./assets/images/veh1.png",
@@ -541,7 +561,7 @@
           transmissionType: "auto",
           fuel: "gas",
           currencySymb: "$",
-          price: "52,090",
+          price: "12,090",
         },
         {
           image: "./assets/images/veh2.png",
@@ -552,7 +572,7 @@
           transmissionType: "auto",
           fuel: "gas",
           currencySymb: "$",
-          price: "54,050",
+          price: "74,050",
         },
         {
           image: "./assets/images/veh3.png",
@@ -641,7 +661,7 @@
           transmissionType: "auto",
           fuel: "gas",
           currencySymb: "$",
-          price: "54,050",
+          price: "94,750",
         },
         {
           image: "./assets/images/veh6.png",
@@ -708,7 +728,7 @@
           transmissionType: "auto",
           fuel: "gas",
           currencySymb: "$",
-          price: "73,090",
+          price: "23,090",
         },
         {
           image: "./assets/images/veh3.png",
@@ -719,7 +739,7 @@
           transmissionType: "auto",
           fuel: "gas",
           currencySymb: "$",
-          price: "52,090",
+          price: "62,090",
         },
         {
           image: "./assets/images/veh2.png",
@@ -730,7 +750,7 @@
           transmissionType: "auto",
           fuel: "gas",
           currencySymb: "$",
-          price: "54,050",
+          price: "4,050",
         },
         {
           image: "./assets/images/veh1.png",
@@ -797,7 +817,7 @@
           transmissionType: "auto",
           fuel: "gas",
           currencySymb: "$",
-          price: "73,090",
+          price: "33,090",
         },
         {
           image: "./assets/images/veh6.png",
@@ -808,7 +828,7 @@
           transmissionType: "auto",
           fuel: "gas",
           currencySymb: "$",
-          price: "52,090",
+          price: "82,090",
         },
         {
           image: "./assets/images/veh5.png",
@@ -819,7 +839,7 @@
           transmissionType: "auto",
           fuel: "gas",
           currencySymb: "$",
-          price: "54,050",
+          price: "50,050",
         },
         {
           image: "./assets/images/veh4.png",
@@ -886,7 +906,7 @@
           transmissionType: "auto",
           fuel: "gas",
           currencySymb: "$",
-          price: "73,090",
+          price: "73,990",
         },
         {
           image: "./assets/images/veh1.png",
@@ -897,7 +917,7 @@
           transmissionType: "auto",
           fuel: "gas",
           currencySymb: "$",
-          price: "52,090",
+          price: "92,090",
         },
         {
           image: "./assets/images/veh2.png",
@@ -908,7 +928,7 @@
           transmissionType: "auto",
           fuel: "gas",
           currencySymb: "$",
-          price: "54,050",
+          price: "51,050",
         },
         {
           image: "./assets/images/veh7.png",
@@ -975,7 +995,7 @@
           transmissionType: "auto",
           fuel: "gas",
           currencySymb: "$",
-          price: "73,090",
+          price: "53,090",
         },
         {
           image: "./assets/images/veh6.png",
@@ -986,7 +1006,7 @@
           transmissionType: "auto",
           fuel: "gas",
           currencySymb: "$",
-          price: "52,090",
+          price: "22,090",
         },
         {
           image: "./assets/images/veh5.png",
@@ -997,7 +1017,7 @@
           transmissionType: "auto",
           fuel: "gas",
           currencySymb: "$",
-          price: "54,050",
+          price: "84,050",
         },
         {
           image: "./assets/images/veh4.png",
@@ -1064,7 +1084,7 @@
           transmissionType: "auto",
           fuel: "gas",
           currencySymb: "$",
-          price: "73,090",
+          price: "43,000",
         },
         {
           image: "./assets/images/veh5.png",
@@ -1075,7 +1095,7 @@
           transmissionType: "auto",
           fuel: "gas",
           currencySymb: "$",
-          price: "52,090",
+          price: "52,490",
         },
         {
           image: "./assets/images/veh0.png",
@@ -1123,15 +1143,18 @@
         },
       ];
       const cardsPerPage = 8; // Number of cards per page
+      const maxVisiblePages = 5; // Maximum pagination buttons visible
       let currentPage = 1;
+
       const cardContainer = document.getElementById("card-container");
       const paginationContainer = document.getElementById("pagination");
       const resultsInfo = document.getElementById("results-info");
+      const pageInfo = document.getElementById("page-info");
       const prevBtn = document.getElementById("prev-btn");
       const nextBtn = document.getElementById("next-btn");
 
       // Function to render cards
-      function renderCards() {
+      const renderCards = () => {
         cardContainer.innerHTML = "";
         const start = (currentPage - 1) * cardsPerPage;
         const end = Math.min(start + cardsPerPage, inventoryData.length);
@@ -1139,8 +1162,8 @@
         for (let i = start; i < end; i++) {
           const car = inventoryData[i];
           const card = `
-          <div class="item-container items-center flex gap-2 flex-col border border-solid border-[#1E1E1E4D] hover:[box-shadow:0px_4px_30px_0px_#00000033] rounded-xl py-3 px-6">
-            <div class="flex justify-center h-full w-full max-w-[259px] max-h-[193px] py-7 px-1">
+          <a href="./product-details.html" class="item-container items-center flex gap-2 flex-col border border-solid border-[#1E1E1E4D] hover:[box-shadow:0px_4px_30px_0px_#00000033] rounded-xl py-3 px-6">
+            <div class="flex justify-center h-full w-full max-w-[259px] max-h-[193px] py-7 px-1 overflow-hidden">
               <img class="h-auto w-auto max-w-full max-h-full" src="${car.image}" alt="car">
             </div>
             <p class="item-name font-bold font-['poppins'] text-sm md:text-lg text-center sm:text-left capitalize text-[#767676]">
@@ -1202,7 +1225,7 @@
               </div>
             </div>
             <div></div>
-          </div>
+          </a>
         `;
           cardContainer.innerHTML += card;
         }
@@ -1210,14 +1233,61 @@
         resultsInfo.textContent = `Showing ${start + 1} - ${end} of ${
           inventoryData.length
         } results`;
+        pageInfo.textContent = `Page ${currentPage} of ${Math.ceil(
+          inventoryData.length / cardsPerPage
+        )}`;
+      };
+
+      // Function to scroll to the top of the container
+      const scrollToTop = () => {
+        const topElement = document.getElementById("card-container"); // Cards container
+        topElement.classList.remove('grid');
+        topElement.classList.add('hidden');
+        // topElement.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        setTimeout(() => {
+          window.scrollBy({
+            top: -10000,
+            behavior: "smooth",
+          }),
+            5;
+        });
+        setTimeout(() => {
+          topElement.classList.remove('hidden');
+          topElement.classList.add('grid');
+        }, 100);
       }
 
       // Function to render pagination buttons
-      function renderPagination() {
+      const renderPagination = () => {
         paginationContainer.innerHTML = "";
         const totalPages = Math.ceil(inventoryData.length / cardsPerPage);
+        const half = Math.floor(maxVisiblePages / 2);
 
-        for (let i = 1; i <= totalPages; i++) {
+        let startPage = Math.max(currentPage - half, 1);
+        let endPage = Math.min(startPage + maxVisiblePages - 1, totalPages);
+
+        if (endPage - startPage + 1 < maxVisiblePages) {
+          startPage = Math.max(endPage - maxVisiblePages + 1, 1);
+        }
+
+        // Previous Button
+        prevBtn.disabled = currentPage === 1;
+        prevBtn.className = `px-3 py-2 rounded-md ${
+          currentPage === 1
+            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+            : "bg-gray-300 text-gray-900 hover:bg-gray-300"
+        }`;
+
+        // Next Button
+        nextBtn.disabled = currentPage === totalPages;
+        nextBtn.className = `px-3 py-2 rounded-md ${
+          currentPage === totalPages
+            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+            : "bg-gray-300 text-gray-900 hover:bg-gray-300"
+        }`;
+
+        for (let i = startPage; i <= endPage; i++) {
           const button = document.createElement("button");
           button.textContent = i;
           button.className = `px-3 py-2 rounded-md ${
@@ -1230,11 +1300,12 @@
             currentPage = i;
             renderCards();
             renderPagination();
+            scrollToTop();
           });
 
           paginationContainer.appendChild(button);
         }
-      }
+      };
 
       // Navigation buttons
       prevBtn.addEventListener("click", () => {
@@ -1242,6 +1313,7 @@
           currentPage--;
           renderCards();
           renderPagination();
+          scrollToTop();
         }
       });
 
@@ -1251,12 +1323,14 @@
           currentPage++;
           renderCards();
           renderPagination();
+          scrollToTop();
         }
       });
 
       // Initial Render
       renderCards();
       renderPagination();
+      window.addEventListener("resize", renderPagination);
     </script>
   </body>
 </html>
