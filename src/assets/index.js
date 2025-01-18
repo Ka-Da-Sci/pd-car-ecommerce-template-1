@@ -1,7 +1,49 @@
-function submitSubscribe(event) {
-  event.preventDefault();
-  console.log("hello");
+import { defaultInventoryData, renderCards, getClickedProductId, targetItem } from "./utilities-js.js";
+
+console.log(defaultInventoryData);
+
+const renderHomePageProducts = () => {
+  const parentIndexCard = document.getElementById("index-card");
+  if (parentIndexCard) {
+    const itemsNumPerPage = 8;
+    const currentPage = 1;
+    renderCards({dataToRender: defaultInventoryData.slice(0, itemsNumPerPage), currentPageNum: currentPage, cardsPerPageNum: itemsNumPerPage});
+  }
+};
+
+renderHomePageProducts();
+
+const productsSection = document.getElementById("card-container");
+if (productsSection) {
+  productsSection.addEventListener("click", async (event) => {
+    event.preventDefault();
+    const productsSectionLinks = Array.from(
+      productsSection.getElementsByTagName("a")
+    );
+    const target = event.target;
+    for (const link of productsSectionLinks) {
+      if (link.contains(target)) {
+        console.log(link.id);
+        sessionStorage.setItem("clickedProductId", link.id);
+        await new Promise((resolve) => setTimeout(resolve, 100)); // Delay to ensure sessionStorage is updated
+        window.location.href = link.href; // Redirect to the clicked link
+        break;
+      }
+    }
+  });
 }
+
+// const targetProduct = targetItem();
+// console.log(targetProduct);
+
+
+// // Clear/remove item from session storage
+// const clearStorageButton = document.getElementById('clear-storage-btn');
+// if (clearStorageButton) {
+//   clearStorageButton.addEventListener('click', () => {
+//     sessionStorage.removeItem('clickedProductId');
+//   });
+// }
 
 // Manages Mobile Menu Toggles
 const mobileMenuToggle = () => {
@@ -33,7 +75,7 @@ const mobileMenuToggle = () => {
     const innerMobileMenu = document.querySelector(".nav-ul");
     const mobileMenuToggle = document.querySelector(".mobile-toggle");
     const faq = document.querySelectorAll(".question");
-  
+
     if (
       !mobileMenu.contains(event.target) &&
       !innerMobileMenu.contains(event.target) &&
@@ -47,7 +89,7 @@ const mobileMenuToggle = () => {
       document.querySelector(".icon-close-menu").classList.toggle("hidden");
     }
   });
-}
+};
 
 mobileMenuToggle();
 
@@ -131,7 +173,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // EMAIL FORM INPUTS VALIDATION FUNCTION
 const subscribeBtn = document.getElementById("subscribe-btn");
 if (subscribeBtn) {
-  console.log(submitSubscribe);
   subscribeBtn.addEventListener("click", (event) => {
     console.log("Triggered");
     const emailInput = document.getElementById("email");
@@ -157,7 +198,6 @@ if (subscribeBtn) {
 document.addEventListener("click", (event) => {
   const faq = document.querySelectorAll(".question");
 
-  console.log("faq");
   for (let num = 0; num < faq.length; num++) {
     if (faq[num].contains(event.target)) {
       let targetAns = document.querySelector("#answer" + num);
