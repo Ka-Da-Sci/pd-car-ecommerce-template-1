@@ -254,7 +254,8 @@
               <p
                 class="item-price font-bold font-['poppins'] text-left antialiased text-[#1E1E1E] text-sm sm:text-base md:text-lg lg:text-xl"
               >
-                <span class="item-price-symb">$</span><span class="item-price-num">83,990</span>
+                <span class="item-price-symb">$</span
+                ><span class="item-price-num">83,990</span>
               </p>
             </div>
             <div
@@ -277,7 +278,7 @@
                     class="quantity-selector flex items-center p-2 rounded bg-[#E9E9E9] text-[#000000]"
                   >
                     <button
-                      onclick="updateQuantity('decrease')"
+                      id="minus"
                       class="decrease bg-gray-200 text-gray-700 font-bold px-4 whitespace-nowrap uppercase font-['Montserrat'] text-sm sm:text-xl"
                     >
                       -
@@ -291,14 +292,14 @@
                       class="w-12 outline-none text-center bg-transparent whitespace-nowrap uppercase font-semibold font-['Montserrat'] text-xs sm:text-sm"
                     />
                     <button
-                      onclick="updateQuantity('increase')"
+                      id="plus"
                       class="increase bg-gray-200 text-gray-700 font-bold px-4 whitespace-nowrap uppercase font-['Montserrat'] text-sm sm:text-xl"
                     >
                       +
                     </button>
                   </div>
                   <button
-                    class="bg-orange-500 text-white whitespace-nowrap uppercase font-semibold font-['Montserrat'] text-xs sm:text-sm p-2 pt-[10px] pb-[10px] rounded"
+                    class="add-to-cart bg-orange-500 text-white whitespace-nowrap uppercase font-semibold font-['Montserrat'] text-xs sm:text-sm p-2 pt-[10px] pb-[10px] rounded"
                   >
                     ADD TO CART
                   </button>
@@ -942,7 +943,7 @@
 
     <script type="module" src="./assets/index.js"></script>
 
-    <script type="module" src="./assets/product-details.js">
-    </script>
+    <script type="module" src="./assets/product-details.js"></script>
+    <script type="module" src="./assets/cart.js"></script>
   </body>
 </html>

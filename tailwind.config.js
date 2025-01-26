@@ -21,6 +21,8 @@ module.exports = {
     "item-price",
     "xsm",
     "leaflet-popup-content",
+    "modal-content-wrapper",
+    "modal-content",
   ],
   theme: {
     extend: {

@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (productDetailsContainer) {
     const targetProduct = targetItem();
-    console.log(targetProduct);
     itemImage.src = targetProduct.image;
     itemName.textContent = targetProduct.name;
     itemPrice.textContent = targetProduct.price;

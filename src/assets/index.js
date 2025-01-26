@@ -1,6 +1,6 @@
 import { defaultInventoryData, renderCards, getClickedProductId, targetItem } from "./utilities-js.js";
 
-console.log(defaultInventoryData);
+// console.log(defaultInventoryData);
 
 const renderHomePageProducts = () => {
   const parentIndexCard = document.getElementById("index-card");

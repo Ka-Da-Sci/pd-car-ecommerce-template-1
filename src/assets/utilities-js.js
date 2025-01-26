@@ -771,8 +771,12 @@ const pageInfo = document.getElementById("page-info");
 // const cardsPerPageNum = 8; // Number of cards per page
 // let currentPageNum = 1;
 
-export const renderCards = ({dataToRender, currentPageNum, cardsPerPageNum}) => {
-  console.log({dataToRender, currentPageNum, cardsPerPageNum});
+export const renderCards = ({
+  dataToRender,
+  currentPageNum,
+  cardsPerPageNum,
+}) => {
+  console.log({ dataToRender, currentPageNum, cardsPerPageNum });
   const start = (currentPageNum - 1) * cardsPerPageNum;
   const end = Math.min(start + cardsPerPageNum, dataToRender.length);
   cardContainer.innerHTML = "";
@@ -784,7 +788,7 @@ export const renderCards = ({dataToRender, currentPageNum, cardsPerPageNum}) => 
         <div class="flex justify-center h-full w-full max-w-[259px] max-h-[193px] py-7 px-1 overflow-hidden">
           <img class="h-auto w-auto max-w-full max-h-full" src="${car.image}" alt="car">
         </div>
-        <p class="item-name font-bold font-['poppins'] text-sm md:text-lg text-center sm:text-left capitalize text-[#767676]">
+        <p class="item-name antialiased font-bold font-['poppins'] text-sm md:text-lg text-center sm:text-left capitalize text-[#767676]">
           ${car.name}
         </p>
         <div class="flex gap-2 items-center flex-col sm:flex-row">
@@ -805,7 +809,7 @@ export const renderCards = ({dataToRender, currentPageNum, cardsPerPageNum}) => 
             <div class="flex justify-center w-full h-full max-w-4 max-h-4">
               <img class="w-auto h-auto max-w-full max-h-full" src="./assets/images/seat-icon.svg" alt="seat-icon">
             </div>
-            <p class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden">
+            <p class="text-[#FFFFFF] antialiased text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden">
               ${car.seatCount} Seats
             </p>
           </div>
@@ -813,7 +817,7 @@ export const renderCards = ({dataToRender, currentPageNum, cardsPerPageNum}) => 
             <div class="flex justify-center w-full h-full max-w-4 max-h-4">
               <img class="w-auto h-auto max-w-full max-h-full" src="./assets/images/auto-icon.svg" alt="seat-icon">
             </div>
-            <p class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden">
+            <p class="text-[#FFFFFF] antialiased text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden">
               ${car.transmissionType}
             </p>
           </div>
@@ -821,7 +825,7 @@ export const renderCards = ({dataToRender, currentPageNum, cardsPerPageNum}) => 
             <div class="flex justify-center w-full h-full max-w-4 max-h-4">
               <img class="w-auto h-auto max-w-full max-h-full" src="./assets/images/fuel-icon.svg" alt="fuel-icon">
             </div>
-            <p class="text-[#FFFFFF] text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden">
+            <p class="text-[#FFFFFF] antialiased text-xs text-left font-normal font-['poppins'] capitalize whitespace-nowrap overflow-hidden">
               ${car.fuel}
             </p>
           </div>
@@ -831,7 +835,7 @@ export const renderCards = ({dataToRender, currentPageNum, cardsPerPageNum}) => 
             <span>${car.currencySymb}</span><span>${car.price}</span>
           </p>
           <div class="flex justify-center items-center gap-2">
-            <button class="flex justify-center w-full h-full max-w-6 max-h-6">
+            <button class="add-to-cart flex justify-center w-full h-full max-w-6 max-h-6">
               <img src="./assets/images/like.svg" alt="wishlist-icon">
             </button>
             <button class="flex justify-center w-full h-full max-w-6 max-h-6">
@@ -862,14 +866,51 @@ export const getClickedProductId = () => {
   return sessionStorage.getItem("clickedProductId");
 };
 
-export const targetItem = () => {
-  const clickedProductId = getClickedProductId();
-  if (clickedProductId) {
+export const targetItem = (targetProuctId) => {
+  const targetId = targetProuctId || getClickedProductId();
+  if (targetId) {
     const findProductById = (id) => {
       return defaultInventoryData.find((product) => product.id === id);
     };
-  
-    const clickedProduct = findProductById(clickedProductId);
-    return clickedProduct;
+
+    const targetProduct = findProductById(targetId);
+    return targetProduct;
   }
-}
+};
+
+export const cartItemContainer = (cartItem, cartItemsQty, collectionType) => {
+  console.log(cartItemsQty);
+  return `
+                      <img class="remove  w-4 cursor-pointer" id="remove" src="./assets/images/remove.png" alt="">
+                      <div class="item-image w-full h-full max-w-8 max-h-8 flex-[0_0_2rem] gap-2 flex justify-center">
+                          <img class="product-image w-full h-full" id="product-image" src="${
+                            cartItem.image
+                          }" alt="">
+                      </div>
+                      <div class="product-name text-left min-w-28 w-28 flex flex-col gap-2">
+                          <h2 class="name antialiased text-xs font-medium font-['Kumbh_Sans'] w-full whitespace-nowrap overflow-hidden text-ellipsis sm:text-base text-black">${
+                            cartItem.name
+                          }</h2>
+                            ${
+                              cartItem.collectionType
+                                ? `<p class="vendor antialiased text-[8px] font-light w-20 whitespace-nowrap overflow-hidden text-ellipsis">${cartItem.collectionType}</p>`
+                                : ""
+                            }
+                      </div>
+                      <div class="quantity-selector flex flex-[0_0_120px] py-0 px-1 text-center justify-between rounded-2xl">
+                          <button class="decrement bg-[#888] border-none cursor-pointer aspect-square rounded-full h-3 flex items-center justify-center">
+                              <img class="w-[7px]" src="./assets/images/minus.png" alt="decrement-icon">
+                          </button>
+                          <input class="appearance-none antialiased border-none outline-none text-center w-full max-w-20 text-xs" type="number" id="quantity" value="${cartItemsQty}" min="1">
+                          <button class="increment bg-[#888] border-none cursor-pointer aspect-square rounded-full h-3 flex items-center justify-center">
+                              <img class="w-[7px]" src="./assets/images/plus.png" alt="increment-icon">
+                          </button>
+                      </div>
+                      <div class="each-item-price w-28 flex justify-start text-xs font-medium">
+                        <p class="unit-price antialiased hidden">${
+                          cartItem.price
+                        }</p>
+                        <p>$<span class="item-total-price antialiased"></span></p>
+                      </div>
+                  `;
+};

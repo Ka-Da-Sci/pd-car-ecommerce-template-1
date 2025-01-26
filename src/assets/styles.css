@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-  body, html {
+
+  body,
+  html {
     display: relative;
     overflow-x: hidden;
   }
@@ -14,15 +16,16 @@
   .animate-image1 .animation-image {
     @apply animate-fall-bounce;
   }
-  
-  .animate-image2 .animation-image,   .animate-image3 .animation-image {
+
+  .animate-image2 .animation-image,
+  .animate-image3 .animation-image {
     @apply animate-zoom-rev;
   }
-  
+
   .dynamic-hr::before {
     @apply animate-scaleUpOne;
   }
-  
+
   .dynamic-hr::after {
     @apply animate-scaleUpTwo;
   }
@@ -46,41 +49,54 @@
   .scrolling-ads-4 {
     @apply animate-scaleUpThreeFour;
   }
-  
+
   .animate-marquee-container .animation-marquee {
     @apply animate-marquee;
   }
 
-  .animate-marquee-container-2 .animation-marquee {       
+  .animate-marquee-container-2 .animation-marquee {
     @apply animate-marquee;
     animation-delay: 10s;
     animation-fill-mode: backwards;
   }
-  
-  .animated-text-one{
+
+  .animated-text-one {
     @apply animate-slideUpDown;
   }
-  
-  .animated-text-two{
+
+  .animated-text-two {
     @apply animate-slideDownUp;
   }
 }
 
 @layer utilities {
-  .item-container:hover .item-name, .item-container:hover .item-price{
+
+  .item-container:hover .item-name,
+  .item-container:hover .item-price {
     color: #FF4500;
   }
 
   .leaflet-popup-content {
-    max-width: 200px; /* Adjust to fit within smaller screens */
+    max-width: 200px;
+    /* Adjust to fit within smaller screens */
     word-wrap: break-word;
-    font-size: 0.875rem; /* Tailwind equivalent of text-sm */
-    line-height: 1.25rem; /* Tailwind equivalent of leading-5 */
+    font-size: 0.875rem;
+    /* Tailwind equivalent of text-sm */
+    line-height: 1.25rem;
+    /* Tailwind equivalent of leading-5 */
   }
+
+  .modal-content-wrapper,
+  .modal-content {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
 
   @media (min-width: 768px) {
     .leaflet-popup-content {
-      max-width: 400px; /* Limit width for larger screens */
+      max-width: 400px;
+      /* Limit width for larger screens */
     }
   }
 }
