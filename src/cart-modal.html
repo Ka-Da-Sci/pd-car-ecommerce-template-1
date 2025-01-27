@@ -1,6 +1,6 @@
 <section id="checkout-modal" class="checkout-modal hidden fixed z-40 left-0 top-0 w-full h-full overflow-hidden bg-[rgba(0,_0,_0,_0.4)]">
 <!-- <div class="modal-content-wrapper container mx-auto bg-[#fefefe] p-4 relative top-1/2 transform -translate-y-1/2 w-full max-w-[min(86ch,calc(100%-1rem))] flex justify-between rounded-2xl h-[70vh]"> -->
-    <div class="modal-content-wrapper container m-auto bg-[#fefefe] p-4 relative w-full max-w-[700px] flex justify-between rounded-2xl h-[70vh] will-change-[transform]">        
+    <div class="modal-content-wrapper container m-auto bg-[#fefefe] p-4 relative w-[90%] md:w-full max-w-[700px] flex justify-between rounded-2xl h-[70vh] will-change-[transform]">        
         <img src="./assets/images/close-circle-svgrepo-com (1).png" alt="" class="close-modal absolute w-6 top-0 right-0 transform -translate-x-[12.5%] -translate-y-[120%] rotate-90 cursor-pointer transition-all duration-500 ease-in-out hover:-translate-x-[12.5%] hover:-translate-y-full hover:-rotate-[270deg]" id="close-modal">
         <form class="modal-content container bg-[#fefefe] m-auto pt-4 pb-4 rounded-2xl fixed inset-0 top-[2.5%] left-0  w-[95%] grid grid-cols-1 md:grid-cols-2 gap-4 justify-between items-center md:items-start overflow-x-hidden overflow-y-auto h-[95%] [scrollbar-width:thin] scrollbar-thumb-[#888] scrollbar-track-[#ffffff]">
             <div class="product-details relative h-full flex flex-col gap-6">
@@ -159,32 +159,48 @@
 
 <section id="contactVendorSection">
     <div id="contactVendorModal" class="contactVendorModal hidden fixed z-30 left-0 top-0 w-full h-full overflow-hidden bg-[rgba(0,_0,_0,_0.4)]">
-        <div class="modal-content2 bg-[#fefefe] m-auto p-4 border border-solid border-[#888] rounded-2xl text-center relative w-[70%] md:w-[60%] max-w-[500px] h-auto">
+        <div class="modal-content2 bg-[#fefefe] m-auto p-2 sm:p-4 border border-solid border-[#888] rounded-2xl text-center relative w-[70%] md:w-[60%] max-w-[500px] h-auto">
             <div class="modal-header flex justify-between items-center mb-8">
                 <h2 class="font-['Space_Grotesk',_sans-serif] text-sm md:text-base font-semibold text-[#333333] antialiased">Vendor Contact Information</h2>
                 <img class="close absolute right-8 opacity-70 w-4 md:w-6 cursor-pointer" id="closeContactVendor" src="./assets/images/close-svgrepo-com.png" alt="">
             </div>
-            <div class="contact-vendor-modal-body">
-                <ul class="list-none">
+            <div class="contact-vendor-modal-body h-full max-h-[70vh] overflow-auto [scrollbar-width:thin]">
+                <ul class="list-none flex flex-col gap-4 items-center">
                     <li class="antialiased font-['Kumbh_Sans',_sans-serif] mb-4">
-                        <a class="antialiased font-['Kumbh_Sans',_sans-serif] text-sm md:text-base no-underline flex gap-4 items-center text-[#408bfc]" href=""><img class="w-8" src="./assets/images/phone-svgrepo-com.png" alt=""><span class="font-['Kumbh_Sans',_sans-serif]">+44-707-334-91</span></a>
+                        <a class="antialiased font-['Kumbh_Sans',_sans-serif] text-sm md:text-base no-underline flex flex-col sm:flex-row gap-2 sm:gap-4 items-center text-[#408bfc]" href="tel:+4470733491">
+                            <img class="w-8" src="./assets/images/phone-svgrepo-com.png" alt="">
+                            <span class="font-['Kumbh_Sans',_sans-serif]">+44-707-334-91</span>
+                        </a>
                     </li>
                     <li class="font-['Kumbh_Sans',_sans-serif] mb-4">
-                        <a class="antialiased font-['Kumbh_Sans',_sans-serif] text-sm md:text-base no-underline flex gap-4 items-center text-[#408bfc]" href=""> <im class="w-8"g src="./assets/images/gmail-svgrepo-com.png" alt=""><span class="font-['Kumbh_Sans',_sans-serif]">theluxe@gmail.com</span></a>
+                        <a class="antialiased font-['Kumbh_Sans',_sans-serif] text-sm md:text-base no-underline flex flex-col sm:flex-row gap-2 sm:gap-4 items-center text-[#408bfc]" href="mailto:theluxe@gmail.com">
+                            <img class="w-8" src="./assets/images/gmail-svgrepo-com.png" alt="">
+                            <span class="font-['Kumbh_Sans',_sans-serif]">theluxe@gmail.com</span>
+                        </a>
                     </li>
                     <li class="antialiased font-['Kumbh_Sans',_sans-serif] mb-4">
-                        <a class="antialiased font-['Kumbh_Sans',_sans-serif] text-sm md:text-base no-underline flex gap-4 items-center text-[#408bfc]" href=""><img class="w-8" src="./assets/images/location-pin-svgrepo-com.png" alt=""><span class="font-['Kumbh_Sans',_sans-serif]">Block 8/9 White Heart
-                                Lane, London Uk</span></a>
+                        <a class="antialiased font-['Kumbh_Sans',_sans-serif] text-sm md:text-base no-underline flex flex-col sm:flex-row gap-2 sm:gap-4 items-center text-[#408bfc]" href="https://www.google.com/maps?q=Block+8/9+White+Heart+Lane,+London+Uk">
+                            <img class="w-8" src="./assets/images/location-pin-svgrepo-com.png" alt="">
+                            <span class="font-['Kumbh_Sans',_sans-serif]">Block 8/9 White Heart Lane, London Uk</span>
+                        </a>
                     </li>
                     <li class="antialiased font-['Kumbh_Sans',_sans-serif] mb-4">
-                        <a class="antialiased font-['Kumbh_Sans',_sans-serif] text-sm md:text-base no-underline flex gap-4 items-center text-[#408bfc]" href=""><img class="w-8" src="./assets/images/whatsapp-color-svgrepo-com (1).png"
-                                alt=""><span class="font-['Kumbh_Sans',_sans-serif]">Whatsapp</span></a>
+                        <a class="antialiased font-['Kumbh_Sans',_sans-serif] text-sm md:text-base no-underline flex flex-col sm:flex-row gap-2 sm:gap-4 items-center text-[#408bfc]" href="https://wa.me/4470733491>
+                            <img class="w-8" src="./assets/images/whatsapp-color-svgrepo-com (1).png" alt="">
+                            <span class="font-['Kumbh_Sans',_sans-serif]">Whatsapp</span>
+                        </a>
                     </li>
                     <li class="antialiased font-['Kumbh_Sans',_sans-serif] mb-4">
-                        <a class="antialiased font-['Kumbh_Sans',_sans-serif] text-sm md:text-base no-underline flex gap-4 items-center text-[#408bfc]" href=""><img class="w-8" src="./assets/images/instagram-1-svgrepo-com.png" alt=""><span class="font-['Kumbh_Sans',_sans-serif]">Instagram</span></a>
+                        <a class="antialiased font-['Kumbh_Sans',_sans-serif] text-sm md:text-base no-underline flex flex-col sm:flex-row gap-2 sm:gap-4 items-center text-[#408bfc]" href="./error404.html">
+                            <img class="w-8" src="./assets/images/instagram-1-svgrepo-com.png" alt="">
+                            <span class="font-['Kumbh_Sans',_sans-serif]">Instagram</span>
+                        </a>
                     </li>
                     <li class="antialiased font-['Kumbh_Sans',_sans-serif] mb-4">
-                        <a class="antialiased font-['Kumbh_Sans',_sans-serif] text-sm md:text-base no-underline flex gap-4 items-center text-[#408bfc]" href=""><img class="w-8" src="./assets/images/ri--twitter-x-fill (1).png" alt=""><span class="font-['Kumbh_Sans',_sans-serif]">Twitter</span></a>
+                        <a class="antialiased font-['Kumbh_Sans',_sans-serif] text-sm md:text-base no-underline flex flex-col sm:flex-row gap-2 sm:gap-4 items-center text-[#408bfc]" href="./error404.html">
+                            <img class="w-8" src="./assets/images/ri--twitter-x-fill (1).png" alt="">
+                            <span class="font-['Kumbh_Sans',_sans-serif]">Twitter</span>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -239,7 +255,7 @@
                         <path fill="currentColor"
                             d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06z" />
                     </svg><span class="font-['Kumbh_Sans',_sans-serif] antialiased">Download as PDF</span></button>
-                <button class="alt font-['Kumbh_Sans',_sans-serif] text-sm md:text-base w-[70%] h-12 rounded text-[#408bfc] bg-white hover:text-[#ffffff] hover:bg-[#408bfc] border border-solid border-[#408bfc] cursor-pointer mb-2 transition-all duration-300 ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                <button class="alt font-['Kumbh_Sans',_sans-serif] text-sm md:text-base w-[70%] h-12 rounded bg-[#408bfc] text-white hover:bg-[#ffffff] hover:text-[#408bfc] border border-solid border-[#408bfc] cursor-pointer mb-2 transition-all duration-300 ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                         viewBox="0 0 16 16">
                         <path fill="currentColor"
                             d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z" />
