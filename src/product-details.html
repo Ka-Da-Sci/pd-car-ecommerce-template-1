@@ -945,5 +945,26 @@
 
     <script type="module" src="./assets/product-details.js"></script>
     <script type="module" src="./assets/cart.js"></script>
+    <script>
+      const shareProduct = () => {
+        const productName = document.querySelector(".item-name").textContent;
+        const productPrice = document.querySelector(".item-price").textContent;
+        const productDescription = document.querySelector("h1").textContent;
+        const shareData = {
+          title: productName,
+          text: `${productDescription} - ${productPrice}`,
+          url: window.location.href,
+        };
+
+        if (navigator.share) {
+          navigator
+            .share(shareData)
+            // .then(() => console.log('Product shared successfully'))
+            .catch((error) => console.error("Error sharing product:", error));
+        } else {
+          alert("Web Share API is not supported in your browser.");
+        }
+      };
+    </script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 // Data for cards
-import { defaultInventoryData, renderCards } from "./utilities-js.js";
+import { defaultInventoryData, cartModalProtocol, renderCards, addToCartElemHandler } from "./utilities-js.js";
 
 let inventoryData = [...defaultInventoryData];
 const cardsPerPage = 8; // Number of cards per page
@@ -82,8 +82,11 @@ const renderPagination = (data) => {
       scrollToTop();
     });
 
+    addToCartElemHandler();
+    
     paginationContainer.appendChild(button);
   }
+  cartModalProtocol();
 };
 
 const sortedShopItemsData = () => {

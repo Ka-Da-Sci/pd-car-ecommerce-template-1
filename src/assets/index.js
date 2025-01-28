@@ -1,4 +1,10 @@
-import { defaultInventoryData, renderCards, getClickedProductId, targetItem } from "./utilities-js.js";
+import {
+  defaultInventoryData,
+  renderCards,
+  updateQuantityHandler,
+  getClickedProductId,
+  targetItem,
+} from "./utilities-js.js";
 
 // console.log(defaultInventoryData);
 
@@ -7,11 +13,16 @@ const renderHomePageProducts = () => {
   if (parentIndexCard) {
     const itemsNumPerPage = 8;
     const currentPage = 1;
-    renderCards({dataToRender: defaultInventoryData.slice(0, itemsNumPerPage), currentPageNum: currentPage, cardsPerPageNum: itemsNumPerPage});
+    renderCards({
+      dataToRender: defaultInventoryData.slice(0, itemsNumPerPage),
+      currentPageNum: currentPage,
+      cardsPerPageNum: itemsNumPerPage,
+    });
   }
 };
 
 renderHomePageProducts();
+
 
 const productsSection = document.getElementById("card-container");
 if (productsSection) {
@@ -33,17 +44,6 @@ if (productsSection) {
   });
 }
 
-// const targetProduct = targetItem();
-// console.log(targetProduct);
-
-
-// // Clear/remove item from session storage
-// const clearStorageButton = document.getElementById('clear-storage-btn');
-// if (clearStorageButton) {
-//   clearStorageButton.addEventListener('click', () => {
-//     sessionStorage.removeItem('clickedProductId');
-//   });
-// }
 
 // Manages Mobile Menu Toggles
 const mobileMenuToggle = () => {
@@ -168,6 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   setInterval(animateHeroImages, 3900);
   animateHeroImages();
+
 });
 
 // EMAIL FORM INPUTS VALIDATION FUNCTION
