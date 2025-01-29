@@ -1,3 +1,9 @@
+import {
+  cartModalProtocol,
+  productItemContainerElemHandler,
+} from "./utilities-js.js";
+
+
 // Fetch cart modal and insert across the relevant pages.
 document.addEventListener("DOMContentLoaded", function () {
   fetch("cart-modal.html")
@@ -13,15 +19,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-import {
-  cartModalProtocol,
-  updateQuantityHandler,
-  cartItemContainer,
-  getClickedProductId,
-  targetItem,
-  addToCartElemHandler,
-} from "./utilities-js.js";
 
-
-
-addToCartElemHandler();
+productItemContainerElemHandler();

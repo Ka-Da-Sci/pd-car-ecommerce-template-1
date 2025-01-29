@@ -1,5 +1,12 @@
-// Data for cards
-import { defaultInventoryData, cartModalProtocol, renderCards, addToCartElemHandler } from "./utilities-js.js";
+import {
+  defaultInventoryData,
+  cartModalProtocol,
+  renderCards,
+  productItemContainerElemHandler,
+} from "./utilities-js.js";
+
+// const uniqueInventoryData = Array.from(new Set(defaultInventoryData.map(item => JSON.stringify(item)))).map(item => JSON.parse(item));
+// console.log(defaultInventoryData);
 
 let inventoryData = [...defaultInventoryData];
 const cardsPerPage = 8; // Number of cards per page
@@ -82,11 +89,25 @@ const renderPagination = (data) => {
       scrollToTop();
     });
 
-    addToCartElemHandler();
-    
+    productItemContainerElemHandler();
+
     paginationContainer.appendChild(button);
   }
-  cartModalProtocol();
+
+
+  if (currentPage > 1){
+    fetch("cart-modal.html")
+      .then((response) => response.text())
+      .then((data) => {
+        const modalSuperContainer = document.createElement("div");
+  
+        modalSuperContainer.classList.add("bg-white", "relative");
+        modalSuperContainer.setAttribute("id", "modal");
+        modalSuperContainer.innerHTML = data;
+        document.body.appendChild(modalSuperContainer);
+        cartModalProtocol();
+      });
+  }
 };
 
 const sortedShopItemsData = () => {
@@ -109,7 +130,7 @@ const sortedShopItemsData = () => {
   }
 
   function sortByReviewsHighToLow(a, b) {
-    return cleanNumber(b.rewsNum) - cleanNumber(a.reviewsNum);
+    return cleanNumber(b.reviewsNum) - cleanNumber(a.reviewsNum);
   }
 
   function sortByNewest(a, b) {
@@ -206,6 +227,7 @@ window.addEventListener("resize", () => renderPagination(inventoryData));
 const toggleCategoryBtn = document.querySelector(".toggle-cat-btn");
 const categoriesList = document.querySelector(".categories-list");
 const categoryButtons = document.querySelectorAll(".category-btn");
+let shopSearchTextInput = document.getElementById('shop-search-input');
 
 const resetCategoryButtonsTextColor = (btns) => {
   btns.forEach((btn) => {
@@ -268,22 +290,31 @@ categoryButtons.forEach((button) => {
   });
 });
 
-const shopSearchButtons = document.querySelector(".shop-search-btn");
-const shopSearchTextInput = document.getElementById("shop-search-input");
+const shopSearchButtons = document.querySelectorAll(".shop-search-btn");
+const shopNavSearchTrigger = document.querySelector(".shop-nav-search-trigger");
+const shopNavSearch = document.querySelector(".shop-nav-search");
 const shopPaginationElems = document.getElementById("shop-pagination");
 const shopSortSelect = document.querySelector(".shop-sort-select");
 
-shopSearchButtons.addEventListener("click", () => {
+shopSearchButtons.forEach(button => button.addEventListener("click", (event) => {
   currentPage = 1;
   shopSortSelect.value = "Default";
   if (!categoriesList.classList.contains("hidden")) {
     categoriesList.classList.add("hidden");
   }
+  shopSearchTextInput = event.target.closest('div').querySelector('input');
   const itemName = shopSearchTextInput.value.trim().toLowerCase();
+
+  document.querySelectorAll('.shop-search-input').forEach(input => {
+    if (input !== shopSearchTextInput) {
+      input.value = "";
+    }
+  })
   itemName &&
     (inventoryData = defaultInventoryData.filter(
       (item) => item.name.toLowerCase() === itemName
     ));
+  itemName == '' && (inventoryData = defaultInventoryData);
   nextBtnFunction(inventoryData);
   prevBtnFunction(inventoryData);
   renderCards({
@@ -293,7 +324,14 @@ shopSearchButtons.addEventListener("click", () => {
   });
   renderPagination(inventoryData);
   shopPaginationElems.classList.add("hidden");
-});
+  shopNavSearch.classList.add("hidden");
+
+}));
+
+shopNavSearchTrigger.addEventListener("click", (event) => {
+  event.preventDefault();
+  shopNavSearch.classList.remove("hidden");
+})
 
 const renderBasedOnSortedData = () => {
   const sortedData = sortedShopItemsData();
@@ -311,4 +349,3 @@ const renderBasedOnSortedData = () => {
 
 shopSortSelect.addEventListener("change", renderBasedOnSortedData);
 
-// sortedShopItemsData();

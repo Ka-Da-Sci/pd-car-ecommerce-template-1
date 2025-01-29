@@ -1,12 +1,11 @@
 import {
   defaultInventoryData,
   renderCards,
-  updateQuantityHandler,
-  getClickedProductId,
-  targetItem,
+  productsSearchHandler,
 } from "./utilities-js.js";
 
-// console.log(defaultInventoryData);
+
+productsSearchHandler(defaultInventoryData.slice(0, 8));
 
 const renderHomePageProducts = () => {
   const parentIndexCard = document.getElementById("index-card");
@@ -44,6 +43,7 @@ if (productsSection) {
   });
 }
 
+productsSearchHandler(defaultInventoryData.slice(0, 8));
 
 // Manages Mobile Menu Toggles
 const mobileMenuToggle = () => {

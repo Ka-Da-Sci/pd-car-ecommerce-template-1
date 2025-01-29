@@ -89,7 +89,7 @@
         </nav>
         <div class="search-cart flex gap-6 items-center">
           <button
-            class="flex justify-center w-auto h-auto max-w-[30px] max-h-[28.59px]"
+            class="shop-nav-search-trigger flex justify-center w-auto h-auto max-w-[30px] max-h-[28.59px]"
           >
             <img
               class="w-auto h-auto max-w-full max-h-full"
@@ -117,6 +117,30 @@
               </p>
             </div>
           </button>
+
+          <div
+            class="shop-nav-search fixed px-4 top-0 left-0 w-full h-full inset-0 bg-[rgba(0,0,0,0.9)] z-20 hidden"
+          >
+            <div
+              class="w-[90%] sm:w-full max-w-[350px] sm:max-w-[500px] bg-black border border-solid border-[#1E1E1E] rounded-xl px-4 py-2 flex gap-2 items-center justify-between absolute top-1/4 mx-auto inset-x-0"
+            >
+              <input
+                id="shop-nav-search-input"
+                class="shop-search-input placeholder:capitalize placeholder:text-[#1E1E1EB2] w-full placeholder:font-['inter'] placeholder:font-normal font-['inter'] font-normal text-[#1E1E1ECC] appearance-none outline-none antialiased text-left text-sm sm:text-base rounded-sm"
+                type="text"
+                placeholder="search"
+              />
+              <button
+                class="shop-search-btn shop-nav-search-btn bg-white p-1 flex justify-center w-6 h-6 rounded-sm"
+              >
+                <img
+                  class="w-full h-full"
+                  src="./assets/images/search-icon.svg"
+                  alt="search"
+                />
+              </button>
+            </div>
+          </div>
         </div>
         <div class="mobile-toggle block sm:hidden hover:cursor-pointer">
           <img
@@ -510,7 +534,7 @@
 
         <div
           id="card-container"
-          class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 place-content-center place-items-stretch"
+          class="w-full grid gap-4 place-content-center"
         ></div>
 
         <a
@@ -1167,34 +1191,5 @@
 
     <script type="module" src="./assets/index.js"></script>
     <script type="module" src="./assets/cart.js"></script>
-    <!-- <script>
-      const addToCartOnHoverHandler = (event) => {
-        event.preventDefault();
-        // if (elem.contains(event.target)){
-        // }
-        const elem = event.target;
-        console.log(elem);
-        const targetParentContainerElemId = elem.id;
-        const targetaddToCartContainerElem = document.querySelector(
-          `#${CSS.escape(targetParentContainerElemId)} .add-to-cart-container`
-        );
-        const targetpseudoAddToCartElem = document.querySelector(
-          `#${CSS.escape(targetParentContainerElemId)} .pseudo-add-to-cart`
-        );
-
-        targetpseudoAddToCartElem.addEventListener("mouseenter", (event) => {
-          event.preventDefault();
-          targetaddToCartContainerElem.classList.remove("hidden");
-          targetaddToCartContainerElem.classList.add("flex");
-
-          // updateQuantityHandler();
-        });
-
-        targetaddToCartContainerElem.addEventListener("mouseout", () => {
-          targetaddToCartContainerElem.classList.remove("flex");
-          targetaddToCartContainerElem.classList.add("hidden");
-        });
-      };
-    </script> -->
   </body>
 </html>

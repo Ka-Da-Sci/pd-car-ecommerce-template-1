@@ -1,4 +1,4 @@
-import { getClickedProductId, targetItem, updateQuantityHandler } from "./utilities-js.js";
+import { targetItem, updateQuantityHandler } from "./utilities-js.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const descriptionBtn = document.getElementById("description");
@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const itemSeatNum = document.querySelector(".seat-num");
   const itemTransmissionType = document.querySelector(".transmission-type");
   const itemFuelType = document.querySelector(".fuel-type");
+  const itemPageDesc = document.getElementById('item-page-description');
+  const itemFooterDesc = document.getElementById('item-footer-description');
   
   if (productDetailsContainer) {
     const targetProduct = targetItem();
@@ -29,6 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
     itemTransmissionType.textContent = targetProduct.transmissionType;
     itemFuelType.textContent = targetProduct.fuel;
     itemReviews.textContent = `(${targetProduct.reviewsNum} Reviews)`;
+    itemPageDesc.textContent = targetProduct.description;
+    itemFooterDesc.textContent = targetProduct.description;
   }
   
   const showDescription = () => {
