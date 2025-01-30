@@ -38,7 +38,7 @@ module.exports = {
         marquee: "marquee 50s linear infinite",
         slideDownUp: "slideDownUp 2s linear infinite",
         slideUpDown: "slideUpDown 2s linear infinite",
-        "fall-bounce": "fall-bounce 1.5s ease-in-out infinite",
+        "fall-bounce": "fall-bounce 1.0s ease-in-out infinite",
         "zoom-rev": "zoom-rev 1.2s ease-in-out infinite",
       },
       keyframes: {

@@ -119,10 +119,12 @@ window.addEventListener("load", () => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+
+const homePageHeroAnimation = () => {
   const animatedTextOne = document.querySelector(".animated-text-one");
   const animatedTextTwo = document.querySelector(".animated-text-two");
   const animatedHeroImageOne = document.querySelector(".animated-hero-one");
+  const animatedHeroImageOnePhrase = document.querySelector(".animated-hero-one span");
   const animatedHeroImageTwo = document.querySelector(".animated-hero-two");
   const animatedHeroImageThree = document.querySelector(".animated-hero-three");
 
@@ -149,13 +151,20 @@ document.addEventListener("DOMContentLoaded", () => {
     animatedHeroImageThree && animatedHeroImageThree.classList.remove("flex");
     animatedHeroImageThree && animatedHeroImageThree.classList.add("hidden");
     setTimeout(() => {
+      animatedHeroImageOnePhrase && animatedHeroImageOnePhrase.classList.remove("hidden");
+      animatedHeroImageOnePhrase && animatedHeroImageOnePhrase.classList.add("flex");
+    }, 500);
+
+    setTimeout(() => {
       animatedHeroImageTwo && animatedHeroImageTwo.classList.remove("hidden");
       animatedHeroImageTwo && animatedHeroImageTwo.classList.add("flex");
       animatedHeroImageOne && animatedHeroImageOne.classList.remove("flex");
+      animatedHeroImageOnePhrase && animatedHeroImageOnePhrase.classList.add("hidden");
+      animatedHeroImageOnePhrase && animatedHeroImageOnePhrase.classList.remove("flex");
       animatedHeroImageOne && animatedHeroImageOne.classList.add("hidden");
       animatedHeroImageThree && animatedHeroImageThree.classList.remove("flex");
       animatedHeroImageThree && animatedHeroImageThree.classList.add("hidden");
-    }, 1500);
+    }, 1000);
     setTimeout(() => {
       animatedHeroImageThree &&
         animatedHeroImageThree.classList.remove("hidden");
@@ -166,10 +175,11 @@ document.addEventListener("DOMContentLoaded", () => {
       animatedHeroImageTwo && animatedHeroImageTwo.classList.add("hidden");
     }, 2700);
   };
-  setInterval(animateHeroImages, 3900);
+  setInterval(animateHeroImages, 3400);
   animateHeroImages();
+};
 
-});
+document.addEventListener("DOMContentLoaded", homePageHeroAnimation);
 
 // EMAIL FORM INPUTS VALIDATION FUNCTION
 const subscribeBtn = document.getElementById("subscribe-btn");

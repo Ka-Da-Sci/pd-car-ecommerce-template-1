@@ -27,7 +27,7 @@
   </head>
   <style></style>
   <body>
-    <section id="header" class="bg-[#FFFFFF] fixed z-10 inset-x-0">
+    <section id="header" class="bg-[#FFFFFF] fixed z-40 inset-x-0">
       <!-- sm:justify-around -->
       <div
         class="header sm:container mx-auto flex flex-row gap-10 items-center justify-between h-[60px] px-4 py-0"
@@ -192,33 +192,49 @@
           </div>
         </div>
         <div class="h-[200px] sm:h-[420px]">
-          <div class="flex justify-center">
+          <div class="flex justify-center relative">
             <div
-              class="animated-hero-one justify-center w-full h-full max-w-[220px] sm:max-w-[689px] max-h-[250px] sm:max-h-[419px] animate-image1"
+              class="animated-hero-one hidden justify-center w-full h-full max-w-[220px] sm:max-w-[689px] max-h-[250px] sm:max-h-[419px] animate-image1"
             >
               <img
-                class="w-auto h-auto max-w-full max-h-full transform animation-image"
+                class="w-auto h-auto max-w-full max-h-full transform animation-image z-20"
                 src="./assets/images/fall-car.png"
                 alt="car"
               />
+
+              <!-- <p class="uppercase absolute top-1/2 -translate-y-1/2 z-10 font-bold font-['montserrat'] text-center text-[200px] opacity-40 tracking-wide hidden">Elegance</p> -->
+
+              <span class="absolute top-1/2 -translate-y-1/2 z-10 w-[90vw] justify-center">
+                <img class="w-auto h-auto max-w-full max-h-full" src="./assets/images/elegance.png" alt="">
+              </span>
             </div>
             <div
-              class="animated-hero-two justify-center w-full h-full max-w-[220px] sm:max-w-[689px] max-h-[250px] sm:max-h-[419px] animate-image2 [transform-style:preserve-3d] [perspective:500px]"
+              class="animated-hero-two hidden justify-center w-full h-full max-w-[220px] sm:max-w-[689px] max-h-[250px] sm:max-h-[419px] animate-image2 [transform-style:preserve-3d] [perspective:500px]"
             >
               <img
-                class="w-auto h-auto max-w-full max-h-full transform animation-image"
+                class="w-auto h-auto max-w-full max-h-full transform animation-image z-20"
                 src="./assets/images/car-2.png"
                 alt="car"
               />
+
+              <!-- <p class="uppercase absolute top-1/2 -translate-y-1/2 z-10 font-bold font-['montserrat'] text-center text-[200px] opacity-40 tracking-wide">Opulence</p> -->
+              <span class="absolute top-1/2 -translate-y-1/2 z-10 w-[90vw] justify-center">
+                <img class="w-auto h-auto max-w-full max-h-full" src="./assets/images/opulence.png" alt="">
+              </span>
             </div>
             <div
-              class="animated-hero-three justify-center w-full h-full max-w-[220px] sm:max-w-[689px] max-h-[250px] sm:max-h-[419px] animate-image3 [transform-style:preserve-3d] [perspective:500px]"
+              class="animated-hero-three hidden justify-center w-full h-full max-w-[220px] sm:max-w-[689px] max-h-[250px] sm:max-h-[419px] animate-image3 [transform-style:preserve-3d] [perspective:500px]"
             >
               <img
-                class="w-auto h-auto max-w-full max-h-full transform animation-image"
+                class="w-auto h-auto max-w-full max-h-full transform animation-image z-20"
                 src="./assets/images/car-3.png"
                 alt="car"
               />
+
+              <!-- <p class="uppercase absolute top-1/2 -translate-y-1/2 z-10 font-bold font-['montserrat'] text-center text-[200px] opacity-40 tracking-wide">Prestige</p> -->
+              <span class="absolute top-1/2 -translate-y-1/2 z-10 w-[90vw] justify-center">
+                <img class="w-auto h-auto max-w-full max-h-full" src="./assets/images/prestige.png" alt="">
+              </span>
             </div>
           </div>
         </div>

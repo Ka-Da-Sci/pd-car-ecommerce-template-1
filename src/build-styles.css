@@ -621,7 +621,7 @@ body,
 }
 
 .animate-image1 .animation-image {
-  animation: fall-bounce 1.5s ease-in-out infinite;
+  animation: fall-bounce 1.0s ease-in-out infinite;
 }
 
 @keyframes zoom-rev {
@@ -935,6 +935,10 @@ body,
   position: relative;
 }
 
+.inset-0 {
+  inset: 0px;
+}
+
 .inset-x-0 {
   left: 0px;
   right: 0px;
@@ -956,12 +960,24 @@ body,
   bottom: 0px;
 }
 
+.bottom-4 {
+  bottom: 1rem;
+}
+
 .left-0 {
   left: 0px;
 }
 
+.left-1\/2 {
+  left: 50%;
+}
+
 .left-\[10px\] {
   left: 10px;
+}
+
+.top-0 {
+  top: 0px;
 }
 
 .top-14 {
@@ -1219,6 +1235,10 @@ body,
   max-height: 100%;
 }
 
+.w-12 {
+  width: 3rem;
+}
+
 .w-20 {
   width: 5rem;
 }
@@ -1416,6 +1436,11 @@ body,
   flex: 0 0 2rem;
 }
 
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .-translate-x-\[100px\] {
   --tw-translate-x: -100px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1474,6 +1499,14 @@ body,
 
 .place-content-between {
   place-content: space-between;
+}
+
+.place-items-center {
+  place-items: center;
+}
+
+.place-items-stretch {
+  place-items: stretch;
 }
 
 .items-center {
@@ -1571,6 +1604,10 @@ body,
 
 .whitespace-pre {
   white-space: pre;
+}
+
+.rounded {
+  border-radius: 0.25rem;
 }
 
 .rounded-2xl {
@@ -1685,6 +1722,19 @@ body,
   background-color: rgb(136 136 136 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#E9E9E9\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(233 233 233 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[rgba\(0\2c 0\2c 0\2c 0\.5\)\] {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.bg-\[rgba\(0\2c 0\2c 0\2c 0\.8\)\] {
+  background-color: rgba(0,0,0,0.8);
+}
+
 .bg-\[rgba\(0\2c 0\2c 0\2c 1\)\] {
   background-color: rgba(0,0,0,1);
 }
@@ -1743,6 +1793,10 @@ body,
 .bg-orange-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 115 22 / var(--tw-bg-opacity, 1));
+}
+
+.bg-transparent {
+  background-color: transparent;
 }
 
 .bg-white {
@@ -1809,6 +1863,11 @@ body,
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .px-6 {
@@ -1904,6 +1963,10 @@ body,
   padding-bottom: 0.25rem;
 }
 
+.pb-\[10px\] {
+  padding-bottom: 10px;
+}
+
 .pb-\[20px\] {
   padding-bottom: 20px;
 }
@@ -1960,6 +2023,10 @@ body,
   padding-top: 2rem;
 }
 
+.pt-\[10px\] {
+  padding-top: 10px;
+}
+
 .pt-\[70px\] {
   padding-top: 70px;
 }
@@ -1988,8 +2055,16 @@ body,
   font-family: 'Kumbh Sans';
 }
 
+.font-\[\'Montserrat\'\] {
+  font-family: 'Montserrat';
+}
+
 .font-\[\'Plus_Jakarta_Sans\'\] {
   font-family: 'Plus Jakarta Sans';
+}
+
+.font-\[\'Poppins\'\] {
+  font-family: 'Poppins';
 }
 
 .font-\[\'Space_Grotesk\'\] {
@@ -2074,12 +2149,21 @@ body,
   font-weight: 600;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 .capitalize {
   text-transform: capitalize;
 }
 
 .leading-normal {
   line-height: 1.5;
+}
+
+.text-\[\#000000\] {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
 .text-\[\#1E1E1E\] {
@@ -2364,6 +2448,10 @@ body,
     align-items: flex-start;
   }
 
+  .sm\:justify-normal {
+    justify-content: normal;
+  }
+
   .sm\:justify-around {
     justify-content: space-around;
   }
@@ -2413,6 +2501,11 @@ body,
   .sm\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .sm\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 
   .sm\:text-\[rgba\(0\2c 0\2c 0\2c 1\)\] {
@@ -2510,6 +2603,11 @@ body,
     line-height: 1.75rem;
   }
 
+  .md\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
@@ -2517,6 +2615,10 @@ body,
 }
 
 @media (min-width: 1024px) {
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .lg\:pt-24 {
     padding-top: 6rem;
   }
