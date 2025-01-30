@@ -330,7 +330,7 @@ export const defaultInventoryData = [
     price: "52,090",
     itemCategory: "luxury cars",
     listingDate: "2024-09-08T23:00:00.000Z",
-    id: "f3e53c75b1e5ac36f3d167de81a40063",
+    id: "d304260415eb799a2d7a796f0c7d8a01",
     description:
       "A versatile and reliable truck that offers excellent performance and durability. Perfect for those who need a dependable vehicle for both work and leisure. With its advanced features and spacious interior, it provides a comfortable and efficient driving experience.",
   },
@@ -346,7 +346,7 @@ export const defaultInventoryData = [
     price: "94,750",
     itemCategory: "electric & hybrid",
     listingDate: "2024-05-14T23:00:00.000Z",
-    id: "545df15e02d8f2b7122d3cc6072c195a",
+    id: "ec18fd607a20be37c951af1b9a73cff7",
     description:
       "A luxurious and high-performance electric hybrid that combines cutting-edge technology with eco-friendliness. This car offers a smooth and quiet ride, advanced safety features, and a stylish design, making it perfect for those who value both luxury and sustainability.",
   },
@@ -362,7 +362,7 @@ export const defaultInventoryData = [
     price: "53,500",
     itemCategory: "classic & vintage",
     listingDate: "2023-12-12T00:00:00.000Z",
-    id: "d72c2bcdc65fdebcb80f9c97573532f7",
+    id: "fcb21bdede3ae93db1f24fa8bb7eab60",
     description:
       "A classic and powerful sports car that combines speed, luxury, and cutting-edge technology. With its sleek design and high-performance engine, it offers an exhilarating driving experience both on the road and on the track. Perfect for car enthusiasts and collectors.",
   },
@@ -378,7 +378,7 @@ export const defaultInventoryData = [
     price: "50,000",
     itemCategory: "sedans",
     listingDate: "2024-12-12T00:00:00.000Z",
-    id: "6af9d71b959f474976dba362623e84e2",
+    id: "548bd93b3978b785bc83a1bf692ec959",
     description:
       "A high-performance sedan that offers a perfect blend of luxury and speed. With its sleek design and powerful engine, it provides an exhilarating driving experience for those who demand the best. Ideal for car enthusiasts who appreciate both style and performance.",
   },
@@ -394,7 +394,7 @@ export const defaultInventoryData = [
     price: "53,070",
     itemCategory: "trucks",
     listingDate: "2024-06-22T23:00:00.000Z",
-    id: "08c125817b53fbba344f6acc7fdf728d",
+    id: "66bc6613568e9937a10651fa67208b1e",
     description:
       "A robust and reliable SUV that offers ample space, advanced safety features, and a comfortable ride. Perfect for families and outdoor enthusiasts who need a versatile vehicle for all occasions. With its powerful engine and modern design, it ensures a smooth and enjoyable driving experience.",
   },
@@ -410,7 +410,7 @@ export const defaultInventoryData = [
     price: "63,000",
     itemCategory: "luxury cars",
     listingDate: "2024-04-11T23:00:00.000Z",
-    id: "3237e81d4907913180caecb15b8f072c",
+    id: "d70464a987441b7f29dee3df07d415d1",
     description:
       "A stylish and efficient sedan that offers a smooth ride, advanced technology, and a spacious interior. Ideal for those who seek a reliable and elegant vehicle for daily use. With its modern design and fuel efficiency, it provides a comfortable and enjoyable driving experience.",
   },
@@ -426,7 +426,7 @@ export const defaultInventoryData = [
     price: "23,090",
     itemCategory: "electric & hybrid",
     listingDate: "2024-12-12T00:00:00.000Z",
-    id: "c5594ab1c228241216e5d1ac6d74df27",
+    id: "137a6e7c7b02284293ab9ea4978b143f",
     description:
       "Experience luxury and performance with the Mercedes Benz 2023. Rated 4.1 stars by 7,437 reviews, this gas-powered electric hybrid is perfect for those who value comfort and efficiency. Priced at $23,090, it's an exceptional choice for modern drivers.",
   },
@@ -442,7 +442,7 @@ export const defaultInventoryData = [
     price: "62,090",
     itemCategory: "classic & vintage",
     listingDate: "2024-03-22T23:00:00.000Z",
-    id: "c42d318288327397f4aa01194c63f78d",
+    id: "98fc29a252cbecba2f3c135a3256fda9",
     description:
       "The Ferrari XXX 2010 is a timeless classic with a 4.3-star rating from 2,237 reviews. This vintage masterpiece combines style and performance, powered by a gas engine and priced at $62,090. Own a piece of automotive history today.",
   },
@@ -458,7 +458,7 @@ export const defaultInventoryData = [
     price: "4,050",
     itemCategory: "sedans",
     listingDate: "2024-10-01T00:00:00.000Z",
-    id: "24f6dccebc99b9e21136e72c0cb9afeb",
+    id: "7c2219e0ee3b892ed2da717e3b103d02",
     description:
       "Built for durability and versatility, the Silverado 2020 stands out with a 4.5-star rating from 5,136 reviews. This gas-powered sedan is an affordable option at just $4,050, perfect for practical and reliable daily use.",
   },
@@ -474,7 +474,7 @@ export const defaultInventoryData = [
     price: "53,500",
     itemCategory: "suv & crossovers",
     listingDate: "2024-04-03T23:00:00.000Z",
-    id: "de0a00d57db4d9fafc3504447bd3ec24",
+    id: "044d396b6aac97311c00b4f3afcef4ae",
     description:
       "Discover the Innoson Spree 2020, a premium SUV and crossover rated 4.7 stars by 8,496 reviewers. This gas-powered vehicle offers unparalleled comfort and style, priced at $53,500. Perfect for family adventures and urban commutes.",
   },
@@ -490,7 +490,7 @@ export const defaultInventoryData = [
     price: "50,000",
     itemCategory: "trucks",
     listingDate: "2024-12-23T00:00:00.000Z",
-    id: "2856f2718cbf69977d298af140df249c",
+    id: "cb8125c4cefa5e7f6f685087ae395d3f",
     description:
       "The Toyota Sienna 2020 is a reliable and spacious truck with a 4.3-star rating from 2,436 reviews. Powered by a gas engine, it offers versatility and performance at a price of $50,000. Ideal for work or play.",
   },
@@ -506,7 +506,7 @@ export const defaultInventoryData = [
     price: "23,090",
     itemCategory: "electric & hybrid",
     listingDate: "2024-12-12T00:00:00.000Z",
-    id: "c5594ab1c228241216e5d1ac6d74df27",
+    id: "aa75d0a893ce332d846a960650d06f2e",
     description:
       "The Mercedes Benz 2023 offers exceptional luxury and cutting-edge technology. Rated 4.1 with over 7,400 reviews, it features a smooth automatic transmission and gas fuel efficiency, making it a top choice for electric and hybrid enthusiasts. Priced at just $23,090.",
   },
@@ -522,7 +522,7 @@ export const defaultInventoryData = [
     price: "62,090",
     itemCategory: "classic & vintage",
     listingDate: "2024-03-22T23:00:00.000Z",
-    id: "c42d318288327397f4aa01194c63f78d",
+    id: "75cf4c95040e41713bb0740837c8e6dd",
     description:
       "A true classic, the Ferrari XXX 2010 embodies power and elegance. Rated 4.3 by over 2,200 satisfied drivers, this vintage beauty combines a sleek design with automatic transmission and gas power. Own a piece of history for $62,090.",
   },
@@ -538,7 +538,7 @@ export const defaultInventoryData = [
     price: "4,050",
     itemCategory: "sedans",
     listingDate: "2024-10-01T00:00:00.000Z",
-    id: "24f6dccebc99b9e21136e72c0cb9afeb",
+    id: "b65bfc2c82d943f3d2201b5889682382",
     description:
       "The Silverado 2020 is a reliable sedan built for everyday use. Rated 4.5 by more than 5,000 happy owners, it offers comfort, fuel efficiency, and an automatic transmission. At just $4,050, it's a budget-friendly option for families or commuters.",
   },
@@ -554,7 +554,7 @@ export const defaultInventoryData = [
     price: "53,500",
     itemCategory: "suv & crossovers",
     listingDate: "2024-04-03T23:00:00.000Z",
-    id: "de0a00d57db4d9fafc3504447bd3ec24",
+    id: "b9a9e3c282c0a68024d82f72d4d8e1a7",
     description:
       "Experience unparalleled durability and versatility with the Innoson Spree 2020. This SUV crossover boasts a stellar 4.7 rating from over 8,400 reviews, featuring gas power and automatic transmission. Perfect for adventure at $53,500.",
   },
@@ -570,7 +570,7 @@ export const defaultInventoryData = [
     price: "50,000",
     itemCategory: "trucks",
     listingDate: "2024-12-23T00:00:00.000Z",
-    id: "2856f2718cbf69977d298af140df249c",
+    id: "235d8160e88e59e7005f25f41940075a",
     description:
       "The Toyota Sienna 2020 is a versatile and powerful truck, ideal for work and family trips. Rated 4.3 with over 2,400 reviews, it features automatic transmission and gas fuel efficiency. Available now for $50,000.",
   },
@@ -586,7 +586,7 @@ export const defaultInventoryData = [
     price: "33,000",
     itemCategory: "luxury cars",
     listingDate: "2024-04-28T23:00:00.000Z",
-    id: "e8b82b1e28a25db2f81064abeae0ba1a",
+    id: "840a980d32a184d45a04e5a20eeff0e5",
     description:
       "The Audi A10 2024 redefines luxury with its sleek design and eco-friendly electric engine. Rated 4.2 by over 4,400 satisfied drivers, it offers a responsive manual transmission and unparalleled comfort. Own this masterpiece for $33,000.",
   },
@@ -602,7 +602,7 @@ export const defaultInventoryData = [
     price: "43,070",
     itemCategory: "electric & hybrid",
     listingDate: "2024-03-03T23:00:00.000Z",
-    id: "18abb95856ba2e8c0fdb31085ec6b85e",
+    id: "b314485b341b4bdfeca253c9ba0d4135",
     description:
       "The Mercedes Benz 2020 combines timeless design with hybrid efficiency. With a 4.0 rating and over 6,400 reviews, this luxury car offers a manual transmission and smooth performance. Available for $43,070.",
   },
@@ -618,7 +618,7 @@ export const defaultInventoryData = [
     price: "33,000",
     itemCategory: "classic & vintage",
     listingDate: "2024-05-06T23:00:00.000Z",
-    id: "5eeed83eaa509a97caf12d37a0ad1290",
+    id: "b2f25ade0e496441c9f6567bfde1a835",
     description:
       "Step into automotive history with the Ferrari DXXX 2018. This vintage marvel boasts a 4.3 rating from 2,400+ enthusiasts and delivers a thrilling manual fuel experience. Classic, powerful, and yours for $33,000.",
   },
@@ -634,7 +634,7 @@ export const defaultInventoryData = [
     price: "99,990",
     itemCategory: "electric & hybrid",
     listingDate: "2024-09-20T00:00:00.000Z",
-    id: "3cde23c9134b512b9abcf32176fd5e81",
+    id: "6ad81ab8afea42831935c55fb27d55bc",
     description:
       "The Tesla Model X 2023 sets a new standard for electric SUVs, combining a sleek design with cutting-edge technology. Rated 4.8 by over 9,000 drivers, it offers five spacious seats and an ultra-smooth automatic transmission. A must-have at $99,990.",
   },
@@ -650,7 +650,7 @@ export const defaultInventoryData = [
     price: "150,000",
     itemCategory: "classic & vintage",
     listingDate: "2024-01-15T00:00:00.000Z",
-    id: "a6d9f4853b7634ad89912c5aeb1b0e13",
+    id: "3c34cca0a7cb6c6ddfa03620f1803e9b",
     description:
       "The Ford Mustang 1969 is a true American classic, blending iconic styling with powerful performance. With a stellar 4.9 rating and over 12,500 reviews, this manual transmission masterpiece is a collector's dream. Own a legend for $150,000.",
   },
@@ -666,7 +666,7 @@ export const defaultInventoryData = [
     price: "24,500",
     itemCategory: "sedans",
     listingDate: "2024-07-12T00:00:00.000Z",
-    id: "b4d82f6f13e6dcd40af9e0bf7d3cfc10",
+    id: "7f17083aca92ffe001da8032b6afceae",
     description:
       "Reliable, efficient, and modern, the Honda Civic 2022 is an excellent sedan choice. With a 4.4 rating from nearly 7,000 drivers, it boasts a gas engine, automatic transmission, and room for five passengers. Priced at $24,500, it's perfect for daily use.",
   },
@@ -682,7 +682,7 @@ export const defaultInventoryData = [
     price: "110,000",
     itemCategory: "luxury cars",
     listingDate: "2024-11-10T00:00:00.000Z",
-    id: "d9e5d6aa58e7f64ea3b2fa0c0416d123",
+    id: "59ce04100279eadab124a0b07e70fd3d",
     description:
       "The Porsche Taycan 2023 redefines luxury with its electric powertrain and futuristic features. Rated 4.6 by 3,500+ drivers, it offers breathtaking performance, automatic handling, and unmatched style. Experience the future for $110,000.",
   },
@@ -698,7 +698,7 @@ export const defaultInventoryData = [
     price: "75,000",
     itemCategory: "classic & vintage",
     listingDate: "2024-02-28T00:00:00.000Z",
-    id: "16c43b7e4dc5c9357efab0f27b7f13b1",
+    id: "e549aa127dbcbee7971e6b3b2bd15b6c",
     description:
       "A timeless gem, the Chevrolet Impala 1967 combines vintage charm with powerful performance. Rated 4.7 by over 9,200 fans, this manual-transmission classic is a must for enthusiasts. Own this iconic piece for $75,000.",
   },
@@ -714,7 +714,7 @@ export const defaultInventoryData = [
     price: "27,990",
     itemCategory: "electric & hybrid",
     listingDate: "2024-06-14T00:00:00.000Z",
-    id: "291fb6cb6f2a7d5e4b7a92c2e41a920f",
+    id: "454f620ace6a823cd38b39f5a3e4e15c",
     description:
       "The Toyota Corolla 2023 is the epitome of hybrid efficiency and practicality. Rated 4.5 by nearly 9,000 users, it features a spacious interior, smooth automatic transmission, and unbeatable fuel economy. Perfect for $27,990.",
   },
@@ -730,7 +730,7 @@ export const defaultInventoryData = [
     price: "45,000",
     itemCategory: "SUV & crossovers",
     listingDate: "2024-03-03T00:00:00.000Z",
-    id: "7ec8b6da3f5c4d4c82f21b0f34f916a1",
+    id: "c4690f6b1a569b1de69d548d200b1081",
     description:
       "Built for adventure, the Jeep Wrangler 2021 is a rugged SUV with unmatched off-road capabilities. With a 4.8 rating from over 7,400 reviews, it offers manual handling and gas-powered performance. Take on any terrain for $45,000.",
   },
@@ -746,7 +746,7 @@ export const defaultInventoryData = [
     price: "31,500",
     itemCategory: "electric & hybrid",
     listingDate: "2024-09-30T00:00:00.000Z",
-    id: "4eb7216d3fdf87e5b3f28b53c9fa1df3",
+    id: "ea4b35dd61c8fb6d173eb6b61cf9708c",
     description:
       "The Nissan Leaf 2022 combines affordability and eco-friendly innovation. Rated 4.3 by over 5,300 drivers, it features an all-electric powertrain, automatic transmission, and seating for five. A sustainable choice for $31,500.",
   },
@@ -762,7 +762,7 @@ export const defaultInventoryData = [
     price: "99,990",
     itemCategory: "electric & hybrid",
     listingDate: "2024-09-20T00:00:00.000Z",
-    id: "3cde23c9134b512b9abcf32176fd5e81",
+    id: "16eaf53544bb9635f1123a4d87167f42",
     description:
       "The Tesla Model X 2023 sets a new standard for electric SUVs, combining a sleek design with cutting-edge technology. Rated 4.8 by over 9,000 drivers, it offers five spacious seats and an ultra-smooth automatic transmission. A must-have at $99,990.",
   },
@@ -778,7 +778,7 @@ export const defaultInventoryData = [
     price: "150,000",
     itemCategory: "classic & vintage",
     listingDate: "2024-01-15T00:00:00.000Z",
-    id: "a6d9f4853b7634ad89912c5aeb1b0e13",
+    id: "8e652b8b6504d2e93b5945fdec217307",
     description:
       "The Ford Mustang 1969 is a true American classic, blending iconic styling with powerful performance. With a stellar 4.9 rating and over 12,500 reviews, this manual transmission masterpiece is a collector's dream. Own a legend for $150,000.",
   },
@@ -794,7 +794,7 @@ export const defaultInventoryData = [
     price: "75,000",
     itemCategory: "classic & vintage",
     listingDate: "2024-02-28T00:00:00.000Z",
-    id: "16c43b7e4dc5c9357efab0f27b7f13b1",
+    id: "5cc41e9620b643d38b06e41e797ded8a",
     description:
       "A timeless gem, the Chevrolet Impala 1967 combines vintage charm with powerful performance. Rated 4.7 by over 9,200 fans, this manual-transmission classic is a must for enthusiasts. Own this iconic piece for $75,000.",
   },
@@ -810,7 +810,7 @@ export const defaultInventoryData = [
     price: "27,990",
     itemCategory: "electric & hybrid",
     listingDate: "2024-06-14T00:00:00.000Z",
-    id: "291fb6cb6f2a7d5e4b7a92c2e41a920f",
+    id: "f0f5d8af10f08c05f627d0fc922bb82a",
     description:
       "The Toyota Corolla 2023 is the epitome of hybrid efficiency and practicality. Rated 4.5 by nearly 9,000 users, it features a spacious interior, smooth automatic transmission, and unbeatable fuel economy. Perfect for $27,990.",
   },
@@ -826,7 +826,7 @@ export const defaultInventoryData = [
     price: "45,000",
     itemCategory: "SUV & crossovers",
     listingDate: "2024-03-03T00:00:00.000Z",
-    id: "7ec8b6da3f5c4d4c82f21b0f34f916a1",
+    id: "384a6f2ee5099e040bd377fd2efe56a9",
     description:
       "Built for adventure, the Jeep Wrangler 2021 is a rugged SUV with unmatched off-road capabilities. With a 4.8 rating from over 7,400 reviews, it offers manual handling and gas-powered performance. Take on any terrain for $45,000.",
   },
@@ -842,7 +842,7 @@ export const defaultInventoryData = [
     price: "31,500",
     itemCategory: "electric & hybrid",
     listingDate: "2024-09-30T00:00:00.000Z",
-    id: "4eb7216d3fdf87e5b3f28b53c9fa1df3",
+    id: "de4b49f25258a17b36d6c1c8bbdbc489",
     description:
       "The Nissan Leaf 2022 combines affordability and eco-friendly innovation. Rated 4.3 by over 5,300 drivers, it features an all-electric powertrain, automatic transmission, and seating for five. A sustainable choice for $31,500.",
   },
@@ -858,7 +858,7 @@ export const defaultInventoryData = [
     price: "120,000",
     itemCategory: "luxury cars",
     listingDate: "2024-08-05T00:00:00.000Z",
-    id: "09c8b6d123de65e432f7a90bcd30a84e",
+    id: "35b63d1dbb2513285d54582ce9508c42",
     description:
       "Sophisticated luxury and unrivaled comfort come together in the Mercedes-Benz S-Class 2023. Rated 4.9 by 4,300+ reviewers, it features a gas engine and automatic transmission for seamless performance. Priced at $120,000.",
   },
@@ -874,7 +874,7 @@ export const defaultInventoryData = [
     price: "28,500",
     itemCategory: "SUV & crossovers",
     listingDate: "2024-10-11T00:00:00.000Z",
-    id: "2dc123ed5e891a73f6b20cd4d90c1ab5",
+    id: "7ed9e9bfb6a2b017c95aa7aefc25c83e",
     description:
       "The Mazda CX-5 2022 delivers a dynamic driving experience with a touch of elegance. Rated 4.6 by over 6,000 drivers, this gas-powered SUV is perfect for families and adventurers. A steal at $28,500.",
   },
@@ -890,7 +890,7 @@ export const defaultInventoryData = [
     price: "63,000",
     itemCategory: "luxury cars",
     listingDate: "2024-05-01T00:00:00.000Z",
-    id: "4bd71f6c9e3d2b08157f90b234ea64cd",
+    id: "c78f2f3a2edf03d8baf36de68f32b857",
     description:
       "The Audi Q7 2021 redefines versatility and luxury with seating for seven and powerful gas performance. Rated 4.7 by over 5,800 satisfied customers. Yours for $63,000.",
   },
@@ -902,6 +902,8 @@ export const defaultInventoryData = [
 //   const uniqueString = `${item.name}-${itemNum}`;
 //   item["id"] = CryptoJS.MD5(uniqueString).toString();
 // });
+
+// console.log(defaultInventoryData);
 
 const openCartBtn = document.getElementById("cart-trolley");
 const lagoonProtocol = () => {
@@ -1208,9 +1210,13 @@ export const cartModalProtocol = () => {
         console.log(Object.keys(cartItems));
 
         if (Object.keys(cartItems).includes(newCartItem.id)) {
-          alert(
-            "Item already in cart!\nNeed to modify your order?\nGo to cart!"
-          );
+          event.target.classList.add("cart-pop");
+          // Remove the class after animation completes
+          setTimeout(() => {
+            event.target.classList.remove("cart-pop");
+          }, 300);
+          cartItems[newCartItem.id] = event.target.closest("a").querySelector("#quantity").value;
+          localStorage.setItem("cartItems", JSON.stringify(cartItems));
           return;
         }
 
@@ -1229,7 +1235,6 @@ export const cartModalProtocol = () => {
           "duration-300",
           "ease-in-out"
         );
-        // li.classList.add("item", "w-full", "flex", "items-center", "md:justify-normal", "justify-between", "gap-8", "pb-1", "border-b", "border-solid", "border-[#3333333b]", "transition-all", "duration-300", "ease-in-out", "hover:[box-shadow:0px_2px_6px_4px_#00000018]");
         li.setAttribute("id", newCartItem.id);
         // li.style.overflow = "auto";
         console.log(newCartItem.price);
@@ -1244,7 +1249,6 @@ export const cartModalProtocol = () => {
         li.innerHTML = cartHtml;
 
         cartItems[newCartItem.id] = shopItemQty.value;
-        // currentCartItemsIds.push(newCartItem.productId);
         localStorage.setItem("cartItems", JSON.stringify(cartItems));
         // localStorage.setItem("cartItemsIds", JSON.stringify(currentCartItemsIds));
 
@@ -1339,7 +1343,11 @@ export const cartModalProtocol = () => {
         updateCartPrices();
         displayEmptyState();
         saveCartState();
-        //   addToCartBtn.style.display = "none";
+        event.target.classList.add("cart-pop");
+        // Remove the class after animation completes
+        setTimeout(() => {
+          event.target.classList.remove("cart-pop");
+        }, 300);
       })
     );
   }
@@ -1430,7 +1438,6 @@ export const cartModalProtocol = () => {
           "duration-300",
           "ease-in-out"
         );
-        // li.classList.add("item", "w-full", "flex", "items-center", "md:justify-normal", "justify-between", "gap-8", "pb-1", "border-b", "border-solid", "border-[#3333333b]", "transition-all", "duration-300", "ease-in-out", "hover:[box-shadow:0px_2px_6px_4px_#00000018]");
         li.setAttribute("id", key);
         const cartHtml = cartItemContainer(
           cartItem,
@@ -1502,6 +1509,11 @@ export const cartModalProtocol = () => {
   const updateCartCounter = () => {
     const numberOfItems = cartItemsContainer.children.length;
     cartItemsCounter.textContent = numberOfItems;
+    cartItemsCounter.closest('button').classList.add("cart-pop");
+    // Remove the class after animation completes
+    setTimeout(() => {
+      cartItemsCounter.closest('button').classList.remove("cart-pop");
+    }, 300);
   };
 
   // Function to update cart prices
@@ -1611,25 +1623,40 @@ export const renderCards = ({
   const start = (currentPageNum - 1) * cardsPerPageNum;
   const end = Math.min(start + cardsPerPageNum, dataToRender.length);
   cardContainer.innerHTML = "";
-  cardContainer.classList.remove("grid-cols-1", "sm:grid-cols-2", "lg:grid-cols-3", 'place-items-center', 'place-items-stretch');
+  cardContainer.classList.remove(
+    "grid-cols-1",
+    "sm:grid-cols-2",
+    "lg:grid-cols-3",
+    "place-items-center",
+    "place-items-stretch"
+  );
 
-  switch(dataToRender.length) {
+  switch (dataToRender.length) {
     case 0:
-      console.log('0');
-      cardContainer.classList.add('grid=cols-1', 'place-items-center');
+      console.log("0");
+      cardContainer.classList.add("grid=cols-1", "place-items-center");
       cardContainer.innerHTML = `<p class="font-bold font-[" poppins'] text-sm md:text-lg text-center sm:text-left capitalize text-[#767676]">No product found.</p>`;
       break;
     case 1:
-      console.log('1');
-      cardContainer.classList.add("grid-cols-1", 'place-items-center');
+      console.log("1");
+      cardContainer.classList.add("grid-cols-1", "place-items-center");
       break;
     case 2:
-      console.log('2');
-      cardContainer.classList.add('grid-cols-1', 'sm:grid-cols-2', 'place-items-center');
+      console.log("2");
+      cardContainer.classList.add(
+        "grid-cols-1",
+        "sm:grid-cols-2",
+        "place-items-center"
+      );
       break;
     default:
-      console.log('3');
-      cardContainer.classList.add('grid-cols-1', 'sm:grid-cols-2', 'lg:grid-cols-3', 'place-items-stretch');
+      console.log("3");
+      cardContainer.classList.add(
+        "grid-cols-1",
+        "sm:grid-cols-2",
+        "lg:grid-cols-3",
+        "place-items-stretch"
+      );
       break;
   }
 
@@ -1743,7 +1770,6 @@ export const renderCards = ({
     (pageInfo.textContent = `Page ${currentPageNum} of ${Math.ceil(
       dataToRender.length / cardsPerPageNum
     )}`);
-
 };
 
 export const productsSearchHandler = (productsData) => {
@@ -1785,14 +1811,17 @@ export const productsSearchHandler = (productsData) => {
       productItemContainerElemHandler();
       cartModalProtocol();
 
-      !(document.querySelector(".categories-list")) ? window.location.href = "./index.html#index-card" : '';
+      !document.querySelector(".categories-list")
+        ? (window.location.href = "./index.html#index-card")
+        : "";
     })
   );
 
-  shopNavSearchTrigger.addEventListener("click", (event) => {
-    event.preventDefault();
-    shopNavSearch.classList.remove("hidden");
-  });
+  shopNavSearchTrigger &&
+    shopNavSearchTrigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      shopNavSearch.classList.remove("hidden");
+    });
 };
 
 const updateQuantity = (action, event, quantityInput) => {

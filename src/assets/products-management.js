@@ -101,7 +101,7 @@ const renderPagination = (data) => {
       .then((data) => {
         const modalSuperContainer = document.createElement("div");
   
-        modalSuperContainer.classList.add("bg-white", "relative");
+        modalSuperContainer.classList.add("bg-white", "relative", "px-2", "sm:px-4");
         modalSuperContainer.setAttribute("id", "modal");
         modalSuperContainer.innerHTML = data;
         document.body.appendChild(modalSuperContainer);

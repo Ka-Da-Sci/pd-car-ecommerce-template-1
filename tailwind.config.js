@@ -23,6 +23,7 @@ module.exports = {
     "leaflet-popup-content",
     "modal-content-wrapper",
     "modal-content",
+    "cart-pop",
   ],
   theme: {
     extend: {
@@ -40,6 +41,7 @@ module.exports = {
         slideUpDown: "slideUpDown 2s linear infinite",
         "fall-bounce": "fall-bounce 1.0s ease-in-out infinite",
         "zoom-rev": "zoom-rev 1.2s ease-in-out infinite",
+        popEffect: "popEffect 0.3s ease-out",
       },
       keyframes: {
         scaleUpOne: {
@@ -135,6 +137,17 @@ module.exports = {
           "100%": {
             transform: "translate3d(-2%, 0, 0) scale(1)", // Settle at the near bottom-left corner
           },
+        },
+        popEffect: {
+          "0%": {
+            transform: "scale(1)"
+          },
+          "50%": {
+            transform: "scale(1.5)"
+          },
+          "100%": {
+            transform: "scale(1)"
+          }
         },
         
       },

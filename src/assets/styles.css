@@ -22,6 +22,10 @@
     @apply animate-zoom-rev;
   }
 
+  .cart-pop{
+    @apply animate-popEffect;
+  }
+
   .dynamic-hr::before {
     @apply animate-scaleUpOne;
   }
