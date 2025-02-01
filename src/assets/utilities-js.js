@@ -1065,7 +1065,8 @@ const lagoonProtocol = () => {
   });
 
   document.querySelectorAll(".select img").forEach((img) => {
-    img.addEventListener("click", () => {
+    let radioSelect = img.closest('.select');
+    radioSelect.addEventListener("click", () => {
       const radio = img.previousElementSibling;
       if (radio) {
         radio.checked = true;
@@ -1434,7 +1435,8 @@ export const cartModalProtocol = () => {
         // Function to update item total price based on quantity
         const updateItemTotalPrice = () => {
           const quantity = parseInt(quantityCart.value);
-          const newTotalPrice = quantity * parseFloat(cartItem.price);
+          const newTotalPrice = quantity * parseFloat(cartItem.price.replace(/,/g, ''));
+          console.log(cartItem.price);
           itemTotalPriceElem.textContent = newTotalPrice.toFixed(2);
           saveCartState();
           updateCartPrices(); // Update cart subtotal and total prices after changing item price
@@ -1607,7 +1609,7 @@ export const renderCards = ({
   switch (dataToRender.length) {
     case 0:
       cardContainer.classList.add("grid=cols-1", "place-items-center");
-      cardContainer.innerHTML = `<p class="font-bold font-[" poppins'] text-sm md:text-lg text-center sm:text-left capitalize text-[#767676]">No product found.</p>`;
+      cardContainer.innerHTML = `<p class="font-bold font-["poppins'] text-sm md:text-lg text-center sm:text-left capitalize text-[#767676]">No product found.</p>`;
       break;
     case 1:
       cardContainer.classList.add("grid-cols-1", "place-items-center");

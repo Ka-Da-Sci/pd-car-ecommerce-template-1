@@ -4,7 +4,6 @@ import {
   productsSearchHandler,
 } from "./utilities-js.js";
 
-
 productsSearchHandler(defaultInventoryData.slice(0, 8));
 
 const renderHomePageProducts = () => {
@@ -21,7 +20,6 @@ const renderHomePageProducts = () => {
 };
 
 renderHomePageProducts();
-
 
 const productsSection = document.getElementById("card-container");
 if (productsSection) {
@@ -44,7 +42,6 @@ if (productsSection) {
 }
 
 productsSearchHandler(defaultInventoryData.slice(0, 8));
-
 
 // Manages Mobile Menu Toggles
 const mobileMenuToggle = () => {
@@ -120,12 +117,13 @@ window.addEventListener("load", () => {
   }
 });
 
-
 const homePageHeroAnimation = () => {
   const animatedTextOne = document.querySelector(".animated-text-one");
   const animatedTextTwo = document.querySelector(".animated-text-two");
   const animatedHeroImageOne = document.querySelector(".animated-hero-one");
-  const animatedHeroImageOnePhrase = document.querySelector(".animated-hero-one span");
+  const animatedHeroImageOnePhrase = document.querySelector(
+    ".animated-hero-one span"
+  );
   const animatedHeroImageTwo = document.querySelector(".animated-hero-two");
   const animatedHeroImageThree = document.querySelector(".animated-hero-three");
 
@@ -152,16 +150,20 @@ const homePageHeroAnimation = () => {
     animatedHeroImageThree && animatedHeroImageThree.classList.remove("flex");
     animatedHeroImageThree && animatedHeroImageThree.classList.add("hidden");
     setTimeout(() => {
-      animatedHeroImageOnePhrase && animatedHeroImageOnePhrase.classList.remove("hidden");
-      animatedHeroImageOnePhrase && animatedHeroImageOnePhrase.classList.add("flex");
+      animatedHeroImageOnePhrase &&
+        animatedHeroImageOnePhrase.classList.remove("hidden");
+      animatedHeroImageOnePhrase &&
+        animatedHeroImageOnePhrase.classList.add("flex");
     }, 500);
 
     setTimeout(() => {
       animatedHeroImageTwo && animatedHeroImageTwo.classList.remove("hidden");
       animatedHeroImageTwo && animatedHeroImageTwo.classList.add("flex");
       animatedHeroImageOne && animatedHeroImageOne.classList.remove("flex");
-      animatedHeroImageOnePhrase && animatedHeroImageOnePhrase.classList.add("hidden");
-      animatedHeroImageOnePhrase && animatedHeroImageOnePhrase.classList.remove("flex");
+      animatedHeroImageOnePhrase &&
+        animatedHeroImageOnePhrase.classList.add("hidden");
+      animatedHeroImageOnePhrase &&
+        animatedHeroImageOnePhrase.classList.remove("flex");
       animatedHeroImageOne && animatedHeroImageOne.classList.add("hidden");
       animatedHeroImageThree && animatedHeroImageThree.classList.remove("flex");
       animatedHeroImageThree && animatedHeroImageThree.classList.add("hidden");
@@ -183,28 +185,79 @@ const homePageHeroAnimation = () => {
 document.addEventListener("DOMContentLoaded", homePageHeroAnimation);
 
 // EMAIL FORM INPUTS VALIDATION FUNCTION
-const subscribeBtn = document.getElementById("subscribe-btn");
-if (subscribeBtn) {
-  subscribeBtn.addEventListener("click", (event) => {
-    console.log("Triggered");
-    const emailInput = document.getElementById("email");
-    const errorMessage = document.getElementById("email-error-message");
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailPattern.test(emailInput.value)) {
-      event.preventDefault();
-      emailInput.classList.add("error");
-      errorMessage.style.display = "inline";
-    } else {
-      emailInput.classList.remove("error");
-      errorMessage.style.display = "none";
-    }
-
-    document.getElementById("email").oninput = () => {
-      errorMessage.style.display = "none";
-    };
-  });
+const miscEmailValidationForm = (parentEmailId, emailInputId, emailErrorMsgid) => {
+  const miscEmailFormSubmitBtn = document.getElementById(parentEmailId);
+  if (miscEmailFormSubmitBtn) {
+    miscEmailFormSubmitBtn.addEventListener("click", (event) => {
+      const emailInput = document.getElementById(emailInputId);
+      const emailInputErrorMessage = document.getElementById(emailErrorMsgid);
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+      if (!emailPattern.test(emailInput.value)) {
+        event.preventDefault();
+        
+        emailInputErrorMessage.style.display = "inline";
+      } else {
+        
+        emailInputErrorMessage.style.display = "none";
+      }
+  
+      document.getElementById("email").oninput = () => {
+        emailInputErrorMessage.style.display = "none";
+      };
+    });
+  }
 }
+
+miscEmailValidationForm('subscribe-btn', 'email', "email-error-message");
+miscEmailValidationForm('discount-email-btn', 'discount-email', "discount-email-error-message");
+
+// CONTACT FORM INPUTS VALIDATION FUNCTION
+const miscFormValidation = (parentFormId) => {
+  const miscForm = document.getElementById(parentFormId);
+  if (miscForm) {
+    const submitMiscBtn = miscForm.querySelector('button');
+    console.log(submitMiscBtn);
+    submitMiscBtn.addEventListener("click", (event) => {
+
+      const emailInput = document.getElementById("client-email");
+      const emailInputErrorMessage = document.getElementById("misc-form-email-error-message");
+      const formMessage = miscForm.querySelector('textarea');
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailPattern.test(emailInput.value)) {
+        event.preventDefault();
+        
+        emailInputErrorMessage.style.display = "inline";
+      } else {
+        
+        emailInputErrorMessage.style.display = "none";
+      }
+
+      document.getElementById("client-email").oninput = () => {
+        emailInputErrorMessage.style.display = "none";
+      };
+
+      const messageErrorMessage = document.getElementById("misc-form-message-error-text");
+      if (formMessage.value.trim() === "") {
+        event.preventDefault();
+        
+        messageErrorMessage.style.display = "inline";
+      } else {
+        
+        messageErrorMessage.style.display = "none";
+      }
+
+      formMessage.oninput = () => {
+        console.log("Wale");
+        messageErrorMessage.style.display = "none";
+      };
+    });
+  }
+};
+
+miscFormValidation('contact-form');
+miscFormValidation('review-form');
 
 // Manages FAQ Toggles
 document.addEventListener("click", (event) => {

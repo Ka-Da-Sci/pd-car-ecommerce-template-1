@@ -9,12 +9,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -190,26 +187,45 @@
             >
               Questions about cars? Our team is here to help!
             </p>
-            <form action="#" method="post" class="space-y-4 w-full">
+            <form id="contact-form" action="#" method="post" class="space-y-4 w-full">
               <input
                 type="text"
                 placeholder="Full Name"
-                class="w-full border rounded-lg px-4 py-2 outline-none text-[#1E1E1E4D] placeholder:text-[#1E1E1E4D] font-normal font-['Poppins'] text-xs"
+                class="w-full border rounded-lg px-4 py-2 outline-none text-[#1E1E1E] placeholder:text-[#1E1E1E4D] font-normal font-['Poppins'] text-xs"
                 required
               />
-              <input
-                type="email"
-                placeholder="Email Address"
-                class="w-full border rounded-lg px-4 py-2 outline-none text-[#1E1E1E4D] placeholder:text-[#1E1E1E4D] font-normal font-['Poppins'] text-xs"
-                required
-              />
-              <textarea
-                placeholder="Message"
-                class="w-full border rounded-lg px-4 py-2 outline-none text-[#1E1E1E4D] placeholder:text-[#1E1E1E4D] font-normal font-['Poppins'] text-xs"
-                rows="2"
-                required
+
+              <span class="flex flex-col relative">
+                <input
+                id="client-email"
+                  type="email"
+                  placeholder="Email Address"
+                  class="w-full border rounded-lg px-4 py-2 outline-none text-[#1E1E1E] placeholder:text-[#1E1E1E4D] font-normal font-['Poppins'] text-xs"
+                  required
+                />
+                <p
+                class="text-xs text-black antialiased hidden absolute -bottom-[15px] left-0"
+                id="misc-form-email-error-message"
+                >Please enter a valid email address.</p
               >
-              </textarea>
+              </span>
+              
+              <span class="flex flex-col relative">
+                <textarea
+                  placeholder="Message"
+                  class="w-full border rounded-lg px-4 py-2 outline-none text-[#1E1E1E] placeholder:text-[#1E1E1E4D] font-normal font-['Poppins'] text-xs"
+                  rows="2"
+                  required
+                >
+                </textarea>
+
+                <p
+                class="text-xs text-black antialiased hidden absolute -bottom-[15px] left-0"
+                id="misc-form-message-error-text"
+                >Please enter a message.</p
+              >
+              </span>
+
               <div class="flex items-center gap-2">
                 <input
                   type="checkbox"
