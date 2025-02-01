@@ -910,7 +910,6 @@ const lagoonProtocol = () => {
   const countrySelect = document.getElementById("country");
   const regionSelect = document.getElementById("region");
   const citySelect = document.getElementById("city");
-  //   const checkoutModal = document.getElementById("checkout-modal");
   const checkoutForm = document.querySelector(".modal-content");
   const orderPlacedModal = document.getElementById("orderPlacedModal");
   const viewReceiptModal = document.getElementById("viewReceiptModal");
@@ -920,7 +919,7 @@ const lagoonProtocol = () => {
   const closeContactVendor = document.getElementById("closeContactVendor");
   const contactVendorBtn = document.getElementById("contactVendorBtn");
   const viewReceiptBtn = document.getElementById("viewReceiptBtn");
-  const totalAmount = document.getElementById("total-price").textContent;
+  let totalAmount = document.getElementById("total-price").textContent;
   const receiptAmount = document.getElementById("receiptTotalPrice");
   const cartCheckOutModal = document.getElementById("checkout-modal");
   const closeModalBtn = document.getElementById("close-modal");
@@ -1096,6 +1095,7 @@ const lagoonProtocol = () => {
   checkoutForm.addEventListener("submit", (event) => {
     // Prevent default form submission
     event.preventDefault();
+    let totalAmount = document.getElementById("total-price").textContent;
 
     // Show the order placed modal
     orderPlacedModal.style.display = "flex"; // Assuming modal is initially hidden via CSS
@@ -1132,7 +1132,6 @@ const lagoonProtocol = () => {
 
 export const cartModalProtocol = () => {
   // Get references to key elements
-  // const openCartBtn = document.getElementById("cart-trolley");
   const cartCheckOutModal = document.getElementById("checkout-modal");
   const closeModalBtn = document.getElementById("close-modal");
   const continueShoppingBtn = document.querySelector(".cart-empty-state a");
@@ -1147,9 +1146,6 @@ export const cartModalProtocol = () => {
   const applyDiscountBtn = document.getElementById("apply-discount");
   const deliveryFee = parseFloat(deliveryFeeElem.textContent.replace("$", ""));
   let cartItems = JSON.parse(localStorage.getItem("cartItems")) || {};
-  // let cartItems =  {rtfj6kk: 'Lovrerttt',
-  //   ujjkofjr5: 'ogkllfmfjjjg'
-  // };
   let shopItemQty = document.querySelector("#quantity");
 
   lagoonProtocol();
@@ -1187,35 +1183,35 @@ export const cartModalProtocol = () => {
     addToCartBtn.forEach((btn) =>
       btn.addEventListener("click", (event) => {
         // event.preventDefault();
-        console.log(shopItemQty.value);
 
-        // const currentCartItemsIds =
-        //   JSON.parse(localStorage.getItem("cartItemsIds")) || [];
-        // const targetLinkId = event.target.closest("a").id;
+        btn.closest(".add-to-cart-container") && btn.closest(".add-to-cart-container").classList.remove("flex");
+        btn.closest(".add-to-cart-container") && btn.closest(".add-to-cart-container").classList.add("hidden");
+
         const newCartItem = event.target.closest("a")
           ? targetItem(event.target.closest("a").id)
           : targetItem(null);
-        console.log(newCartItem);
 
         // Prevent default link behavior
         event.preventDefault();
         // event.stopPropagation();
 
         // Get the product details from the clicked item
-        // const name = newCartItem.name;
         const collectionType = newCartItem.collectionType;
         // const price = parseFloat(newCartItem.price);
         // const imageSrc = newCartItem.image;
 
-        console.log(Object.keys(cartItems));
-
         if (Object.keys(cartItems).includes(newCartItem.id)) {
           event.target.classList.add("cart-pop");
+          cartItemsCounter.closest("button").classList.add("cart-pop");
           // Remove the class after animation completes
           setTimeout(() => {
             event.target.classList.remove("cart-pop");
+            cartItemsCounter.closest("button").classList.remove("cart-pop");
           }, 300);
-          cartItems[newCartItem.id] = event.target.closest("a").querySelector("#quantity").value;
+
+          cartItems[newCartItem.id] = event.target
+            .closest("a")
+            .querySelector("#quantity").value;
           localStorage.setItem("cartItems", JSON.stringify(cartItems));
           return;
         }
@@ -1236,7 +1232,6 @@ export const cartModalProtocol = () => {
           "ease-in-out"
         );
         li.setAttribute("id", newCartItem.id);
-        // li.style.overflow = "auto";
         console.log(newCartItem.price);
         console.log(shopItemQty.value);
         const cartHtml = cartItemContainer(
@@ -1250,7 +1245,6 @@ export const cartModalProtocol = () => {
 
         cartItems[newCartItem.id] = shopItemQty.value;
         localStorage.setItem("cartItems", JSON.stringify(cartItems));
-        // localStorage.setItem("cartItemsIds", JSON.stringify(currentCartItemsIds));
 
         // Append the new list item to the cart
         cartItemsContainer.appendChild(li);
@@ -1263,7 +1257,6 @@ export const cartModalProtocol = () => {
         const incrementItem = document.querySelector("#minus");
         const decrementItem = document.querySelector("#plus");
         const itemTotalPriceElem = li.querySelector(".item-total-price");
-        console.log(event.target.closest("a"));
         const parentLink = event.target.closest("a");
         quantityCart.value = parentLink
           ? document.querySelector(`#${CSS.escape(parentLink.id)} #quantity`)
@@ -1329,7 +1322,6 @@ export const cartModalProtocol = () => {
         // Add event listener for the remove button in the cart item
         li.querySelector(".remove").addEventListener("click", () => {
           li.remove();
-          // let cartItemsIds = JSON.parse(localStorage.getItem(''));
           updateCartCounter();
           updateCartPrices();
           displayEmptyState();
@@ -1383,35 +1375,17 @@ export const cartModalProtocol = () => {
     // const cartItemsQty = {};
     cartItems = {};
     cartItemsContainer.querySelectorAll(".item").forEach((item) => {
-      // const prodImg = `./assets${
-      //   item.querySelector(".item-image img").src.split("assets")[1]
-      // }`.toString();
-
-      // cartItems.push({
-      //   image: prodImg,
-      //   name: item.querySelector(".product-name .name").textContent,
-      //   id: item.id,
-      //   collectionType: item.querySelector(".product-name .vendor") ? item.querySelector(".product-name .vendor").textContent : '',
-      //   price: +`${item
-      //     .querySelector(".unit-price")
-      //     .textContent.replace("$", "")}`,
-      // });
 
       cartItems[item.id] = item.querySelector("#quantity").value;
-      // updatedCartItemsIds.push(item.id);
-      // cartItemsQty[item.id] = item.querySelector("#quantity").value;
     });
 
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
-    // localStorage.setItem("cartItemsIds", JSON.stringify(updatedCartItemsIds));
-    // localStorage.setItem("cartItemsQty", JSON.stringify(cartItemsQty));
   };
 
   //function to load cart
   const loadCartState = () => {
     // Retrieve cartItems and cartItemsQty from localStorage
     const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || {};
-    // const cartItemsQty = JSON.parse(localStorage.getItem("cartItemsQty"));
 
     // Check if there are any stored items
     if (Object.keys(storedCartItems).length > 0) {
@@ -1456,6 +1430,7 @@ export const cartModalProtocol = () => {
         const decrementCart = li.querySelector(".decrement");
         const quantityCart = li.querySelector("#quantity");
         const itemTotalPriceElem = li.querySelector(".item-total-price");
+        
         // Function to update item total price based on quantity
         const updateItemTotalPrice = () => {
           const quantity = parseInt(quantityCart.value);
@@ -1509,10 +1484,10 @@ export const cartModalProtocol = () => {
   const updateCartCounter = () => {
     const numberOfItems = cartItemsContainer.children.length;
     cartItemsCounter.textContent = numberOfItems;
-    cartItemsCounter.closest('button').classList.add("cart-pop");
+    cartItemsCounter.closest("button").classList.add("cart-pop");
     // Remove the class after animation completes
     setTimeout(() => {
-      cartItemsCounter.closest('button').classList.remove("cart-pop");
+      cartItemsCounter.closest("button").classList.remove("cart-pop");
     }, 300);
   };
 
@@ -1534,7 +1509,7 @@ export const cartModalProtocol = () => {
   const displayEmptyState = () => {
     const cartEmptyState = document.querySelector(".cart-empty-state");
     const checkoutForm = document.querySelector(".modal-content");
-    // console.log(JSON.parse(localStorage.getItem("cartItems")));
+
     if (
       !JSON.parse(localStorage.getItem("cartItems")) ||
       Object.keys(JSON.parse(localStorage.getItem("cartItems"))).length == 0
@@ -1546,7 +1521,7 @@ export const cartModalProtocol = () => {
         }
       });
     } else {
-      // console.log(JSON.parse(localStorage.getItem("cartItems")));
+
       cartEmptyState.style.display = "none";
       Array.from(checkoutForm.children).forEach((child) => {
         if (child !== cartEmptyState) {
@@ -1612,8 +1587,6 @@ export const cartModalProtocol = () => {
 const cardContainer = document.getElementById("card-container");
 const resultsInfo = document.getElementById("results-info");
 const pageInfo = document.getElementById("page-info");
-// const cardsPerPageNum = 8; // Number of cards per page
-// let currentPageNum = 1;
 
 export const renderCards = ({
   dataToRender,
@@ -1633,12 +1606,10 @@ export const renderCards = ({
 
   switch (dataToRender.length) {
     case 0:
-      console.log("0");
       cardContainer.classList.add("grid=cols-1", "place-items-center");
       cardContainer.innerHTML = `<p class="font-bold font-[" poppins'] text-sm md:text-lg text-center sm:text-left capitalize text-[#767676]">No product found.</p>`;
       break;
     case 1:
-      console.log("1");
       cardContainer.classList.add("grid-cols-1", "place-items-center");
       break;
     case 2:
@@ -1650,7 +1621,6 @@ export const renderCards = ({
       );
       break;
     default:
-      console.log("3");
       cardContainer.classList.add(
         "grid-cols-1",
         "sm:grid-cols-2",
@@ -1817,10 +1787,27 @@ export const productsSearchHandler = (productsData) => {
     })
   );
 
+  const hideShopNavSearch = () => {
+    document.addEventListener("click", (event) => {
+      if (
+        event.target.closest(".search-cart") &&
+        !event.target
+          .closest(".search-cart")
+          .querySelector("input")
+          .contains(event.target) &&
+        !shopNavSearchTrigger.contains(event.target)
+      ) {
+        shopNavSearch.classList.add("hidden");
+      }
+    });
+  };
+
   shopNavSearchTrigger &&
     shopNavSearchTrigger.addEventListener("click", (event) => {
       event.preventDefault();
       shopNavSearch.classList.remove("hidden");
+
+      document.addEventListener("click", hideShopNavSearch);
     });
 };
 
@@ -1880,7 +1867,6 @@ export const targetItem = (targetProuctId) => {
 };
 
 export const cartItemContainer = (cartItem, cartItemsQty, collectionType) => {
-  // console.log(cartItemsQty);
   return `
                       <img class="remove  w-4 cursor-pointer" id="remove" src="./assets/images/remove.png" alt="">
                       <div class="item-image w-full h-full max-w-8 max-h-8 flex-[0_0_2rem] gap-2 flex justify-center">
@@ -1920,8 +1906,22 @@ export const productItemContainerElemHandler = () => {
   const productItemContainerElems =
     document.querySelectorAll(".item-container");
 
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          entry.target.classList.remove("flex");
+          entry.target.classList.add("hidden");
+          observer.unobserve(entry.target); // Stop observing the element
+        }
+      });
+    },
+    {
+      threshold: 0.4, // Trigger when 40% of the element is out of view
+    }
+  );
+
   const addToCartOnHoverHandler = (elem, event) => {
-    console.log("Entered");
     event.preventDefault();
 
     if (elem.contains(event.target)) {
@@ -1954,20 +1954,21 @@ export const productItemContainerElemHandler = () => {
         };
 
         elem.addEventListener("click", stopElemClickNavigation);
-
         targetaddToCartContainerElem.classList.remove("hidden");
         targetaddToCartContainerElem.classList.add("flex");
+
+        observer.observe(targetaddToCartContainerElem);
 
         updateQuantityHandler(
           targetaddToCartContainerDecreaseBtnElem,
           targetaddToCartContainerIncreaseBtnElem
         );
         targetaddToCartContainerElem.addEventListener("mouseleave", () => {
-          console.log("Out");
           targetaddToCartContainerElem.classList.remove("flex");
           targetaddToCartContainerElem.classList.add("hidden");
           elem.removeEventListener("click", stopElemClickNavigation);
         });
+
       });
 
       targetItemPreviewElemBtn.addEventListener("mouseenter", (event) => {
@@ -1983,11 +1984,13 @@ export const productItemContainerElemHandler = () => {
         targetItemPreviewElem.classList.add("flex");
 
         targetItemPreviewElem.addEventListener("mouseleave", () => {
-          console.log("Preview Out");
           targetItemPreviewElem.classList.remove("flex");
           targetItemPreviewElem.classList.add("hidden");
           elem.removeEventListener("click", stopElemClickNavigation);
         });
+
+        observer.observe(targetItemPreviewElem);
+
       });
     }
   };

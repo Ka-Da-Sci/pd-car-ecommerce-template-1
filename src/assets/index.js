@@ -45,6 +45,7 @@ if (productsSection) {
 
 productsSearchHandler(defaultInventoryData.slice(0, 8));
 
+
 // Manages Mobile Menu Toggles
 const mobileMenuToggle = () => {
   const mobileMenuToggle = document.querySelector(".mobile-toggle");

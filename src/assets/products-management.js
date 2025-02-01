@@ -176,8 +176,6 @@ const sortedShopItemsData = () => {
       sortValue
     );
     return inventoryData;
-    // const handleSortChange = () => {
-    // };
   } else {
     console.error('Element with class "shop-sort-select" not found');
   }
@@ -325,12 +323,25 @@ shopSearchButtons.forEach(button => button.addEventListener("click", (event) => 
   renderPagination(inventoryData);
   shopPaginationElems.classList.add("hidden");
   shopNavSearch.classList.add("hidden");
+  cartModalProtocol();
 
 }));
+
+const hideShopNavSearch = () => {
+  document.addEventListener('click', (event) => {
+    if (event.target.closest('.search-cart') && !event.target.closest('.search-cart').querySelector('input').contains(event.target) && !shopNavSearchTrigger.contains(event.target)){
+      shopNavSearch.classList.add("hidden");
+      console.log("Idiot");
+    }
+  });
+};
 
 shopNavSearchTrigger.addEventListener("click", (event) => {
   event.preventDefault();
   shopNavSearch.classList.remove("hidden");
+
+  document.addEventListener('click', hideShopNavSearch);
+
 })
 
 const renderBasedOnSortedData = () => {
