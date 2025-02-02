@@ -112,28 +112,28 @@ const renderPagination = (data) => {
 
 const sortedShopItemsData = () => {
   // Helper function to clean number strings by removing commas and converting to integers
-  function cleanNumber(str) {
+  let cleanNumber = (str) => {
     return parseInt(str.replace(/,/g, ""), 10);
   }
 
   // Sorting functions for better modularity
-  function sortByPriceLowToHigh(a, b) {
+  let sortByPriceLowToHigh = (a, b) => {
     return cleanNumber(a.price) - cleanNumber(b.price);
   }
 
-  function sortByPriceHighToLow(a, b) {
+  let sortByPriceHighToLow = (a, b) => {
     return cleanNumber(b.price) - cleanNumber(a.price);
   }
 
-  function sortByRatingHighToLow(a, b) {
+  let sortByRatingHighToLow = (a, b) => {
     return (Number(b.rating) || 0) - (Number(a.rating) || 0);
   }
 
-  function sortByReviewsHighToLow(a, b) {
+  let sortByReviewsHighToLow = (a, b) => {
     return cleanNumber(b.reviewsNum) - cleanNumber(a.reviewsNum);
   }
 
-  function sortByNewest(a, b) {
+  let sortByNewest = (a, b) => {
     return (
       (new Date(b.listingDate).getTime() || 0) -
       (new Date(a.listingDate).getTime() || 0)

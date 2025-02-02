@@ -5,7 +5,7 @@ import {
 
 
 // Fetch cart modal and insert across the relevant pages.
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   fetch("cart-modal.html")
     .then((response) => response.text())
     .then((data) => {
