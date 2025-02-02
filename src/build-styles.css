@@ -1,3 +1,7 @@
+/* @import url(https://fonts.googleapis.com/css?family=Kumbh+Sans:100,200,300,regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Alfa+Slab+One:regular);
+@import url(https://fonts.googleapis.com/css?family=Space+Grotesk:300,regular,500,600,700); */
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -106,9 +110,7 @@
   --tw-contain-style:  ;
 }
 
-/*
-! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com
-*/
+/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -1676,10 +1678,6 @@ body,
   border-width: 2px;
 }
 
-.border-b {
-  border-bottom-width: 1px;
-}
-
 .border-solid {
   border-style: solid;
 }
@@ -1690,10 +1688,6 @@ body,
 
 .border-\[\#1E1E1E4D\] {
   border-color: #1E1E1E4D;
-}
-
-.border-\[\#3333333b\] {
-  border-color: #3333333b;
 }
 
 .border-\[\#ff4500\] {
@@ -2372,10 +2366,6 @@ body,
   color: rgb(152 165 133 / var(--tw-text-opacity, 1));
 }
 
-.hover\:\[box-shadow\:0px_2px_6px_4px_\#00000018\]:hover {
-  box-shadow: 0px 2px 6px 4px #00000018;
-}
-
 .hover\:\[box-shadow\:0px_4px_30px_0px_\#00000033\]:hover {
   box-shadow: 0px 4px 30px 0px #00000033;
 }
@@ -2487,14 +2477,14 @@ body,
     padding-right: 7rem;
   }
 
-  .sm\:py-14 {
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
-  }
-
   .sm\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .sm\:py-14 {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
   }
 
   .sm\:text-left {

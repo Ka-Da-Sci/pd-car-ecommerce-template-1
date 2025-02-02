@@ -896,14 +896,97 @@ export const defaultInventoryData = [
   },
 ];
 
+export const adsProductsData = [
+  {
+    image: "./assets/images/rolling-ads-1.png",
+    name: "Jeep Wrangler 2021",
+    rating: 4.8,
+    reviewsNum: "7,432",
+    seatCount: "5",
+    transmissionType: "manual",
+    fuel: "gas",
+    currencySymb: "$",
+    price: "45,000",
+    itemCategory: "SUV & crossovers",
+    listingDate: "2024-03-03T00:00:00.000Z",
+    id: "31de426241cec060e7c3ec0ebcf2d8cc",
+    description:
+      "Built for adventure, the Jeep Wrangler 2021 is a rugged SUV with unmatched off-road capabilities. With a 4.8 rating from over 7,400 reviews, it offers manual handling and gas-powered performance. Take on any terrain for $45,000.",
+  },
+  {
+    image: "./assets/images/rolling-ads-2.png",
+    name: "Nissan Leaf 2022",
+    rating: 4.3,
+    reviewsNum: "5,332",
+    seatCount: "5",
+    transmissionType: "auto",
+    fuel: "electric",
+    currencySymb: "$",
+    price: "31,500",
+    itemCategory: "electric & hybrid",
+    listingDate: "2024-09-30T00:00:00.000Z",
+    id: "e1a4feb57e273823861088bb9eccfe81",
+    description:
+      "The Nissan Leaf 2022 combines affordability and eco-friendly innovation. Rated 4.3 by over 5,300 drivers, it features an all-electric powertrain, automatic transmission, and seating for five. A sustainable choice for $31,500.",
+  },
+  {
+    image: "./assets/images/rolling-ads-3.png",
+    name: "Mercedes-Benz S-Class 2023",
+    rating: 4.9,
+    reviewsNum: "4,302",
+    seatCount: "5",
+    transmissionType: "auto",
+    fuel: "gas",
+    currencySymb: "$",
+    price: "120,000",
+    itemCategory: "luxury cars",
+    listingDate: "2024-08-05T00:00:00.000Z",
+    id: "3a726db202f964afea56aa3bc9192a59",
+    description:
+      "Sophisticated luxury and unrivaled comfort come together in the Mercedes-Benz S-Class 2023. Rated 4.9 by 4,300+ reviewers, it features a gas engine and automatic transmission for seamless performance. Priced at $120,000.",
+  },
+  {
+    image: "./assets/images/rolling-ads-4.png",
+    name: "Mazda CX-5 2022",
+    rating: 4.6,
+    reviewsNum: "6,019",
+    seatCount: "5",
+    transmissionType: "auto",
+    fuel: "gas",
+    currencySymb: "$",
+    price: "28,500",
+    itemCategory: "SUV & crossovers",
+    listingDate: "2024-10-11T00:00:00.000Z",
+    id: "3fe4f0945e33a4c97938fe535b8f2b00",
+    description:
+      "The Mazda CX-5 2022 delivers a dynamic driving experience with a touch of elegance. Rated 4.6 by over 6,000 drivers, this gas-powered SUV is perfect for families and adventurers. A steal at $28,500.",
+  },
+  {
+    image: "./assets/images/rolling-ads-5.png",
+    name: "Audi Q7 2021",
+    rating: 4.7,
+    reviewsNum: "5,874",
+    seatCount: "7",
+    transmissionType: "auto",
+    fuel: "gas",
+    currencySymb: "$",
+    price: "63,000",
+    itemCategory: "luxury cars",
+    listingDate: "2024-05-01T00:00:00.000Z",
+    id: "62491325384e7ffaf7f50702310736ed",
+    description:
+      "The Audi Q7 2021 redefines versatility and luxury with seating for seven and powerful gas performance. Rated 4.7 by over 5,800 satisfied customers. Yours for $63,000.",
+  },
+];
+
 // let itemNum = 0;
-// defaultInventoryData.forEach((item) => {
+// adsProductsData.forEach((item) => {
 //   itemNum++;
 //   const uniqueString = `${item.name}-${itemNum}`;
 //   item["id"] = CryptoJS.MD5(uniqueString).toString();
 // });
 
-// console.log(defaultInventoryData);
+// console.log(adsProductsData);
 
 const openCartBtn = document.getElementById("cart-trolley");
 const lagoonProtocol = () => {
@@ -1065,7 +1148,7 @@ const lagoonProtocol = () => {
   });
 
   document.querySelectorAll(".select img").forEach((img) => {
-    let radioSelect = img.closest('.select');
+    let radioSelect = img.closest(".select");
     radioSelect.addEventListener("click", () => {
       const radio = img.previousElementSibling;
       if (radio) {
@@ -1185,8 +1268,10 @@ export const cartModalProtocol = () => {
       btn.addEventListener("click", (event) => {
         // event.preventDefault();
 
-        btn.closest(".add-to-cart-container") && btn.closest(".add-to-cart-container").classList.remove("flex");
-        btn.closest(".add-to-cart-container") && btn.closest(".add-to-cart-container").classList.add("hidden");
+        btn.closest(".add-to-cart-container") &&
+          btn.closest(".add-to-cart-container").classList.remove("flex");
+        btn.closest(".add-to-cart-container") &&
+          btn.closest(".add-to-cart-container").classList.add("hidden");
 
         const newCartItem = event.target.closest("a")
           ? targetItem(event.target.closest("a").id)
@@ -1376,7 +1461,6 @@ export const cartModalProtocol = () => {
     // const cartItemsQty = {};
     cartItems = {};
     cartItemsContainer.querySelectorAll(".item").forEach((item) => {
-
       cartItems[item.id] = item.querySelector("#quantity").value;
     });
 
@@ -1431,11 +1515,12 @@ export const cartModalProtocol = () => {
         const decrementCart = li.querySelector(".decrement");
         const quantityCart = li.querySelector("#quantity");
         const itemTotalPriceElem = li.querySelector(".item-total-price");
-        
+
         // Function to update item total price based on quantity
         const updateItemTotalPrice = () => {
           const quantity = parseInt(quantityCart.value);
-          const newTotalPrice = quantity * parseFloat(cartItem.price.replace(/,/g, ''));
+          const newTotalPrice =
+            quantity * parseFloat(cartItem.price.replace(/,/g, ""));
           console.log(cartItem.price);
           itemTotalPriceElem.textContent = newTotalPrice.toFixed(2);
           saveCartState();
@@ -1523,7 +1608,6 @@ export const cartModalProtocol = () => {
         }
       });
     } else {
-
       cartEmptyState.style.display = "none";
       Array.from(checkoutForm.children).forEach((child) => {
         if (child !== cartEmptyState) {
@@ -1860,7 +1944,8 @@ export const targetItem = (targetProuctId) => {
   const targetId = targetProuctId ? targetProuctId : getClickedProductId();
   if (targetId) {
     const findProductById = (id) => {
-      return defaultInventoryData.find((product) => product.id === id);
+      let productToReturn = defaultInventoryData.find((product) => product.id === id) || adsProductsData.find((product) => product.id === id);
+      return productToReturn;
     };
 
     const targetProduct = findProductById(targetId);
@@ -1970,7 +2055,6 @@ export const productItemContainerElemHandler = () => {
           targetaddToCartContainerElem.classList.add("hidden");
           elem.removeEventListener("click", stopElemClickNavigation);
         });
-
       });
 
       targetItemPreviewElemBtn.addEventListener("mouseenter", (event) => {
@@ -1992,7 +2076,6 @@ export const productItemContainerElemHandler = () => {
         });
 
         observer.observe(targetItemPreviewElem);
-
       });
     }
   };

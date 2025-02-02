@@ -1,10 +1,39 @@
 import {
   defaultInventoryData,
+  adsProductsData,
   renderCards,
   productsSearchHandler,
 } from "./utilities-js.js";
 
 productsSearchHandler(defaultInventoryData.slice(0, 8));
+
+const homePageAdsSectionUpdater = (parentSectionId) => {
+  const homepageAdssSection = document.getElementById(parentSectionId);
+  if (homepageAdssSection) {
+    const homepageAdssSectionLinks = Array.from(
+      homepageAdssSection.getElementsByTagName("a")
+    );
+    let adsItemNum = 0;
+
+    homepageAdssSectionLinks.forEach(ads => {
+      let adsItemInFocus = ads.closest('.ads-item');
+      console.log(adsItemInFocus);
+      ads.setAttribute('id', adsProductsData[adsItemNum].id);
+      adsItemInFocus.querySelector(".ads-item-name").textContent = adsProductsData[adsItemNum].name;
+      adsItemInFocus.querySelector(".ads-curr").textContent = adsProductsData[adsItemNum].currencySymb;
+      adsItemInFocus.querySelector(".ads-item-price").textContent = adsProductsData[adsItemNum].price;
+      adsItemInFocus.querySelector(".ads-item-description").textContent = adsProductsData[adsItemNum].description;
+      adsItemInFocus.querySelector(".ads-item-img").src = adsProductsData[adsItemNum].image;
+      // adsItemInFocus.querySelector() = adsProductsData[adsItemNum].
+      // adsItemInFocus.querySelector() = adsProductsData[adsItemNum].
+      adsItemNum++;
+      console.log(ads);
+    })
+    
+  }
+};
+
+homePageAdsSectionUpdater('homepage-ads');
 
 const renderHomePageProducts = () => {
   const parentIndexCard = document.getElementById("index-card");
@@ -21,25 +50,31 @@ const renderHomePageProducts = () => {
 
 renderHomePageProducts();
 
-const productsSection = document.getElementById("card-container");
-if (productsSection) {
-  productsSection.addEventListener("click", async (event) => {
-    event.preventDefault();
-    const productsSectionLinks = Array.from(
-      productsSection.getElementsByTagName("a")
-    );
-    const target = event.target;
-    for (const link of productsSectionLinks) {
-      if (link.contains(target)) {
-        console.log(link.id);
-        sessionStorage.setItem("clickedProductId", link.id);
-        await new Promise((resolve) => setTimeout(resolve, 100)); // Delay to ensure sessionStorage is updated
-        window.location.href = link.href; // Redirect to the clicked link
-        break;
+const miscIdGrabber = (parentSectionId) => {
+  const productsSection = document.getElementById(parentSectionId);
+  if (productsSection) {
+    productsSection.addEventListener("click", async (event) => {
+      event.preventDefault();
+      const productsSectionLinks = Array.from(
+        productsSection.getElementsByTagName("a")
+      );
+      const target = event.target;
+      for (const link of productsSectionLinks) {
+        if (link.contains(target)) {
+          console.log(link.id);
+          sessionStorage.setItem("clickedProductId", link.id);
+          await new Promise((resolve) => setTimeout(resolve, 100)); // Delay to ensure sessionStorage is updated
+          window.location.href = `${link.href}?id=${link.id}`; // Redirect to the clicked link
+          break;
+        }
       }
-    }
-  });
+    });
+  }
 }
+
+miscIdGrabber("card-container");
+miscIdGrabber("homepage-ads");
+
 
 productsSearchHandler(defaultInventoryData.slice(0, 8));
 

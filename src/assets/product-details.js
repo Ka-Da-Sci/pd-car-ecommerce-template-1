@@ -21,7 +21,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const itemFooterDesc = document.getElementById('item-footer-description');
   
   if (productDetailsContainer) {
-    const targetProduct = targetItem();
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetProductId = urlParams.get('id');
+    const targetProduct = targetItem(targetProductId);
+    if (!targetProductId || !targetProduct) {
+      window.location.href = "../src/error404.html";
+      return;
+    }
     itemImage.src = targetProduct.image;
     itemName.textContent = targetProduct.name;
     itemPrice.textContent = targetProduct.price;
@@ -33,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     itemReviews.textContent = `(${targetProduct.reviewsNum} Reviews)`;
     itemPageDesc.textContent = targetProduct.description;
     itemFooterDesc.textContent = targetProduct.description;
+    document.body.classList.remove('hidden');
   }
   
   const showDescription = () => {

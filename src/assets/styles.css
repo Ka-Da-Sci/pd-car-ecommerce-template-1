@@ -85,13 +85,10 @@
   }
 
   .leaflet-popup-content {
-    max-width: 200px;
-    /* Adjust to fit within smaller screens */
+    max-width: 200px;  /* Adjust to fit within smaller screens */
     word-wrap: break-word;
-    font-size: 0.875rem;
-    /* Tailwind equivalent of text-sm */
-    line-height: 1.25rem;
-    /* Tailwind equivalent of leading-5 */
+    font-size: 0.875rem; /* Tailwind equivalent of text-sm */
+    line-height: 1.25rem; /* Tailwind equivalent of leading-5 */
   }
 
   .modal-content-wrapper,
@@ -103,8 +100,7 @@
 
   @media (min-width: 768px) {
     .leaflet-popup-content {
-      max-width: 400px;
-      /* Limit width for larger screens */
+      max-width: 400px;  /* Limit width for larger screens */
     }
   }
 }
