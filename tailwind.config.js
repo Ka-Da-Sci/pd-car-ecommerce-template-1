@@ -1,7 +1,7 @@
 module.exports = {
   content: [
     "./index.html", // Adjust based on your file structure
-    "./src/**/*.{js,jsx,ts,tsx}", // Include paths to your project files
+    "./src/**/*.{js,jsx,ts,tsx,html}", // Include paths to your project files
   ],
   safelist: [
     "animate-marquee-container",
