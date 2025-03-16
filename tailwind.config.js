@@ -25,6 +25,7 @@ module.exports = {
     "modal-content",
     "cart-pop",
   ],
+  // safelist: [{ pattern: /.*/ }], // Forces all classes to be included
   theme: {
     extend: {
       animation: {

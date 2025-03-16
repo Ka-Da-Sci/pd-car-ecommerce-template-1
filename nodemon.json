@@ -1,6 +1,6 @@
 {
     "watch": ["tailwind.config.js", "src/**/*.css",  "src/**/*.js",  "src/**/*.html"],
     "ext": "css,js,html",
-    "exec": "npx tailwindcss -i ./src/assets/styles.css -o ./src/build-styles.css --watch live-server"
+    "exec": "npx tailwindcss -i ./src/assets/styles.css -o ./src/build-styles.css --watch"
   }
   
