@@ -1296,7 +1296,10 @@ export const cartModalProtocol = () => {
           }, 300);
 
           cartItems[newCartItem.id] = event.target
+            .closest("a") ? event.target
             .closest("a")
+            .querySelector("#quantity").value : event.target
+            .closest(".products-details-container")
             .querySelector("#quantity").value;
           localStorage.setItem("cartItems", JSON.stringify(cartItems));
           return;
